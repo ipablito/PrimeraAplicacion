@@ -1,0 +1,4 @@
+c:\users\ipabliito_\documents\visual studio 2010\Projects\MT\MT\bin\Debug\MT.dll
+c:\users\ipabliito_\documents\visual studio 2010\Projects\MT\MT\bin\Debug\MT.pdb
+c:\users\ipabliito_\documents\visual studio 2010\Projects\MT\MT\obj\Debug\MT.dll
+c:\users\ipabliito_\documents\visual studio 2010\Projects\MT\MT\obj\Debug\MT.pdb

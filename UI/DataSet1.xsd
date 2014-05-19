@@ -1,0 +1,1517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="mastertech_db1ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="mastertech_db1ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.UI.Properties.Settings.GlobalReference.Default.mastertech_db1ConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="clienteTableAdapter" GeneratorDataComponentClassName="clienteTableAdapter" Name="cliente" UserDataComponentName="clienteTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="mastertech_db1ConnectionString (Settings)" DbObjectName="mastertech_db1.cliente" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_listaclientesactivos" GetMethodModifier="Public" GetMethodName="GetData_listaclientesactivos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_listaclientesactivos" UserSourceName="GetData_listaclientesactivos">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id_cliente, nombre_cliente, nit_cliente, direccion_cliente, telefono_cliente, correo_cliente
+FROM            cliente
+where estado_cliente=1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_cliente" DataSetColumn="id_cliente" />
+              <Mapping SourceColumn="nombre_cliente" DataSetColumn="nombre_cliente" />
+              <Mapping SourceColumn="nit_cliente" DataSetColumn="nit_cliente" />
+              <Mapping SourceColumn="direccion_cliente" DataSetColumn="direccion_cliente" />
+              <Mapping SourceColumn="telefono_cliente" DataSetColumn="telefono_cliente" />
+              <Mapping SourceColumn="correo_cliente" DataSetColumn="correo_cliente" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="marcaTableAdapter" GeneratorDataComponentClassName="marcaTableAdapter" Name="marca" UserDataComponentName="marcaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="mastertech_db1ConnectionString (Settings)" DbObjectName="mastertech_db1.marca" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_listamarcasactivas" GetMethodModifier="Public" GetMethodName="GetData_listamarcasactivas" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_listamarcasactivas" UserSourceName="GetData_listamarcasactivas">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        nombre_marca
+FROM            marca where estado_marca=1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nombre_marca" DataSetColumn="nombre_marca" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProductoExistenteTableAdapter" GeneratorDataComponentClassName="ProductoExistenteTableAdapter" Name="ProductoExistente" UserDataComponentName="ProductoExistenteTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="mastertech_db1ConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_productosexistentes" GetMethodModifier="Public" GetMethodName="GetData_productosexistentes" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_productosexistentes" UserSourceName="GetData_productosexistentes">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        producto.codigo_producto, producto.descripcion_producto, bodega.descripcion_bodega, producto_bodega.existencia_producto_bodega
+FROM            bodega INNER JOIN
+                         producto_bodega ON bodega.id_bodega = producto_bodega.id_bodega INNER JOIN
+                         producto ON producto_bodega.id_producto = producto.id_producto
+
+where producto.estado_producto =1 and bodega.estado_bodega=1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="codigo_producto" DataSetColumn="codigo_producto" />
+              <Mapping SourceColumn="descripcion_producto" DataSetColumn="descripcion_producto" />
+              <Mapping SourceColumn="descripcion_bodega" DataSetColumn="descripcion_bodega" />
+              <Mapping SourceColumn="existencia_producto_bodega" DataSetColumn="existencia_producto_bodega" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="proveedorTableAdapter" GeneratorDataComponentClassName="proveedorTableAdapter" Name="proveedor" UserDataComponentName="proveedorTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="mastertech_db1ConnectionString (Settings)" DbObjectName="mastertech_db1.proveedor" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_proveedoresactivos" GetMethodModifier="Public" GetMethodName="GetData_proveedoresactivos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_proveedoresactivos" UserSourceName="GetData_proveedoresactivos">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id_proveedor, nit_proveedor, descripcion_proveedor, telefono_proveedor, telefono2_proveedor, direccion_proveedor, correo_proveedor
+FROM            proveedor
+where estado_proveedor=1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_proveedor" DataSetColumn="id_proveedor" />
+              <Mapping SourceColumn="nit_proveedor" DataSetColumn="nit_proveedor" />
+              <Mapping SourceColumn="descripcion_proveedor" DataSetColumn="descripcion_proveedor" />
+              <Mapping SourceColumn="telefono_proveedor" DataSetColumn="telefono_proveedor" />
+              <Mapping SourceColumn="telefono2_proveedor" DataSetColumn="telefono2_proveedor" />
+              <Mapping SourceColumn="direccion_proveedor" DataSetColumn="direccion_proveedor" />
+              <Mapping SourceColumn="correo_proveedor" DataSetColumn="correo_proveedor" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="bodegaTableAdapter" GeneratorDataComponentClassName="bodegaTableAdapter" Name="bodega" UserDataComponentName="bodegaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="mastertech_db1ConnectionString (Settings)" DbObjectName="mastertech_db1.bodega" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_bodegasactivas" GetMethodModifier="Public" GetMethodName="GetData_bodegasactivas" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_bodegasactivas" UserSourceName="GetData_bodegasactivas">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id_bodega, descripcion_bodega, direccion_bodega, telefono_bodega, telefono2_bodega
+FROM            bodega
+where estado_bodega=1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_bodega" DataSetColumn="id_bodega" />
+              <Mapping SourceColumn="descripcion_bodega" DataSetColumn="descripcion_bodega" />
+              <Mapping SourceColumn="direccion_bodega" DataSetColumn="direccion_bodega" />
+              <Mapping SourceColumn="telefono_bodega" DataSetColumn="telefono_bodega" />
+              <Mapping SourceColumn="telefono2_bodega" DataSetColumn="telefono2_bodega" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SeriesActivasTableAdapter" GeneratorDataComponentClassName="SeriesActivasTableAdapter" Name="SeriesActivas" UserDataComponentName="SeriesActivasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="mastertech_db1ConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_seriesactivas" GetMethodModifier="Public" GetMethodName="GetData_seriesactivas" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_seriesactivas" UserSourceName="GetData_seriesactivas">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        serie_documento.descripcion_serie_documento, tipo_documento.descripcion_tipo_documento
+FROM            tipo_documento INNER JOIN
+                         serie_documento ON tipo_documento.id_tipo_documento = serie_documento.id_tipo_documento
+
+where serie_documento.id_estado_documento=1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="descripcion_serie_documento" DataSetColumn="descripcion_serie_documento" />
+              <Mapping SourceColumn="descripcion_tipo_documento" DataSetColumn="descripcion_tipo_documento" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PermisosRolTableAdapter" GeneratorDataComponentClassName="PermisosRolTableAdapter" Name="PermisosRol" UserDataComponentName="PermisosRolTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="mastertech_db1ConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_listapermisosrol" GetMethodModifier="Public" GetMethodName="GetData_listapermisosrol" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_listapermisosrol" UserSourceName="GetData_listapermisosrol">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        permiso.id_permiso, permiso.descripcion_permiso, rol_permiso.estado_rol_permiso
+FROM            permiso INNER JOIN
+                         rol_permiso ON permiso.id_permiso = rol_permiso.id_permiso
+
+where rol_permiso.id_rol=@n_rol</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="n_rol" ColumnName="id_rol" DataSourceName="mastertech_db1.rol_permiso" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@n_rol" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="id_rol" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_permiso" DataSetColumn="id_permiso" />
+              <Mapping SourceColumn="descripcion_permiso" DataSetColumn="descripcion_permiso" />
+              <Mapping SourceColumn="estado_rol_permiso" DataSetColumn="estado_rol_permiso" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="usuario_rolTableAdapter" GeneratorDataComponentClassName="usuario_rolTableAdapter" Name="usuario_rol" UserDataComponentName="usuario_rolTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="mastertech_db1ConnectionString (Settings)" DbObjectName="mastertech_db1.usuario_rol" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_listarolesusuario" GetMethodModifier="Public" GetMethodName="GetData_listarolesusuario" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_listarolesusuario" UserSourceName="GetData_listarolesusuario">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        usuario_rol.estado_usurio_rol, usuario_rol.id_rol
+FROM            usuario INNER JOIN
+                         usuario_rol ON usuario.id_usuario = usuario_rol.id_usuario INNER JOIN
+                         rol ON usuario_rol.id_rol = rol.id_rol
+
+where usuario_rol.id_usuario=@n_idus</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="n_idus" ColumnName="id_usuario" DataSourceName="mastertech_db1.usuario_rol" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@n_idus" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="id_usuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="estado_usurio_rol" DataSetColumn="estado_usurio_rol" />
+              <Mapping SourceColumn="id_rol" DataSetColumn="id_rol" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="logginTableAdapter" GeneratorDataComponentClassName="logginTableAdapter" Name="loggin" UserDataComponentName="logginTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="mastertech_db1ConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_listapermisos" GetMethodModifier="Public" GetMethodName="GetData_listapermisos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_listapermisos" UserSourceName="GetData_listapermisos">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        rol_permiso.estado_rol_permiso, permiso.descripcion_permiso_para_programador
+FROM            usuario INNER JOIN
+                         usuario_rol ON usuario.id_usuario = usuario_rol.id_usuario INNER JOIN
+                         rol ON usuario_rol.id_rol = rol.id_rol INNER JOIN
+                         rol_permiso ON rol.id_rol = rol_permiso.id_rol INNER JOIN
+                         permiso ON rol_permiso.id_permiso = permiso.id_permiso
+
+WHERE ((usuario.estado_usuario=TRUE)AND (usuario_rol.estado_usurio_rol=TRUE) AND   (rol.estado_rol=TRUE)  AND(permiso.estado_permiso=TRUE) AND    (usuario.nombre_usuario = @us) AND (usuario.pass_usuario = @pas)) 
+
+ORDER BY rol.id_rol DESC</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="us" ColumnName="nombre_usuario" DataSourceName="mastertech_db1.usuario" DataTypeServer="varchar(25)(25)" DbType="String" Direction="Input" ParameterName="@us" Precision="0" ProviderType="VarChar" Scale="0" Size="25" SourceColumn="nombre_usuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="pas" ColumnName="pass_usuario" DataSourceName="mastertech_db1.usuario" DataTypeServer="varchar(25)(25)" DbType="String" Direction="Input" ParameterName="@pas" Precision="0" ProviderType="VarChar" Scale="0" Size="25" SourceColumn="pass_usuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="estado_rol_permiso" DataSetColumn="estado_rol_permiso" />
+              <Mapping SourceColumn="descripcion_permiso_para_programador" DataSetColumn="descripcion_permiso_para_programador" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ListadeProductosenBodegaTableAdapter" GeneratorDataComponentClassName="ListadeProductosenBodegaTableAdapter" Name="ListadeProductosenBodega" UserDataComponentName="ListadeProductosenBodegaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="mastertech_db1ConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_listadeproductosenbodega" GetMethodModifier="Public" GetMethodName="GetData_listadeproductosenbodega" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_listadeproductosenbodega" UserSourceName="GetData_listadeproductosenbodega">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        bodega.descripcion_bodega, producto_bodega.existencia_producto_bodega, producto.descripcion_producto
+FROM            bodega INNER JOIN
+                         producto_bodega ON bodega.id_bodega = producto_bodega.id_bodega INNER JOIN
+                         producto ON producto_bodega.id_producto = producto.id_producto
+
+where bodega.estado_bodega=1 and producto.estado_producto=1 and bodega.id_bodega=@n_nobo</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="n_nobo" ColumnName="id_bodega" DataSourceName="mastertech_db1.bodega" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@n_nobo" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="id_bodega" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="descripcion_bodega" DataSetColumn="descripcion_bodega" />
+              <Mapping SourceColumn="existencia_producto_bodega" DataSetColumn="existencia_producto_bodega" />
+              <Mapping SourceColumn="descripcion_producto" DataSetColumn="descripcion_producto" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ComprasaunProveedorTableAdapter" GeneratorDataComponentClassName="ComprasaunProveedorTableAdapter" Name="ComprasaunProveedor" UserDataComponentName="ComprasaunProveedorTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="mastertech_db1ConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_compraaproveedor" GetMethodModifier="Public" GetMethodName="GetData_compraaproveedor" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_compraaproveedor" UserSourceName="GetData_compraaproveedor">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        tipo_documento.descripcion_tipo_documento, serie_documento.descripcion_serie_documento, encabezado.fecha_encabezado_usuario, 
+                         producto.descripcion_producto, detalle.precio_por_unidad_detalle, detalle.cantidad_de_producto_detalle, detalle.total_detalle, proveedor.nit_proveedor, 
+                         proveedor.descripcion_proveedor
+FROM            detalle INNER JOIN
+                         encabezado ON detalle.id_encabezado = encabezado.id_encabezado INNER JOIN
+                         producto ON detalle.id_producto = producto.id_producto INNER JOIN
+                         serie_documento ON encabezado.id_serie_documento = serie_documento.id_serie_documento INNER JOIN
+                         tipo_documento ON serie_documento.id_tipo_documento = tipo_documento.id_tipo_documento INNER JOIN
+                         proveedor ON encabezado.id_proveedor = proveedor.id_proveedor AND encabezado.id_proveedor = proveedor.id_proveedor
+
+where proveedor.id_proveedor=@idpro</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="idpro" ColumnName="id_proveedor" DataSourceName="mastertech_db1.proveedor" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@idpro" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="id_proveedor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="descripcion_tipo_documento" DataSetColumn="descripcion_tipo_documento" />
+              <Mapping SourceColumn="descripcion_serie_documento" DataSetColumn="descripcion_serie_documento" />
+              <Mapping SourceColumn="fecha_encabezado_usuario" DataSetColumn="fecha_encabezado_usuario" />
+              <Mapping SourceColumn="descripcion_producto" DataSetColumn="descripcion_producto" />
+              <Mapping SourceColumn="precio_por_unidad_detalle" DataSetColumn="precio_por_unidad_detalle" />
+              <Mapping SourceColumn="cantidad_de_producto_detalle" DataSetColumn="cantidad_de_producto_detalle" />
+              <Mapping SourceColumn="total_detalle" DataSetColumn="total_detalle" />
+              <Mapping SourceColumn="nit_proveedor" DataSetColumn="nit_proveedor" />
+              <Mapping SourceColumn="descripcion_proveedor" DataSetColumn="descripcion_proveedor" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ContactodeproveedorTableAdapter" GeneratorDataComponentClassName="ContactodeproveedorTableAdapter" Name="Contactodeproveedor" UserDataComponentName="ContactodeproveedorTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="mastertech_db1ConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_contactosdeproveedor" GetMethodModifier="Public" GetMethodName="GetData_contactosdeproveedor" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_contactosdeproveedor" UserSourceName="GetData_contactosdeproveedor">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        proveedor.nit_proveedor, proveedor.descripcion_proveedor, contacto.nombre_contacto, contacto.telefono_contacto, contacto.direccion_contacto
+FROM            contacto INNER JOIN
+                         proveedor ON contacto.id_proveedor = proveedor.id_proveedor
+WHERE        (contacto.estado_contacto = 1) AND (proveedor.estado_proveedor = 1) and (proveedor.id_proveedor=@npro)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="npro" ColumnName="id_proveedor" DataSourceName="mastertech_db1.proveedor" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@npro" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="id_proveedor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nit_proveedor" DataSetColumn="nit_proveedor" />
+              <Mapping SourceColumn="descripcion_proveedor" DataSetColumn="descripcion_proveedor" />
+              <Mapping SourceColumn="nombre_contacto" DataSetColumn="nombre_contacto" />
+              <Mapping SourceColumn="telefono_contacto" DataSetColumn="telefono_contacto" />
+              <Mapping SourceColumn="direccion_contacto" DataSetColumn="direccion_contacto" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HistorialexistenciaProductoenBodegaTableAdapter" GeneratorDataComponentClassName="HistorialexistenciaProductoenBodegaTableAdapter" Name="HistorialexistenciaProductoenBodega" UserDataComponentName="HistorialexistenciaProductoenBodegaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="mastertech_db1ConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_historialexistenciaproducto" GetMethodModifier="Public" GetMethodName="GetData_historialexistenciaproducto" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_historialexistenciaproducto" UserSourceName="GetData_historialexistenciaproducto">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        tipo_documento.descripcion_tipo_documento, serie_documento.descripcion_serie_documento, detalle.cantidad_de_producto_detalle, 
+                         producto.descripcion_producto, producto.codigo_producto, producto_bodega.existencia_producto_bodega, bodega.descripcion_bodega, 
+                         encabezado.fecha_encabezado_usuario
+FROM            tipo_documento INNER JOIN
+                         serie_documento ON tipo_documento.id_tipo_documento = serie_documento.id_tipo_documento INNER JOIN
+                         encabezado ON serie_documento.id_serie_documento = encabezado.id_serie_documento INNER JOIN
+                         detalle ON encabezado.id_encabezado = detalle.id_encabezado INNER JOIN
+                         producto ON detalle.id_producto = producto.id_producto INNER JOIN
+                         producto_bodega ON producto.id_producto = producto_bodega.id_producto INNER JOIN
+                         bodega ON detalle.id_bodega = bodega.id_bodega AND producto_bodega.id_bodega = bodega.id_bodega
+WHERE        (bodega.id_bodega = @bo) AND (producto.id_producto = @pro)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="bo" ColumnName="id_bodega" DataSourceName="mastertech_db1.bodega" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@bo" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="id_bodega" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="pro" ColumnName="id_producto" DataSourceName="mastertech_db1.producto" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@pro" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="id_producto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="descripcion_tipo_documento" DataSetColumn="descripcion_tipo_documento" />
+              <Mapping SourceColumn="descripcion_serie_documento" DataSetColumn="descripcion_serie_documento" />
+              <Mapping SourceColumn="cantidad_de_producto_detalle" DataSetColumn="cantidad_de_producto_detalle" />
+              <Mapping SourceColumn="descripcion_producto" DataSetColumn="descripcion_producto" />
+              <Mapping SourceColumn="codigo_producto" DataSetColumn="codigo_producto" />
+              <Mapping SourceColumn="existencia_producto_bodega" DataSetColumn="existencia_producto_bodega" />
+              <Mapping SourceColumn="descripcion_bodega" DataSetColumn="descripcion_bodega" />
+              <Mapping SourceColumn="fecha_encabezado_usuario" DataSetColumn="fecha_encabezado_usuario" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="historialprecioproductoTableAdapter" GeneratorDataComponentClassName="historialprecioproductoTableAdapter" Name="historialprecioproducto" UserDataComponentName="historialprecioproductoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="mastertech_db1ConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_historialprecioproducto" GetMethodModifier="Public" GetMethodName="GetData_historialprecioproducto" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_historialprecioproducto" UserSourceName="GetData_historialprecioproducto">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        tipo_documento.descripcion_tipo_documento, serie_documento.descripcion_serie_documento, proveedor.descripcion_proveedor, 
+                         encabezado.fecha_encabezado_usuario, producto.descripcion_producto, historial_precio_compra.antiguo_precio_compra, 
+                         historial_precio_compra.antigua_precio_venta, producto.ultimo_precio_compra_producto, producto.ultimo_precio_venta_producto
+FROM            encabezado INNER JOIN
+                         detalle ON encabezado.id_encabezado = detalle.id_encabezado INNER JOIN
+                         historial_precio_compra ON detalle.id_detalle = historial_precio_compra.id_detalle INNER JOIN
+                         producto ON detalle.id_producto = producto.id_producto INNER JOIN
+                         serie_documento ON encabezado.id_serie_documento = serie_documento.id_serie_documento INNER JOIN
+                         tipo_documento ON serie_documento.id_tipo_documento = tipo_documento.id_tipo_documento INNER JOIN
+                         proveedor ON encabezado.id_proveedor = proveedor.id_proveedor AND encabezado.id_proveedor = proveedor.id_proveedor
+
+where producto.id_producto=@pro</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="pro" ColumnName="id_producto" DataSourceName="mastertech_db1.producto" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@pro" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="id_producto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="descripcion_tipo_documento" DataSetColumn="descripcion_tipo_documento" />
+              <Mapping SourceColumn="descripcion_serie_documento" DataSetColumn="descripcion_serie_documento" />
+              <Mapping SourceColumn="descripcion_proveedor" DataSetColumn="descripcion_proveedor" />
+              <Mapping SourceColumn="fecha_encabezado_usuario" DataSetColumn="fecha_encabezado_usuario" />
+              <Mapping SourceColumn="descripcion_producto" DataSetColumn="descripcion_producto" />
+              <Mapping SourceColumn="antiguo_precio_compra" DataSetColumn="antiguo_precio_compra" />
+              <Mapping SourceColumn="antigua_precio_venta" DataSetColumn="antigua_precio_venta" />
+              <Mapping SourceColumn="ultimo_precio_compra_producto" DataSetColumn="ultimo_precio_compra_producto" />
+              <Mapping SourceColumn="ultimo_precio_venta_producto" DataSetColumn="ultimo_precio_venta_producto" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="facturasdeunclienteTableAdapter" GeneratorDataComponentClassName="facturasdeunclienteTableAdapter" Name="facturasdeuncliente" UserDataComponentName="facturasdeunclienteTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="mastertech_db1ConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_facturasdeuncliente" GetMethodModifier="Public" GetMethodName="GetData_facturasdeuncliente" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_facturasdeuncliente" UserSourceName="GetData_facturasdeuncliente">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        tipo_documento.descripcion_tipo_documento, serie_documento.descripcion_serie_documento, encabezado.fecha_encabezado_usuario, 
+                         encabezado.total_encabezado, encabezado.no_documento, cliente.nombre_cliente, cliente.nit_cliente
+FROM            tipo_documento INNER JOIN
+                         serie_documento ON tipo_documento.id_tipo_documento = serie_documento.id_tipo_documento INNER JOIN
+                         encabezado ON serie_documento.id_serie_documento = encabezado.id_serie_documento INNER JOIN
+                         cliente ON encabezado.id_cliente = cliente.id_cliente AND encabezado.id_cliente = cliente.id_cliente
+
+where tipo_documento.descripcion_tipo_documento='factura' and cliente.id_cliente=@cli</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="cli" ColumnName="id_cliente" DataSourceName="mastertech_db1.cliente" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@cli" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="id_cliente" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="descripcion_tipo_documento" DataSetColumn="descripcion_tipo_documento" />
+              <Mapping SourceColumn="descripcion_serie_documento" DataSetColumn="descripcion_serie_documento" />
+              <Mapping SourceColumn="fecha_encabezado_usuario" DataSetColumn="fecha_encabezado_usuario" />
+              <Mapping SourceColumn="total_encabezado" DataSetColumn="total_encabezado" />
+              <Mapping SourceColumn="no_documento" DataSetColumn="no_documento" />
+              <Mapping SourceColumn="nombre_cliente" DataSetColumn="nombre_cliente" />
+              <Mapping SourceColumn="nit_cliente" DataSetColumn="nit_cliente" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CompraTableAdapter" GeneratorDataComponentClassName="CompraTableAdapter" Name="Compra" UserDataComponentName="CompraTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="mastertech_db1ConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_compra" GetMethodModifier="Public" GetMethodName="GetData_compra" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_compra" UserSourceName="GetData_compra">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        serie_documento.descripcion_serie_documento, encabezado.fecha_encabezado_usuario, encabezado.total_encabezado, encabezado.no_documento, 
+                         encabezado.docomento_referencia_proveedor, proveedor.nit_proveedor, proveedor.descripcion_proveedor, producto.codigo_producto, 
+                         producto.descripcion_producto, detalle.precio_por_unidad_detalle, detalle.cantidad_de_producto_detalle, detalle.total_detalle, 
+                         bodega.descripcion_bodega
+FROM            tipo_documento INNER JOIN
+                         serie_documento ON tipo_documento.id_tipo_documento = serie_documento.id_tipo_documento INNER JOIN
+                         encabezado ON serie_documento.id_serie_documento = encabezado.id_serie_documento INNER JOIN
+                         detalle ON encabezado.id_encabezado = detalle.id_encabezado INNER JOIN
+                         producto ON detalle.id_producto = producto.id_producto INNER JOIN
+                         bodega ON detalle.id_bodega = bodega.id_bodega INNER JOIN
+                         proveedor ON encabezado.id_proveedor = proveedor.id_proveedor AND encabezado.id_proveedor = proveedor.id_proveedor
+
+WHERE ENCABEZADO.ID_ENCABEZADO=@EN</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="EN" ColumnName="id_encabezado" DataSourceName="mastertech_db1.encabezado" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@EN" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="id_encabezado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="descripcion_serie_documento" DataSetColumn="descripcion_serie_documento" />
+              <Mapping SourceColumn="fecha_encabezado_usuario" DataSetColumn="fecha_encabezado_usuario" />
+              <Mapping SourceColumn="total_encabezado" DataSetColumn="total_encabezado" />
+              <Mapping SourceColumn="no_documento" DataSetColumn="no_documento" />
+              <Mapping SourceColumn="docomento_referencia_proveedor" DataSetColumn="docomento_referencia_proveedor" />
+              <Mapping SourceColumn="nit_proveedor" DataSetColumn="nit_proveedor" />
+              <Mapping SourceColumn="descripcion_proveedor" DataSetColumn="descripcion_proveedor" />
+              <Mapping SourceColumn="codigo_producto" DataSetColumn="codigo_producto" />
+              <Mapping SourceColumn="descripcion_producto" DataSetColumn="descripcion_producto" />
+              <Mapping SourceColumn="precio_por_unidad_detalle" DataSetColumn="precio_por_unidad_detalle" />
+              <Mapping SourceColumn="cantidad_de_producto_detalle" DataSetColumn="cantidad_de_producto_detalle" />
+              <Mapping SourceColumn="total_detalle" DataSetColumn="total_detalle" />
+              <Mapping SourceColumn="descripcion_bodega" DataSetColumn="descripcion_bodega" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ComprapornumeroTableAdapter" GeneratorDataComponentClassName="ComprapornumeroTableAdapter" Name="Comprapornumero" UserDataComponentName="ComprapornumeroTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="mastertech_db1ConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_comprapornumero" GetMethodModifier="Public" GetMethodName="GetData_comprapornumero" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_comprapornumero" UserSourceName="GetData_comprapornumero">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        serie_documento.descripcion_serie_documento, encabezado.fecha_encabezado_usuario, encabezado.total_encabezado, encabezado.no_documento, 
+                         encabezado.docomento_referencia_proveedor, proveedor.nit_proveedor, proveedor.descripcion_proveedor, producto.codigo_producto, 
+                         producto.descripcion_producto, detalle.precio_por_unidad_detalle, detalle.cantidad_de_producto_detalle, detalle.total_detalle, 
+                         bodega.descripcion_bodega
+FROM            tipo_documento INNER JOIN
+                         serie_documento ON tipo_documento.id_tipo_documento = serie_documento.id_tipo_documento INNER JOIN
+                         encabezado ON serie_documento.id_serie_documento = encabezado.id_serie_documento INNER JOIN
+                         detalle ON encabezado.id_encabezado = detalle.id_encabezado INNER JOIN
+                         producto ON detalle.id_producto = producto.id_producto INNER JOIN
+                         bodega ON detalle.id_bodega = bodega.id_bodega INNER JOIN
+                         proveedor ON encabezado.id_proveedor = proveedor.id_proveedor AND encabezado.id_proveedor = proveedor.id_proveedor
+
+WHERE serie_documento.id_serie_documento=@s and encabezado.no_documento =@n and tipo_documento.descripcion_tipo_documento='Compra'</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="s" ColumnName="id_serie_documento" DataSourceName="mastertech_db1.serie_documento" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@s" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="id_serie_documento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="n" ColumnName="no_documento" DataSourceName="mastertech_db1.encabezado" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@n" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="no_documento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="descripcion_serie_documento" DataSetColumn="descripcion_serie_documento" />
+              <Mapping SourceColumn="fecha_encabezado_usuario" DataSetColumn="fecha_encabezado_usuario" />
+              <Mapping SourceColumn="total_encabezado" DataSetColumn="total_encabezado" />
+              <Mapping SourceColumn="no_documento" DataSetColumn="no_documento" />
+              <Mapping SourceColumn="docomento_referencia_proveedor" DataSetColumn="docomento_referencia_proveedor" />
+              <Mapping SourceColumn="nit_proveedor" DataSetColumn="nit_proveedor" />
+              <Mapping SourceColumn="descripcion_proveedor" DataSetColumn="descripcion_proveedor" />
+              <Mapping SourceColumn="codigo_producto" DataSetColumn="codigo_producto" />
+              <Mapping SourceColumn="descripcion_producto" DataSetColumn="descripcion_producto" />
+              <Mapping SourceColumn="precio_por_unidad_detalle" DataSetColumn="precio_por_unidad_detalle" />
+              <Mapping SourceColumn="cantidad_de_producto_detalle" DataSetColumn="cantidad_de_producto_detalle" />
+              <Mapping SourceColumn="total_detalle" DataSetColumn="total_detalle" />
+              <Mapping SourceColumn="descripcion_bodega" DataSetColumn="descripcion_bodega" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ComprasentrefechasTableAdapter" GeneratorDataComponentClassName="ComprasentrefechasTableAdapter" Name="Comprasentrefechas" UserDataComponentName="ComprasentrefechasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="mastertech_db1ConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_comprasentrefehas" GetMethodModifier="Public" GetMethodName="GetData_comprasentrefehas" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_comprasentrefehas" UserSourceName="GetData_comprasentrefehas">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        serie_documento.descripcion_serie_documento, encabezado.fecha_encabezado_usuario, encabezado.total_encabezado, encabezado.no_documento, 
+                         proveedor.nit_proveedor, proveedor.descripcion_proveedor
+FROM            tipo_documento INNER JOIN
+                         serie_documento ON tipo_documento.id_tipo_documento = serie_documento.id_tipo_documento INNER JOIN
+                         encabezado ON serie_documento.id_serie_documento = encabezado.id_serie_documento INNER JOIN
+                         proveedor ON encabezado.id_proveedor = proveedor.id_proveedor AND encabezado.id_proveedor = proveedor.id_proveedor
+
+where tipo_documento.descripcion_tipo_documento='Compra'
+
+and (encabezado.fecha_encabezado_usuario between @fi and @ff)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="fi" ColumnName="fecha_encabezado_usuario" DataSourceName="mastertech_db1.encabezado" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@fi" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="fecha_encabezado_usuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="ff" ColumnName="fecha_encabezado_usuario" DataSourceName="mastertech_db1.encabezado" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@ff" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="fecha_encabezado_usuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="descripcion_serie_documento" DataSetColumn="descripcion_serie_documento" />
+              <Mapping SourceColumn="fecha_encabezado_usuario" DataSetColumn="fecha_encabezado_usuario" />
+              <Mapping SourceColumn="total_encabezado" DataSetColumn="total_encabezado" />
+              <Mapping SourceColumn="no_documento" DataSetColumn="no_documento" />
+              <Mapping SourceColumn="nit_proveedor" DataSetColumn="nit_proveedor" />
+              <Mapping SourceColumn="descripcion_proveedor" DataSetColumn="descripcion_proveedor" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="movimientosentrefechasTableAdapter" GeneratorDataComponentClassName="movimientosentrefechasTableAdapter" Name="movimientosentrefechas" UserDataComponentName="movimientosentrefechasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="mastertech_db1ConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_movimientosentrefechas" GetMethodModifier="Public" GetMethodName="GetData_movimientosentrefechas" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_movimientosentrefechas" UserSourceName="GetData_movimientosentrefechas">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        serie_documento.descripcion_serie_documento, encabezado.fecha_encabezado_usuario, encabezado.total_encabezado, encabezado.no_documento, 
+                         proveedor.nit_proveedor, proveedor.descripcion_proveedor, tipo_documento.descripcion_tipo_documento, cliente.nit_cliente, cliente.nombre_cliente
+FROM            tipo_documento INNER JOIN
+                         serie_documento ON tipo_documento.id_tipo_documento = serie_documento.id_tipo_documento INNER JOIN
+                         encabezado ON serie_documento.id_serie_documento = encabezado.id_serie_documento INNER JOIN
+                         proveedor ON encabezado.id_proveedor = proveedor.id_proveedor AND encabezado.id_proveedor = proveedor.id_proveedor INNER JOIN
+                         cliente ON encabezado.id_cliente = cliente.id_cliente AND encabezado.id_cliente = cliente.id_cliente
+WHERE        (encabezado.fecha_encabezado_usuario BETWEEN @fi AND @ff)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="fi" ColumnName="fecha_encabezado_usuario" DataSourceName="mastertech_db1.encabezado" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@fi" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="fecha_encabezado_usuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="ff" ColumnName="fecha_encabezado_usuario" DataSourceName="mastertech_db1.encabezado" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@ff" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="fecha_encabezado_usuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="descripcion_serie_documento" DataSetColumn="descripcion_serie_documento" />
+              <Mapping SourceColumn="fecha_encabezado_usuario" DataSetColumn="fecha_encabezado_usuario" />
+              <Mapping SourceColumn="total_encabezado" DataSetColumn="total_encabezado" />
+              <Mapping SourceColumn="no_documento" DataSetColumn="no_documento" />
+              <Mapping SourceColumn="nit_proveedor" DataSetColumn="nit_proveedor" />
+              <Mapping SourceColumn="descripcion_proveedor" DataSetColumn="descripcion_proveedor" />
+              <Mapping SourceColumn="descripcion_tipo_documento" DataSetColumn="descripcion_tipo_documento" />
+              <Mapping SourceColumn="nit_cliente" DataSetColumn="nit_cliente" />
+              <Mapping SourceColumn="nombre_cliente" DataSetColumn="nombre_cliente" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FacturaTableAdapter" GeneratorDataComponentClassName="FacturaTableAdapter" Name="Factura" UserDataComponentName="FacturaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="mastertech_db1ConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_factura" GetMethodModifier="Public" GetMethodName="GetData_factura" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_factura" UserSourceName="GetData_factura">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        serie_documento.descripcion_serie_documento, encabezado.fecha_encabezado_usuario, encabezado.total_encabezado, encabezado.no_documento, 
+                         detalle.precio_por_unidad_detalle, detalle.cantidad_de_producto_detalle, detalle.total_detalle, cliente.nit_cliente, cliente.nombre_cliente, 
+                         producto.codigo_producto, producto.descripcion_producto
+FROM            cliente INNER JOIN
+                         encabezado ON cliente.id_cliente = encabezado.id_cliente AND cliente.id_cliente = encabezado.id_cliente INNER JOIN
+                         detalle ON encabezado.id_encabezado = detalle.id_encabezado INNER JOIN
+                         producto ON detalle.id_producto = producto.id_producto INNER JOIN
+                         serie_documento ON encabezado.id_serie_documento = serie_documento.id_serie_documento INNER JOIN
+                         tipo_documento ON serie_documento.id_tipo_documento = tipo_documento.id_tipo_documento
+
+where tipo_documento.descripcion_tipo_documento='Factura'
+and encabezado.id_encabezado=@en</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="en" ColumnName="id_encabezado" DataSourceName="mastertech_db1.encabezado" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@en" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="id_encabezado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="descripcion_serie_documento" DataSetColumn="descripcion_serie_documento" />
+              <Mapping SourceColumn="fecha_encabezado_usuario" DataSetColumn="fecha_encabezado_usuario" />
+              <Mapping SourceColumn="total_encabezado" DataSetColumn="total_encabezado" />
+              <Mapping SourceColumn="no_documento" DataSetColumn="no_documento" />
+              <Mapping SourceColumn="precio_por_unidad_detalle" DataSetColumn="precio_por_unidad_detalle" />
+              <Mapping SourceColumn="cantidad_de_producto_detalle" DataSetColumn="cantidad_de_producto_detalle" />
+              <Mapping SourceColumn="total_detalle" DataSetColumn="total_detalle" />
+              <Mapping SourceColumn="nit_cliente" DataSetColumn="nit_cliente" />
+              <Mapping SourceColumn="nombre_cliente" DataSetColumn="nombre_cliente" />
+              <Mapping SourceColumn="codigo_producto" DataSetColumn="codigo_producto" />
+              <Mapping SourceColumn="descripcion_producto" DataSetColumn="descripcion_producto" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="facturapornumeroTableAdapter" GeneratorDataComponentClassName="facturapornumeroTableAdapter" Name="facturapornumero" UserDataComponentName="facturapornumeroTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="mastertech_db1ConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_facturapornumero" GetMethodModifier="Public" GetMethodName="GetData_facturapornumero" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_facturapornumero" UserSourceName="GetData_facturapornumero">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        serie_documento.descripcion_serie_documento, cliente.nombre_cliente, cliente.nit_cliente, detalle.precio_por_unidad_detalle, 
+                         detalle.cantidad_de_producto_detalle, detalle.total_detalle, producto.descripcion_producto, producto.codigo_producto, 
+                         encabezado.fecha_encabezado_usuario, encabezado.total_encabezado, encabezado.no_documento
+FROM            cliente INNER JOIN
+                         encabezado ON cliente.id_cliente = encabezado.id_cliente AND cliente.id_cliente = encabezado.id_cliente INNER JOIN
+                         detalle ON encabezado.id_encabezado = detalle.id_encabezado INNER JOIN
+                         producto ON detalle.id_producto = producto.id_producto INNER JOIN
+                         serie_documento ON encabezado.id_serie_documento = serie_documento.id_serie_documento INNER JOIN
+                         tipo_documento ON serie_documento.id_tipo_documento = tipo_documento.id_tipo_documento
+
+where tipo_documento.descripcion_tipo_documento='Factura' and serie_documento.id_serie_documento=@se and  encabezado.no_documento=@no</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="se" ColumnName="id_serie_documento" DataSourceName="mastertech_db1.serie_documento" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@se" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="id_serie_documento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="no" ColumnName="no_documento" DataSourceName="mastertech_db1.encabezado" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@no" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="no_documento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="descripcion_serie_documento" DataSetColumn="descripcion_serie_documento" />
+              <Mapping SourceColumn="nombre_cliente" DataSetColumn="nombre_cliente" />
+              <Mapping SourceColumn="nit_cliente" DataSetColumn="nit_cliente" />
+              <Mapping SourceColumn="precio_por_unidad_detalle" DataSetColumn="precio_por_unidad_detalle" />
+              <Mapping SourceColumn="cantidad_de_producto_detalle" DataSetColumn="cantidad_de_producto_detalle" />
+              <Mapping SourceColumn="total_detalle" DataSetColumn="total_detalle" />
+              <Mapping SourceColumn="descripcion_producto" DataSetColumn="descripcion_producto" />
+              <Mapping SourceColumn="codigo_producto" DataSetColumn="codigo_producto" />
+              <Mapping SourceColumn="fecha_encabezado_usuario" DataSetColumn="fecha_encabezado_usuario" />
+              <Mapping SourceColumn="total_encabezado" DataSetColumn="total_encabezado" />
+              <Mapping SourceColumn="no_documento" DataSetColumn="no_documento" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FacturasentrefechasTableAdapter" GeneratorDataComponentClassName="FacturasentrefechasTableAdapter" Name="Facturasentrefechas" UserDataComponentName="FacturasentrefechasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="mastertech_db1ConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_facturaentrefechas" GetMethodModifier="Public" GetMethodName="GetData_facturaentrefechas" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_facturaentrefechas" UserSourceName="GetData_facturaentrefechas">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        serie_documento.descripcion_serie_documento, encabezado.fecha_encabezado_usuario, encabezado.total_encabezado, encabezado.no_documento, 
+                         cliente.nombre_cliente, cliente.nit_cliente
+FROM            tipo_documento INNER JOIN
+                         serie_documento ON tipo_documento.id_tipo_documento = serie_documento.id_tipo_documento INNER JOIN
+                         encabezado ON serie_documento.id_serie_documento = encabezado.id_serie_documento INNER JOIN
+                         cliente ON encabezado.id_cliente = cliente.id_cliente AND encabezado.id_cliente = cliente.id_cliente
+
+where tipo_documento.descripcion_tipo_documento='Factura'
+
+and (encabezado.fecha_encabezado_usuario between @fi and @ff)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="fi" ColumnName="fecha_encabezado_usuario" DataSourceName="mastertech_db1.encabezado" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@fi" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="fecha_encabezado_usuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="ff" ColumnName="fecha_encabezado_usuario" DataSourceName="mastertech_db1.encabezado" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@ff" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="fecha_encabezado_usuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="descripcion_serie_documento" DataSetColumn="descripcion_serie_documento" />
+              <Mapping SourceColumn="fecha_encabezado_usuario" DataSetColumn="fecha_encabezado_usuario" />
+              <Mapping SourceColumn="total_encabezado" DataSetColumn="total_encabezado" />
+              <Mapping SourceColumn="no_documento" DataSetColumn="no_documento" />
+              <Mapping SourceColumn="nombre_cliente" DataSetColumn="nombre_cliente" />
+              <Mapping SourceColumn="nit_cliente" DataSetColumn="nit_cliente" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CorteDeCajaTableAdapter" GeneratorDataComponentClassName="CorteDeCajaTableAdapter" Name="CorteDeCaja" UserDataComponentName="CorteDeCajaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="mastertech_db1ConnectionString (Settings)" DbObjectName="``.`mastertech_db1`.`CorteDeCaja`" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_cortedecaja" GetMethodModifier="Public" GetMethodName="GetData_cortedecaja" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData_cortedecaja" UserSourceName="GetData_cortedecaja">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>`mastertech_db1`.`CorteDeCaja`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="descripcion_tipo_documento" DataSetColumn="descripcion_tipo_documento" />
+              <Mapping SourceColumn="descripcion_serie_documento" DataSetColumn="descripcion_serie_documento" />
+              <Mapping SourceColumn="total_encabezado" DataSetColumn="total_encabezado" />
+              <Mapping SourceColumn="no_documento" DataSetColumn="no_documento" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="cliente" msprop:Generator_TableClassName="clienteDataTable" msprop:Generator_TableVarName="tablecliente" msprop:Generator_TablePropName="cliente" msprop:Generator_RowDeletingName="clienteRowDeleting" msprop:Generator_RowChangingName="clienteRowChanging" msprop:Generator_RowEvHandlerName="clienteRowChangeEventHandler" msprop:Generator_RowDeletedName="clienteRowDeleted" msprop:Generator_UserTableName="cliente" msprop:Generator_RowChangedName="clienteRowChanged" msprop:Generator_RowEvArgName="clienteRowChangeEvent" msprop:Generator_RowClassName="clienteRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_cliente" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_cliente" msprop:Generator_ColumnPropNameInRow="id_cliente" msprop:Generator_ColumnPropNameInTable="id_clienteColumn" msprop:Generator_UserColumnName="id_cliente" type="xs:int" />
+              <xs:element name="nombre_cliente" msprop:Generator_ColumnVarNameInTable="columnnombre_cliente" msprop:Generator_ColumnPropNameInRow="nombre_cliente" msprop:Generator_ColumnPropNameInTable="nombre_clienteColumn" msprop:Generator_UserColumnName="nombre_cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nit_cliente" msprop:Generator_ColumnVarNameInTable="columnnit_cliente" msprop:Generator_ColumnPropNameInRow="nit_cliente" msprop:Generator_ColumnPropNameInTable="nit_clienteColumn" msprop:Generator_UserColumnName="nit_cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="direccion_cliente" msprop:Generator_ColumnVarNameInTable="columndireccion_cliente" msprop:Generator_ColumnPropNameInRow="direccion_cliente" msprop:Generator_ColumnPropNameInTable="direccion_clienteColumn" msprop:Generator_UserColumnName="direccion_cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefono_cliente" msprop:Generator_ColumnVarNameInTable="columntelefono_cliente" msprop:Generator_ColumnPropNameInRow="telefono_cliente" msprop:Generator_ColumnPropNameInTable="telefono_clienteColumn" msprop:Generator_UserColumnName="telefono_cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="correo_cliente" msprop:Generator_ColumnVarNameInTable="columncorreo_cliente" msprop:Generator_ColumnPropNameInRow="correo_cliente" msprop:Generator_ColumnPropNameInTable="correo_clienteColumn" msprop:Generator_UserColumnName="correo_cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="marca" msprop:Generator_TableClassName="marcaDataTable" msprop:Generator_TableVarName="tablemarca" msprop:Generator_RowChangedName="marcaRowChanged" msprop:Generator_TablePropName="marca" msprop:Generator_RowDeletingName="marcaRowDeleting" msprop:Generator_RowChangingName="marcaRowChanging" msprop:Generator_RowEvHandlerName="marcaRowChangeEventHandler" msprop:Generator_RowDeletedName="marcaRowDeleted" msprop:Generator_RowClassName="marcaRow" msprop:Generator_UserTableName="marca" msprop:Generator_RowEvArgName="marcaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre_marca" msprop:Generator_ColumnVarNameInTable="columnnombre_marca" msprop:Generator_ColumnPropNameInRow="nombre_marca" msprop:Generator_ColumnPropNameInTable="nombre_marcaColumn" msprop:Generator_UserColumnName="nombre_marca" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProductoExistente" msprop:Generator_TableClassName="ProductoExistenteDataTable" msprop:Generator_TableVarName="tableProductoExistente" msprop:Generator_TablePropName="ProductoExistente" msprop:Generator_RowDeletingName="ProductoExistenteRowDeleting" msprop:Generator_RowChangingName="ProductoExistenteRowChanging" msprop:Generator_RowEvHandlerName="ProductoExistenteRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductoExistenteRowDeleted" msprop:Generator_UserTableName="ProductoExistente" msprop:Generator_RowChangedName="ProductoExistenteRowChanged" msprop:Generator_RowEvArgName="ProductoExistenteRowChangeEvent" msprop:Generator_RowClassName="ProductoExistenteRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codigo_producto" msprop:Generator_ColumnVarNameInTable="columncodigo_producto" msprop:Generator_ColumnPropNameInRow="codigo_producto" msprop:Generator_ColumnPropNameInTable="codigo_productoColumn" msprop:Generator_UserColumnName="codigo_producto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion_producto" msprop:Generator_ColumnVarNameInTable="columndescripcion_producto" msprop:Generator_ColumnPropNameInRow="descripcion_producto" msprop:Generator_ColumnPropNameInTable="descripcion_productoColumn" msprop:Generator_UserColumnName="descripcion_producto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion_bodega" msprop:Generator_ColumnVarNameInTable="columndescripcion_bodega" msprop:Generator_ColumnPropNameInRow="descripcion_bodega" msprop:Generator_ColumnPropNameInTable="descripcion_bodegaColumn" msprop:Generator_UserColumnName="descripcion_bodega" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="existencia_producto_bodega" msprop:Generator_ColumnVarNameInTable="columnexistencia_producto_bodega" msprop:Generator_ColumnPropNameInRow="existencia_producto_bodega" msprop:Generator_ColumnPropNameInTable="existencia_producto_bodegaColumn" msprop:Generator_UserColumnName="existencia_producto_bodega" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="proveedor" msprop:Generator_TableClassName="proveedorDataTable" msprop:Generator_TableVarName="tableproveedor" msprop:Generator_TablePropName="proveedor" msprop:Generator_RowDeletingName="proveedorRowDeleting" msprop:Generator_RowChangingName="proveedorRowChanging" msprop:Generator_RowEvHandlerName="proveedorRowChangeEventHandler" msprop:Generator_RowDeletedName="proveedorRowDeleted" msprop:Generator_UserTableName="proveedor" msprop:Generator_RowChangedName="proveedorRowChanged" msprop:Generator_RowEvArgName="proveedorRowChangeEvent" msprop:Generator_RowClassName="proveedorRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_proveedor" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_proveedor" msprop:Generator_ColumnPropNameInRow="id_proveedor" msprop:Generator_ColumnPropNameInTable="id_proveedorColumn" msprop:Generator_UserColumnName="id_proveedor" type="xs:int" />
+              <xs:element name="nit_proveedor" msprop:Generator_ColumnVarNameInTable="columnnit_proveedor" msprop:Generator_ColumnPropNameInRow="nit_proveedor" msprop:Generator_ColumnPropNameInTable="nit_proveedorColumn" msprop:Generator_UserColumnName="nit_proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion_proveedor" msprop:Generator_ColumnVarNameInTable="columndescripcion_proveedor" msprop:Generator_ColumnPropNameInRow="descripcion_proveedor" msprop:Generator_ColumnPropNameInTable="descripcion_proveedorColumn" msprop:Generator_UserColumnName="descripcion_proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefono_proveedor" msprop:Generator_ColumnVarNameInTable="columntelefono_proveedor" msprop:Generator_ColumnPropNameInRow="telefono_proveedor" msprop:Generator_ColumnPropNameInTable="telefono_proveedorColumn" msprop:Generator_UserColumnName="telefono_proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefono2_proveedor" msprop:Generator_ColumnVarNameInTable="columntelefono2_proveedor" msprop:Generator_ColumnPropNameInRow="telefono2_proveedor" msprop:Generator_ColumnPropNameInTable="telefono2_proveedorColumn" msprop:Generator_UserColumnName="telefono2_proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="direccion_proveedor" msprop:Generator_ColumnVarNameInTable="columndireccion_proveedor" msprop:Generator_ColumnPropNameInRow="direccion_proveedor" msprop:Generator_ColumnPropNameInTable="direccion_proveedorColumn" msprop:Generator_UserColumnName="direccion_proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="correo_proveedor" msprop:Generator_ColumnVarNameInTable="columncorreo_proveedor" msprop:Generator_ColumnPropNameInRow="correo_proveedor" msprop:Generator_ColumnPropNameInTable="correo_proveedorColumn" msprop:Generator_UserColumnName="correo_proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="bodega" msprop:Generator_TableClassName="bodegaDataTable" msprop:Generator_TableVarName="tablebodega" msprop:Generator_RowChangedName="bodegaRowChanged" msprop:Generator_TablePropName="bodega" msprop:Generator_RowDeletingName="bodegaRowDeleting" msprop:Generator_RowChangingName="bodegaRowChanging" msprop:Generator_RowEvHandlerName="bodegaRowChangeEventHandler" msprop:Generator_RowDeletedName="bodegaRowDeleted" msprop:Generator_RowClassName="bodegaRow" msprop:Generator_UserTableName="bodega" msprop:Generator_RowEvArgName="bodegaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_bodega" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_bodega" msprop:Generator_ColumnPropNameInRow="id_bodega" msprop:Generator_ColumnPropNameInTable="id_bodegaColumn" msprop:Generator_UserColumnName="id_bodega" type="xs:int" />
+              <xs:element name="descripcion_bodega" msprop:Generator_ColumnVarNameInTable="columndescripcion_bodega" msprop:Generator_ColumnPropNameInRow="descripcion_bodega" msprop:Generator_ColumnPropNameInTable="descripcion_bodegaColumn" msprop:Generator_UserColumnName="descripcion_bodega" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="direccion_bodega" msprop:Generator_ColumnVarNameInTable="columndireccion_bodega" msprop:Generator_ColumnPropNameInRow="direccion_bodega" msprop:Generator_ColumnPropNameInTable="direccion_bodegaColumn" msprop:Generator_UserColumnName="direccion_bodega" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefono_bodega" msprop:Generator_ColumnVarNameInTable="columntelefono_bodega" msprop:Generator_ColumnPropNameInRow="telefono_bodega" msprop:Generator_ColumnPropNameInTable="telefono_bodegaColumn" msprop:Generator_UserColumnName="telefono_bodega" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefono2_bodega" msprop:Generator_ColumnVarNameInTable="columntelefono2_bodega" msprop:Generator_ColumnPropNameInRow="telefono2_bodega" msprop:Generator_ColumnPropNameInTable="telefono2_bodegaColumn" msprop:Generator_UserColumnName="telefono2_bodega" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SeriesActivas" msprop:Generator_TableClassName="SeriesActivasDataTable" msprop:Generator_TableVarName="tableSeriesActivas" msprop:Generator_TablePropName="SeriesActivas" msprop:Generator_RowDeletingName="SeriesActivasRowDeleting" msprop:Generator_RowChangingName="SeriesActivasRowChanging" msprop:Generator_RowEvHandlerName="SeriesActivasRowChangeEventHandler" msprop:Generator_RowDeletedName="SeriesActivasRowDeleted" msprop:Generator_UserTableName="SeriesActivas" msprop:Generator_RowChangedName="SeriesActivasRowChanged" msprop:Generator_RowEvArgName="SeriesActivasRowChangeEvent" msprop:Generator_RowClassName="SeriesActivasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="descripcion_serie_documento" msprop:Generator_ColumnVarNameInTable="columndescripcion_serie_documento" msprop:Generator_ColumnPropNameInRow="descripcion_serie_documento" msprop:Generator_ColumnPropNameInTable="descripcion_serie_documentoColumn" msprop:Generator_UserColumnName="descripcion_serie_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion_tipo_documento" msprop:Generator_ColumnVarNameInTable="columndescripcion_tipo_documento" msprop:Generator_ColumnPropNameInRow="descripcion_tipo_documento" msprop:Generator_ColumnPropNameInTable="descripcion_tipo_documentoColumn" msprop:Generator_UserColumnName="descripcion_tipo_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PermisosRol" msprop:Generator_TableClassName="PermisosRolDataTable" msprop:Generator_TableVarName="tablePermisosRol" msprop:Generator_RowChangedName="PermisosRolRowChanged" msprop:Generator_TablePropName="PermisosRol" msprop:Generator_RowDeletingName="PermisosRolRowDeleting" msprop:Generator_RowChangingName="PermisosRolRowChanging" msprop:Generator_RowEvHandlerName="PermisosRolRowChangeEventHandler" msprop:Generator_RowDeletedName="PermisosRolRowDeleted" msprop:Generator_RowClassName="PermisosRolRow" msprop:Generator_UserTableName="PermisosRol" msprop:Generator_RowEvArgName="PermisosRolRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_permiso" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_permiso" msprop:Generator_ColumnPropNameInRow="id_permiso" msprop:Generator_ColumnPropNameInTable="id_permisoColumn" msprop:Generator_UserColumnName="id_permiso" type="xs:int" />
+              <xs:element name="descripcion_permiso" msprop:Generator_ColumnVarNameInTable="columndescripcion_permiso" msprop:Generator_ColumnPropNameInRow="descripcion_permiso" msprop:Generator_ColumnPropNameInTable="descripcion_permisoColumn" msprop:Generator_UserColumnName="descripcion_permiso" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="estado_rol_permiso" msprop:Generator_ColumnVarNameInTable="columnestado_rol_permiso" msprop:Generator_ColumnPropNameInRow="estado_rol_permiso" msprop:Generator_ColumnPropNameInTable="estado_rol_permisoColumn" msprop:Generator_UserColumnName="estado_rol_permiso" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="usuario_rol" msprop:Generator_TableClassName="usuario_rolDataTable" msprop:Generator_TableVarName="tableusuario_rol" msprop:Generator_RowChangedName="usuario_rolRowChanged" msprop:Generator_TablePropName="usuario_rol" msprop:Generator_RowDeletingName="usuario_rolRowDeleting" msprop:Generator_RowChangingName="usuario_rolRowChanging" msprop:Generator_RowEvHandlerName="usuario_rolRowChangeEventHandler" msprop:Generator_RowDeletedName="usuario_rolRowDeleted" msprop:Generator_RowClassName="usuario_rolRow" msprop:Generator_UserTableName="usuario_rol" msprop:Generator_RowEvArgName="usuario_rolRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="estado_usurio_rol" msprop:Generator_ColumnVarNameInTable="columnestado_usurio_rol" msprop:Generator_ColumnPropNameInRow="estado_usurio_rol" msprop:Generator_ColumnPropNameInTable="estado_usurio_rolColumn" msprop:Generator_UserColumnName="estado_usurio_rol" type="xs:boolean" minOccurs="0" />
+              <xs:element name="id_rol" msprop:Generator_ColumnVarNameInTable="columnid_rol" msprop:Generator_ColumnPropNameInRow="id_rol" msprop:Generator_ColumnPropNameInTable="id_rolColumn" msprop:Generator_UserColumnName="id_rol" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="loggin" msprop:Generator_TableClassName="logginDataTable" msprop:Generator_TableVarName="tableloggin" msprop:Generator_TablePropName="loggin" msprop:Generator_RowDeletingName="logginRowDeleting" msprop:Generator_RowChangingName="logginRowChanging" msprop:Generator_RowEvHandlerName="logginRowChangeEventHandler" msprop:Generator_RowDeletedName="logginRowDeleted" msprop:Generator_UserTableName="loggin" msprop:Generator_RowChangedName="logginRowChanged" msprop:Generator_RowEvArgName="logginRowChangeEvent" msprop:Generator_RowClassName="logginRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="estado_rol_permiso" msprop:Generator_ColumnVarNameInTable="columnestado_rol_permiso" msprop:Generator_ColumnPropNameInRow="estado_rol_permiso" msprop:Generator_ColumnPropNameInTable="estado_rol_permisoColumn" msprop:Generator_UserColumnName="estado_rol_permiso" type="xs:boolean" minOccurs="0" />
+              <xs:element name="descripcion_permiso_para_programador" msprop:Generator_ColumnVarNameInTable="columndescripcion_permiso_para_programador" msprop:Generator_ColumnPropNameInRow="descripcion_permiso_para_programador" msprop:Generator_ColumnPropNameInTable="descripcion_permiso_para_programadorColumn" msprop:Generator_UserColumnName="descripcion_permiso_para_programador" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ListadeProductosenBodega" msprop:Generator_TableClassName="ListadeProductosenBodegaDataTable" msprop:Generator_TableVarName="tableListadeProductosenBodega" msprop:Generator_TablePropName="ListadeProductosenBodega" msprop:Generator_RowDeletingName="ListadeProductosenBodegaRowDeleting" msprop:Generator_RowChangingName="ListadeProductosenBodegaRowChanging" msprop:Generator_RowEvHandlerName="ListadeProductosenBodegaRowChangeEventHandler" msprop:Generator_RowDeletedName="ListadeProductosenBodegaRowDeleted" msprop:Generator_UserTableName="ListadeProductosenBodega" msprop:Generator_RowChangedName="ListadeProductosenBodegaRowChanged" msprop:Generator_RowEvArgName="ListadeProductosenBodegaRowChangeEvent" msprop:Generator_RowClassName="ListadeProductosenBodegaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="descripcion_bodega" msprop:Generator_ColumnVarNameInTable="columndescripcion_bodega" msprop:Generator_ColumnPropNameInRow="descripcion_bodega" msprop:Generator_ColumnPropNameInTable="descripcion_bodegaColumn" msprop:Generator_UserColumnName="descripcion_bodega" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="existencia_producto_bodega" msprop:Generator_ColumnVarNameInTable="columnexistencia_producto_bodega" msprop:Generator_ColumnPropNameInRow="existencia_producto_bodega" msprop:Generator_ColumnPropNameInTable="existencia_producto_bodegaColumn" msprop:Generator_UserColumnName="existencia_producto_bodega" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion_producto" msprop:Generator_ColumnVarNameInTable="columndescripcion_producto" msprop:Generator_ColumnPropNameInRow="descripcion_producto" msprop:Generator_ColumnPropNameInTable="descripcion_productoColumn" msprop:Generator_UserColumnName="descripcion_producto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ComprasaunProveedor" msprop:Generator_TableClassName="ComprasaunProveedorDataTable" msprop:Generator_TableVarName="tableComprasaunProveedor" msprop:Generator_TablePropName="ComprasaunProveedor" msprop:Generator_RowDeletingName="ComprasaunProveedorRowDeleting" msprop:Generator_RowChangingName="ComprasaunProveedorRowChanging" msprop:Generator_RowEvHandlerName="ComprasaunProveedorRowChangeEventHandler" msprop:Generator_RowDeletedName="ComprasaunProveedorRowDeleted" msprop:Generator_UserTableName="ComprasaunProveedor" msprop:Generator_RowChangedName="ComprasaunProveedorRowChanged" msprop:Generator_RowEvArgName="ComprasaunProveedorRowChangeEvent" msprop:Generator_RowClassName="ComprasaunProveedorRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="descripcion_tipo_documento" msprop:Generator_ColumnVarNameInTable="columndescripcion_tipo_documento" msprop:Generator_ColumnPropNameInRow="descripcion_tipo_documento" msprop:Generator_ColumnPropNameInTable="descripcion_tipo_documentoColumn" msprop:Generator_UserColumnName="descripcion_tipo_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion_serie_documento" msprop:Generator_ColumnVarNameInTable="columndescripcion_serie_documento" msprop:Generator_ColumnPropNameInRow="descripcion_serie_documento" msprop:Generator_ColumnPropNameInTable="descripcion_serie_documentoColumn" msprop:Generator_UserColumnName="descripcion_serie_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_encabezado_usuario" msprop:Generator_ColumnVarNameInTable="columnfecha_encabezado_usuario" msprop:Generator_ColumnPropNameInRow="fecha_encabezado_usuario" msprop:Generator_ColumnPropNameInTable="fecha_encabezado_usuarioColumn" msprop:Generator_UserColumnName="fecha_encabezado_usuario" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="descripcion_producto" msprop:Generator_ColumnVarNameInTable="columndescripcion_producto" msprop:Generator_ColumnPropNameInRow="descripcion_producto" msprop:Generator_ColumnPropNameInTable="descripcion_productoColumn" msprop:Generator_UserColumnName="descripcion_producto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="precio_por_unidad_detalle" msprop:Generator_ColumnVarNameInTable="columnprecio_por_unidad_detalle" msprop:Generator_ColumnPropNameInRow="precio_por_unidad_detalle" msprop:Generator_ColumnPropNameInTable="precio_por_unidad_detalleColumn" msprop:Generator_UserColumnName="precio_por_unidad_detalle" type="xs:double" minOccurs="0" />
+              <xs:element name="cantidad_de_producto_detalle" msprop:Generator_ColumnVarNameInTable="columncantidad_de_producto_detalle" msprop:Generator_ColumnPropNameInRow="cantidad_de_producto_detalle" msprop:Generator_ColumnPropNameInTable="cantidad_de_producto_detalleColumn" msprop:Generator_UserColumnName="cantidad_de_producto_detalle" type="xs:int" minOccurs="0" />
+              <xs:element name="total_detalle" msprop:Generator_ColumnVarNameInTable="columntotal_detalle" msprop:Generator_ColumnPropNameInRow="total_detalle" msprop:Generator_ColumnPropNameInTable="total_detalleColumn" msprop:Generator_UserColumnName="total_detalle" type="xs:double" minOccurs="0" />
+              <xs:element name="nit_proveedor" msprop:Generator_ColumnVarNameInTable="columnnit_proveedor" msprop:Generator_ColumnPropNameInRow="nit_proveedor" msprop:Generator_ColumnPropNameInTable="nit_proveedorColumn" msprop:Generator_UserColumnName="nit_proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion_proveedor" msprop:Generator_ColumnVarNameInTable="columndescripcion_proveedor" msprop:Generator_ColumnPropNameInRow="descripcion_proveedor" msprop:Generator_ColumnPropNameInTable="descripcion_proveedorColumn" msprop:Generator_UserColumnName="descripcion_proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Contactodeproveedor" msprop:Generator_TableClassName="ContactodeproveedorDataTable" msprop:Generator_TableVarName="tableContactodeproveedor" msprop:Generator_RowChangedName="ContactodeproveedorRowChanged" msprop:Generator_TablePropName="Contactodeproveedor" msprop:Generator_RowDeletingName="ContactodeproveedorRowDeleting" msprop:Generator_RowChangingName="ContactodeproveedorRowChanging" msprop:Generator_RowEvHandlerName="ContactodeproveedorRowChangeEventHandler" msprop:Generator_RowDeletedName="ContactodeproveedorRowDeleted" msprop:Generator_RowClassName="ContactodeproveedorRow" msprop:Generator_UserTableName="Contactodeproveedor" msprop:Generator_RowEvArgName="ContactodeproveedorRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nit_proveedor" msprop:Generator_ColumnVarNameInTable="columnnit_proveedor" msprop:Generator_ColumnPropNameInRow="nit_proveedor" msprop:Generator_ColumnPropNameInTable="nit_proveedorColumn" msprop:Generator_UserColumnName="nit_proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion_proveedor" msprop:Generator_ColumnVarNameInTable="columndescripcion_proveedor" msprop:Generator_ColumnPropNameInRow="descripcion_proveedor" msprop:Generator_ColumnPropNameInTable="descripcion_proveedorColumn" msprop:Generator_UserColumnName="descripcion_proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre_contacto" msprop:Generator_ColumnVarNameInTable="columnnombre_contacto" msprop:Generator_ColumnPropNameInRow="nombre_contacto" msprop:Generator_ColumnPropNameInTable="nombre_contactoColumn" msprop:Generator_UserColumnName="nombre_contacto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefono_contacto" msprop:Generator_ColumnVarNameInTable="columntelefono_contacto" msprop:Generator_ColumnPropNameInRow="telefono_contacto" msprop:Generator_ColumnPropNameInTable="telefono_contactoColumn" msprop:Generator_UserColumnName="telefono_contacto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="direccion_contacto" msprop:Generator_ColumnVarNameInTable="columndireccion_contacto" msprop:Generator_ColumnPropNameInRow="direccion_contacto" msprop:Generator_ColumnPropNameInTable="direccion_contactoColumn" msprop:Generator_UserColumnName="direccion_contacto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="HistorialexistenciaProductoenBodega" msprop:Generator_TableClassName="HistorialexistenciaProductoenBodegaDataTable" msprop:Generator_TableVarName="tableHistorialexistenciaProductoenBodega" msprop:Generator_TablePropName="HistorialexistenciaProductoenBodega" msprop:Generator_RowDeletingName="HistorialexistenciaProductoenBodegaRowDeleting" msprop:Generator_RowChangingName="HistorialexistenciaProductoenBodegaRowChanging" msprop:Generator_RowEvHandlerName="HistorialexistenciaProductoenBodegaRowChangeEventHandler" msprop:Generator_RowDeletedName="HistorialexistenciaProductoenBodegaRowDeleted" msprop:Generator_UserTableName="HistorialexistenciaProductoenBodega" msprop:Generator_RowChangedName="HistorialexistenciaProductoenBodegaRowChanged" msprop:Generator_RowEvArgName="HistorialexistenciaProductoenBodegaRowChangeEvent" msprop:Generator_RowClassName="HistorialexistenciaProductoenBodegaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="descripcion_tipo_documento" msprop:Generator_ColumnVarNameInTable="columndescripcion_tipo_documento" msprop:Generator_ColumnPropNameInRow="descripcion_tipo_documento" msprop:Generator_ColumnPropNameInTable="descripcion_tipo_documentoColumn" msprop:Generator_UserColumnName="descripcion_tipo_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion_serie_documento" msprop:Generator_ColumnVarNameInTable="columndescripcion_serie_documento" msprop:Generator_ColumnPropNameInRow="descripcion_serie_documento" msprop:Generator_ColumnPropNameInTable="descripcion_serie_documentoColumn" msprop:Generator_UserColumnName="descripcion_serie_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cantidad_de_producto_detalle" msprop:Generator_ColumnVarNameInTable="columncantidad_de_producto_detalle" msprop:Generator_ColumnPropNameInRow="cantidad_de_producto_detalle" msprop:Generator_ColumnPropNameInTable="cantidad_de_producto_detalleColumn" msprop:Generator_UserColumnName="cantidad_de_producto_detalle" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion_producto" msprop:Generator_ColumnVarNameInTable="columndescripcion_producto" msprop:Generator_ColumnPropNameInRow="descripcion_producto" msprop:Generator_ColumnPropNameInTable="descripcion_productoColumn" msprop:Generator_UserColumnName="descripcion_producto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="codigo_producto" msprop:Generator_ColumnVarNameInTable="columncodigo_producto" msprop:Generator_ColumnPropNameInRow="codigo_producto" msprop:Generator_ColumnPropNameInTable="codigo_productoColumn" msprop:Generator_UserColumnName="codigo_producto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="existencia_producto_bodega" msprop:Generator_ColumnVarNameInTable="columnexistencia_producto_bodega" msprop:Generator_ColumnPropNameInRow="existencia_producto_bodega" msprop:Generator_ColumnPropNameInTable="existencia_producto_bodegaColumn" msprop:Generator_UserColumnName="existencia_producto_bodega" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion_bodega" msprop:Generator_ColumnVarNameInTable="columndescripcion_bodega" msprop:Generator_ColumnPropNameInRow="descripcion_bodega" msprop:Generator_ColumnPropNameInTable="descripcion_bodegaColumn" msprop:Generator_UserColumnName="descripcion_bodega" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_encabezado_usuario" msprop:Generator_ColumnVarNameInTable="columnfecha_encabezado_usuario" msprop:Generator_ColumnPropNameInRow="fecha_encabezado_usuario" msprop:Generator_ColumnPropNameInTable="fecha_encabezado_usuarioColumn" msprop:Generator_UserColumnName="fecha_encabezado_usuario" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="historialprecioproducto" msprop:Generator_TableClassName="historialprecioproductoDataTable" msprop:Generator_TableVarName="tablehistorialprecioproducto" msprop:Generator_TablePropName="historialprecioproducto" msprop:Generator_RowDeletingName="historialprecioproductoRowDeleting" msprop:Generator_RowChangingName="historialprecioproductoRowChanging" msprop:Generator_RowEvHandlerName="historialprecioproductoRowChangeEventHandler" msprop:Generator_RowDeletedName="historialprecioproductoRowDeleted" msprop:Generator_UserTableName="historialprecioproducto" msprop:Generator_RowChangedName="historialprecioproductoRowChanged" msprop:Generator_RowEvArgName="historialprecioproductoRowChangeEvent" msprop:Generator_RowClassName="historialprecioproductoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="descripcion_tipo_documento" msprop:Generator_ColumnVarNameInTable="columndescripcion_tipo_documento" msprop:Generator_ColumnPropNameInRow="descripcion_tipo_documento" msprop:Generator_ColumnPropNameInTable="descripcion_tipo_documentoColumn" msprop:Generator_UserColumnName="descripcion_tipo_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion_serie_documento" msprop:Generator_ColumnVarNameInTable="columndescripcion_serie_documento" msprop:Generator_ColumnPropNameInRow="descripcion_serie_documento" msprop:Generator_ColumnPropNameInTable="descripcion_serie_documentoColumn" msprop:Generator_UserColumnName="descripcion_serie_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion_proveedor" msprop:Generator_ColumnVarNameInTable="columndescripcion_proveedor" msprop:Generator_ColumnPropNameInRow="descripcion_proveedor" msprop:Generator_ColumnPropNameInTable="descripcion_proveedorColumn" msprop:Generator_UserColumnName="descripcion_proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_encabezado_usuario" msprop:Generator_ColumnVarNameInTable="columnfecha_encabezado_usuario" msprop:Generator_ColumnPropNameInRow="fecha_encabezado_usuario" msprop:Generator_ColumnPropNameInTable="fecha_encabezado_usuarioColumn" msprop:Generator_UserColumnName="fecha_encabezado_usuario" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="descripcion_producto" msprop:Generator_ColumnVarNameInTable="columndescripcion_producto" msprop:Generator_ColumnPropNameInRow="descripcion_producto" msprop:Generator_ColumnPropNameInTable="descripcion_productoColumn" msprop:Generator_UserColumnName="descripcion_producto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="antiguo_precio_compra" msprop:Generator_ColumnVarNameInTable="columnantiguo_precio_compra" msprop:Generator_ColumnPropNameInRow="antiguo_precio_compra" msprop:Generator_ColumnPropNameInTable="antiguo_precio_compraColumn" msprop:Generator_UserColumnName="antiguo_precio_compra" type="xs:double" minOccurs="0" />
+              <xs:element name="antigua_precio_venta" msprop:Generator_ColumnVarNameInTable="columnantigua_precio_venta" msprop:Generator_ColumnPropNameInRow="antigua_precio_venta" msprop:Generator_ColumnPropNameInTable="antigua_precio_ventaColumn" msprop:Generator_UserColumnName="antigua_precio_venta" type="xs:double" minOccurs="0" />
+              <xs:element name="ultimo_precio_compra_producto" msprop:Generator_ColumnVarNameInTable="columnultimo_precio_compra_producto" msprop:Generator_ColumnPropNameInRow="ultimo_precio_compra_producto" msprop:Generator_ColumnPropNameInTable="ultimo_precio_compra_productoColumn" msprop:Generator_UserColumnName="ultimo_precio_compra_producto" type="xs:double" minOccurs="0" />
+              <xs:element name="ultimo_precio_venta_producto" msprop:Generator_ColumnVarNameInTable="columnultimo_precio_venta_producto" msprop:Generator_ColumnPropNameInRow="ultimo_precio_venta_producto" msprop:Generator_ColumnPropNameInTable="ultimo_precio_venta_productoColumn" msprop:Generator_UserColumnName="ultimo_precio_venta_producto" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="facturasdeuncliente" msprop:Generator_TableClassName="facturasdeunclienteDataTable" msprop:Generator_TableVarName="tablefacturasdeuncliente" msprop:Generator_RowChangedName="facturasdeunclienteRowChanged" msprop:Generator_TablePropName="facturasdeuncliente" msprop:Generator_RowDeletingName="facturasdeunclienteRowDeleting" msprop:Generator_RowChangingName="facturasdeunclienteRowChanging" msprop:Generator_RowEvHandlerName="facturasdeunclienteRowChangeEventHandler" msprop:Generator_RowDeletedName="facturasdeunclienteRowDeleted" msprop:Generator_RowClassName="facturasdeunclienteRow" msprop:Generator_UserTableName="facturasdeuncliente" msprop:Generator_RowEvArgName="facturasdeunclienteRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="descripcion_tipo_documento" msprop:Generator_ColumnVarNameInTable="columndescripcion_tipo_documento" msprop:Generator_ColumnPropNameInRow="descripcion_tipo_documento" msprop:Generator_ColumnPropNameInTable="descripcion_tipo_documentoColumn" msprop:Generator_UserColumnName="descripcion_tipo_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion_serie_documento" msprop:Generator_ColumnVarNameInTable="columndescripcion_serie_documento" msprop:Generator_ColumnPropNameInRow="descripcion_serie_documento" msprop:Generator_ColumnPropNameInTable="descripcion_serie_documentoColumn" msprop:Generator_UserColumnName="descripcion_serie_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_encabezado_usuario" msprop:Generator_ColumnVarNameInTable="columnfecha_encabezado_usuario" msprop:Generator_ColumnPropNameInRow="fecha_encabezado_usuario" msprop:Generator_ColumnPropNameInTable="fecha_encabezado_usuarioColumn" msprop:Generator_UserColumnName="fecha_encabezado_usuario" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="total_encabezado" msprop:Generator_ColumnVarNameInTable="columntotal_encabezado" msprop:Generator_ColumnPropNameInRow="total_encabezado" msprop:Generator_ColumnPropNameInTable="total_encabezadoColumn" msprop:Generator_UserColumnName="total_encabezado" type="xs:double" minOccurs="0" />
+              <xs:element name="no_documento" msprop:Generator_ColumnVarNameInTable="columnno_documento" msprop:Generator_ColumnPropNameInRow="no_documento" msprop:Generator_ColumnPropNameInTable="no_documentoColumn" msprop:Generator_UserColumnName="no_documento" type="xs:int" minOccurs="0" />
+              <xs:element name="nombre_cliente" msprop:Generator_ColumnVarNameInTable="columnnombre_cliente" msprop:Generator_ColumnPropNameInRow="nombre_cliente" msprop:Generator_ColumnPropNameInTable="nombre_clienteColumn" msprop:Generator_UserColumnName="nombre_cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nit_cliente" msprop:Generator_ColumnVarNameInTable="columnnit_cliente" msprop:Generator_ColumnPropNameInRow="nit_cliente" msprop:Generator_ColumnPropNameInTable="nit_clienteColumn" msprop:Generator_UserColumnName="nit_cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Compra" msprop:Generator_TableClassName="CompraDataTable" msprop:Generator_TableVarName="tableCompra" msprop:Generator_TablePropName="Compra" msprop:Generator_RowDeletingName="CompraRowDeleting" msprop:Generator_RowChangingName="CompraRowChanging" msprop:Generator_RowEvHandlerName="CompraRowChangeEventHandler" msprop:Generator_RowDeletedName="CompraRowDeleted" msprop:Generator_UserTableName="Compra" msprop:Generator_RowChangedName="CompraRowChanged" msprop:Generator_RowEvArgName="CompraRowChangeEvent" msprop:Generator_RowClassName="CompraRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="descripcion_serie_documento" msprop:Generator_ColumnVarNameInTable="columndescripcion_serie_documento" msprop:Generator_ColumnPropNameInRow="descripcion_serie_documento" msprop:Generator_ColumnPropNameInTable="descripcion_serie_documentoColumn" msprop:Generator_UserColumnName="descripcion_serie_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_encabezado_usuario" msprop:Generator_ColumnVarNameInTable="columnfecha_encabezado_usuario" msprop:Generator_ColumnPropNameInRow="fecha_encabezado_usuario" msprop:Generator_ColumnPropNameInTable="fecha_encabezado_usuarioColumn" msprop:Generator_UserColumnName="fecha_encabezado_usuario" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="total_encabezado" msprop:Generator_ColumnVarNameInTable="columntotal_encabezado" msprop:Generator_ColumnPropNameInRow="total_encabezado" msprop:Generator_ColumnPropNameInTable="total_encabezadoColumn" msprop:Generator_UserColumnName="total_encabezado" type="xs:double" minOccurs="0" />
+              <xs:element name="no_documento" msprop:Generator_ColumnVarNameInTable="columnno_documento" msprop:Generator_ColumnPropNameInRow="no_documento" msprop:Generator_ColumnPropNameInTable="no_documentoColumn" msprop:Generator_UserColumnName="no_documento" type="xs:int" minOccurs="0" />
+              <xs:element name="docomento_referencia_proveedor" msprop:Generator_ColumnVarNameInTable="columndocomento_referencia_proveedor" msprop:Generator_ColumnPropNameInRow="docomento_referencia_proveedor" msprop:Generator_ColumnPropNameInTable="docomento_referencia_proveedorColumn" msprop:Generator_UserColumnName="docomento_referencia_proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nit_proveedor" msprop:Generator_ColumnVarNameInTable="columnnit_proveedor" msprop:Generator_ColumnPropNameInRow="nit_proveedor" msprop:Generator_ColumnPropNameInTable="nit_proveedorColumn" msprop:Generator_UserColumnName="nit_proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion_proveedor" msprop:Generator_ColumnVarNameInTable="columndescripcion_proveedor" msprop:Generator_ColumnPropNameInRow="descripcion_proveedor" msprop:Generator_ColumnPropNameInTable="descripcion_proveedorColumn" msprop:Generator_UserColumnName="descripcion_proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="codigo_producto" msprop:Generator_ColumnVarNameInTable="columncodigo_producto" msprop:Generator_ColumnPropNameInRow="codigo_producto" msprop:Generator_ColumnPropNameInTable="codigo_productoColumn" msprop:Generator_UserColumnName="codigo_producto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion_producto" msprop:Generator_ColumnVarNameInTable="columndescripcion_producto" msprop:Generator_ColumnPropNameInRow="descripcion_producto" msprop:Generator_ColumnPropNameInTable="descripcion_productoColumn" msprop:Generator_UserColumnName="descripcion_producto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="precio_por_unidad_detalle" msprop:Generator_ColumnVarNameInTable="columnprecio_por_unidad_detalle" msprop:Generator_ColumnPropNameInRow="precio_por_unidad_detalle" msprop:Generator_ColumnPropNameInTable="precio_por_unidad_detalleColumn" msprop:Generator_UserColumnName="precio_por_unidad_detalle" type="xs:double" minOccurs="0" />
+              <xs:element name="cantidad_de_producto_detalle" msprop:Generator_ColumnVarNameInTable="columncantidad_de_producto_detalle" msprop:Generator_ColumnPropNameInRow="cantidad_de_producto_detalle" msprop:Generator_ColumnPropNameInTable="cantidad_de_producto_detalleColumn" msprop:Generator_UserColumnName="cantidad_de_producto_detalle" type="xs:int" minOccurs="0" />
+              <xs:element name="total_detalle" msprop:Generator_ColumnVarNameInTable="columntotal_detalle" msprop:Generator_ColumnPropNameInRow="total_detalle" msprop:Generator_ColumnPropNameInTable="total_detalleColumn" msprop:Generator_UserColumnName="total_detalle" type="xs:double" minOccurs="0" />
+              <xs:element name="descripcion_bodega" msprop:Generator_ColumnVarNameInTable="columndescripcion_bodega" msprop:Generator_ColumnPropNameInRow="descripcion_bodega" msprop:Generator_ColumnPropNameInTable="descripcion_bodegaColumn" msprop:Generator_UserColumnName="descripcion_bodega" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Comprapornumero" msprop:Generator_TableClassName="ComprapornumeroDataTable" msprop:Generator_TableVarName="tableComprapornumero" msprop:Generator_RowChangedName="ComprapornumeroRowChanged" msprop:Generator_TablePropName="Comprapornumero" msprop:Generator_RowDeletingName="ComprapornumeroRowDeleting" msprop:Generator_RowChangingName="ComprapornumeroRowChanging" msprop:Generator_RowEvHandlerName="ComprapornumeroRowChangeEventHandler" msprop:Generator_RowDeletedName="ComprapornumeroRowDeleted" msprop:Generator_RowClassName="ComprapornumeroRow" msprop:Generator_UserTableName="Comprapornumero" msprop:Generator_RowEvArgName="ComprapornumeroRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="descripcion_serie_documento" msprop:Generator_ColumnVarNameInTable="columndescripcion_serie_documento" msprop:Generator_ColumnPropNameInRow="descripcion_serie_documento" msprop:Generator_ColumnPropNameInTable="descripcion_serie_documentoColumn" msprop:Generator_UserColumnName="descripcion_serie_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_encabezado_usuario" msprop:Generator_ColumnVarNameInTable="columnfecha_encabezado_usuario" msprop:Generator_ColumnPropNameInRow="fecha_encabezado_usuario" msprop:Generator_ColumnPropNameInTable="fecha_encabezado_usuarioColumn" msprop:Generator_UserColumnName="fecha_encabezado_usuario" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="total_encabezado" msprop:Generator_ColumnVarNameInTable="columntotal_encabezado" msprop:Generator_ColumnPropNameInRow="total_encabezado" msprop:Generator_ColumnPropNameInTable="total_encabezadoColumn" msprop:Generator_UserColumnName="total_encabezado" type="xs:double" minOccurs="0" />
+              <xs:element name="no_documento" msprop:Generator_ColumnVarNameInTable="columnno_documento" msprop:Generator_ColumnPropNameInRow="no_documento" msprop:Generator_ColumnPropNameInTable="no_documentoColumn" msprop:Generator_UserColumnName="no_documento" type="xs:int" minOccurs="0" />
+              <xs:element name="docomento_referencia_proveedor" msprop:Generator_ColumnVarNameInTable="columndocomento_referencia_proveedor" msprop:Generator_ColumnPropNameInRow="docomento_referencia_proveedor" msprop:Generator_ColumnPropNameInTable="docomento_referencia_proveedorColumn" msprop:Generator_UserColumnName="docomento_referencia_proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nit_proveedor" msprop:Generator_ColumnVarNameInTable="columnnit_proveedor" msprop:Generator_ColumnPropNameInRow="nit_proveedor" msprop:Generator_ColumnPropNameInTable="nit_proveedorColumn" msprop:Generator_UserColumnName="nit_proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion_proveedor" msprop:Generator_ColumnVarNameInTable="columndescripcion_proveedor" msprop:Generator_ColumnPropNameInRow="descripcion_proveedor" msprop:Generator_ColumnPropNameInTable="descripcion_proveedorColumn" msprop:Generator_UserColumnName="descripcion_proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="codigo_producto" msprop:Generator_ColumnVarNameInTable="columncodigo_producto" msprop:Generator_ColumnPropNameInRow="codigo_producto" msprop:Generator_ColumnPropNameInTable="codigo_productoColumn" msprop:Generator_UserColumnName="codigo_producto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion_producto" msprop:Generator_ColumnVarNameInTable="columndescripcion_producto" msprop:Generator_ColumnPropNameInRow="descripcion_producto" msprop:Generator_ColumnPropNameInTable="descripcion_productoColumn" msprop:Generator_UserColumnName="descripcion_producto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="precio_por_unidad_detalle" msprop:Generator_ColumnVarNameInTable="columnprecio_por_unidad_detalle" msprop:Generator_ColumnPropNameInRow="precio_por_unidad_detalle" msprop:Generator_ColumnPropNameInTable="precio_por_unidad_detalleColumn" msprop:Generator_UserColumnName="precio_por_unidad_detalle" type="xs:double" minOccurs="0" />
+              <xs:element name="cantidad_de_producto_detalle" msprop:Generator_ColumnVarNameInTable="columncantidad_de_producto_detalle" msprop:Generator_ColumnPropNameInRow="cantidad_de_producto_detalle" msprop:Generator_ColumnPropNameInTable="cantidad_de_producto_detalleColumn" msprop:Generator_UserColumnName="cantidad_de_producto_detalle" type="xs:int" minOccurs="0" />
+              <xs:element name="total_detalle" msprop:Generator_ColumnVarNameInTable="columntotal_detalle" msprop:Generator_ColumnPropNameInRow="total_detalle" msprop:Generator_ColumnPropNameInTable="total_detalleColumn" msprop:Generator_UserColumnName="total_detalle" type="xs:double" minOccurs="0" />
+              <xs:element name="descripcion_bodega" msprop:Generator_ColumnVarNameInTable="columndescripcion_bodega" msprop:Generator_ColumnPropNameInRow="descripcion_bodega" msprop:Generator_ColumnPropNameInTable="descripcion_bodegaColumn" msprop:Generator_UserColumnName="descripcion_bodega" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Comprasentrefechas" msprop:Generator_TableClassName="ComprasentrefechasDataTable" msprop:Generator_TableVarName="tableComprasentrefechas" msprop:Generator_TablePropName="Comprasentrefechas" msprop:Generator_RowDeletingName="ComprasentrefechasRowDeleting" msprop:Generator_RowChangingName="ComprasentrefechasRowChanging" msprop:Generator_RowEvHandlerName="ComprasentrefechasRowChangeEventHandler" msprop:Generator_RowDeletedName="ComprasentrefechasRowDeleted" msprop:Generator_UserTableName="Comprasentrefechas" msprop:Generator_RowChangedName="ComprasentrefechasRowChanged" msprop:Generator_RowEvArgName="ComprasentrefechasRowChangeEvent" msprop:Generator_RowClassName="ComprasentrefechasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="descripcion_serie_documento" msprop:Generator_ColumnVarNameInTable="columndescripcion_serie_documento" msprop:Generator_ColumnPropNameInRow="descripcion_serie_documento" msprop:Generator_ColumnPropNameInTable="descripcion_serie_documentoColumn" msprop:Generator_UserColumnName="descripcion_serie_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_encabezado_usuario" msprop:Generator_ColumnVarNameInTable="columnfecha_encabezado_usuario" msprop:Generator_ColumnPropNameInRow="fecha_encabezado_usuario" msprop:Generator_ColumnPropNameInTable="fecha_encabezado_usuarioColumn" msprop:Generator_UserColumnName="fecha_encabezado_usuario" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="total_encabezado" msprop:Generator_ColumnVarNameInTable="columntotal_encabezado" msprop:Generator_ColumnPropNameInRow="total_encabezado" msprop:Generator_ColumnPropNameInTable="total_encabezadoColumn" msprop:Generator_UserColumnName="total_encabezado" type="xs:double" minOccurs="0" />
+              <xs:element name="no_documento" msprop:Generator_ColumnVarNameInTable="columnno_documento" msprop:Generator_ColumnPropNameInRow="no_documento" msprop:Generator_ColumnPropNameInTable="no_documentoColumn" msprop:Generator_UserColumnName="no_documento" type="xs:int" minOccurs="0" />
+              <xs:element name="nit_proveedor" msprop:Generator_ColumnVarNameInTable="columnnit_proveedor" msprop:Generator_ColumnPropNameInRow="nit_proveedor" msprop:Generator_ColumnPropNameInTable="nit_proveedorColumn" msprop:Generator_UserColumnName="nit_proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion_proveedor" msprop:Generator_ColumnVarNameInTable="columndescripcion_proveedor" msprop:Generator_ColumnPropNameInRow="descripcion_proveedor" msprop:Generator_ColumnPropNameInTable="descripcion_proveedorColumn" msprop:Generator_UserColumnName="descripcion_proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="movimientosentrefechas" msprop:Generator_TableClassName="movimientosentrefechasDataTable" msprop:Generator_TableVarName="tablemovimientosentrefechas" msprop:Generator_RowChangedName="movimientosentrefechasRowChanged" msprop:Generator_TablePropName="movimientosentrefechas" msprop:Generator_RowDeletingName="movimientosentrefechasRowDeleting" msprop:Generator_RowChangingName="movimientosentrefechasRowChanging" msprop:Generator_RowEvHandlerName="movimientosentrefechasRowChangeEventHandler" msprop:Generator_RowDeletedName="movimientosentrefechasRowDeleted" msprop:Generator_RowClassName="movimientosentrefechasRow" msprop:Generator_UserTableName="movimientosentrefechas" msprop:Generator_RowEvArgName="movimientosentrefechasRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="descripcion_serie_documento" msprop:Generator_ColumnVarNameInTable="columndescripcion_serie_documento" msprop:Generator_ColumnPropNameInRow="descripcion_serie_documento" msprop:Generator_ColumnPropNameInTable="descripcion_serie_documentoColumn" msprop:Generator_UserColumnName="descripcion_serie_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_encabezado_usuario" msprop:Generator_ColumnVarNameInTable="columnfecha_encabezado_usuario" msprop:Generator_ColumnPropNameInRow="fecha_encabezado_usuario" msprop:Generator_ColumnPropNameInTable="fecha_encabezado_usuarioColumn" msprop:Generator_UserColumnName="fecha_encabezado_usuario" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="total_encabezado" msprop:Generator_ColumnVarNameInTable="columntotal_encabezado" msprop:Generator_ColumnPropNameInRow="total_encabezado" msprop:Generator_ColumnPropNameInTable="total_encabezadoColumn" msprop:Generator_UserColumnName="total_encabezado" type="xs:double" minOccurs="0" />
+              <xs:element name="no_documento" msprop:Generator_ColumnVarNameInTable="columnno_documento" msprop:Generator_ColumnPropNameInRow="no_documento" msprop:Generator_ColumnPropNameInTable="no_documentoColumn" msprop:Generator_UserColumnName="no_documento" type="xs:int" minOccurs="0" />
+              <xs:element name="nit_proveedor" msprop:Generator_ColumnVarNameInTable="columnnit_proveedor" msprop:Generator_ColumnPropNameInRow="nit_proveedor" msprop:Generator_ColumnPropNameInTable="nit_proveedorColumn" msprop:Generator_UserColumnName="nit_proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion_proveedor" msprop:Generator_ColumnVarNameInTable="columndescripcion_proveedor" msprop:Generator_ColumnPropNameInRow="descripcion_proveedor" msprop:Generator_ColumnPropNameInTable="descripcion_proveedorColumn" msprop:Generator_UserColumnName="descripcion_proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion_tipo_documento" msprop:Generator_ColumnVarNameInTable="columndescripcion_tipo_documento" msprop:Generator_ColumnPropNameInRow="descripcion_tipo_documento" msprop:Generator_ColumnPropNameInTable="descripcion_tipo_documentoColumn" msprop:Generator_UserColumnName="descripcion_tipo_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nit_cliente" msprop:Generator_ColumnVarNameInTable="columnnit_cliente" msprop:Generator_ColumnPropNameInRow="nit_cliente" msprop:Generator_ColumnPropNameInTable="nit_clienteColumn" msprop:Generator_UserColumnName="nit_cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre_cliente" msprop:Generator_ColumnVarNameInTable="columnnombre_cliente" msprop:Generator_ColumnPropNameInRow="nombre_cliente" msprop:Generator_ColumnPropNameInTable="nombre_clienteColumn" msprop:Generator_UserColumnName="nombre_cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Factura" msprop:Generator_TableClassName="FacturaDataTable" msprop:Generator_TableVarName="tableFactura" msprop:Generator_TablePropName="Factura" msprop:Generator_RowDeletingName="FacturaRowDeleting" msprop:Generator_RowChangingName="FacturaRowChanging" msprop:Generator_RowEvHandlerName="FacturaRowChangeEventHandler" msprop:Generator_RowDeletedName="FacturaRowDeleted" msprop:Generator_UserTableName="Factura" msprop:Generator_RowChangedName="FacturaRowChanged" msprop:Generator_RowEvArgName="FacturaRowChangeEvent" msprop:Generator_RowClassName="FacturaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="descripcion_serie_documento" msprop:Generator_ColumnVarNameInTable="columndescripcion_serie_documento" msprop:Generator_ColumnPropNameInRow="descripcion_serie_documento" msprop:Generator_ColumnPropNameInTable="descripcion_serie_documentoColumn" msprop:Generator_UserColumnName="descripcion_serie_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_encabezado_usuario" msprop:Generator_ColumnVarNameInTable="columnfecha_encabezado_usuario" msprop:Generator_ColumnPropNameInRow="fecha_encabezado_usuario" msprop:Generator_ColumnPropNameInTable="fecha_encabezado_usuarioColumn" msprop:Generator_UserColumnName="fecha_encabezado_usuario" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="total_encabezado" msprop:Generator_ColumnVarNameInTable="columntotal_encabezado" msprop:Generator_ColumnPropNameInRow="total_encabezado" msprop:Generator_ColumnPropNameInTable="total_encabezadoColumn" msprop:Generator_UserColumnName="total_encabezado" type="xs:double" minOccurs="0" />
+              <xs:element name="no_documento" msprop:Generator_ColumnVarNameInTable="columnno_documento" msprop:Generator_ColumnPropNameInRow="no_documento" msprop:Generator_ColumnPropNameInTable="no_documentoColumn" msprop:Generator_UserColumnName="no_documento" type="xs:int" minOccurs="0" />
+              <xs:element name="precio_por_unidad_detalle" msprop:Generator_ColumnVarNameInTable="columnprecio_por_unidad_detalle" msprop:Generator_ColumnPropNameInRow="precio_por_unidad_detalle" msprop:Generator_ColumnPropNameInTable="precio_por_unidad_detalleColumn" msprop:Generator_UserColumnName="precio_por_unidad_detalle" type="xs:double" minOccurs="0" />
+              <xs:element name="cantidad_de_producto_detalle" msprop:Generator_ColumnVarNameInTable="columncantidad_de_producto_detalle" msprop:Generator_ColumnPropNameInRow="cantidad_de_producto_detalle" msprop:Generator_ColumnPropNameInTable="cantidad_de_producto_detalleColumn" msprop:Generator_UserColumnName="cantidad_de_producto_detalle" type="xs:int" minOccurs="0" />
+              <xs:element name="total_detalle" msprop:Generator_ColumnVarNameInTable="columntotal_detalle" msprop:Generator_ColumnPropNameInRow="total_detalle" msprop:Generator_ColumnPropNameInTable="total_detalleColumn" msprop:Generator_UserColumnName="total_detalle" type="xs:double" minOccurs="0" />
+              <xs:element name="nit_cliente" msprop:Generator_ColumnVarNameInTable="columnnit_cliente" msprop:Generator_ColumnPropNameInRow="nit_cliente" msprop:Generator_ColumnPropNameInTable="nit_clienteColumn" msprop:Generator_UserColumnName="nit_cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre_cliente" msprop:Generator_ColumnVarNameInTable="columnnombre_cliente" msprop:Generator_ColumnPropNameInRow="nombre_cliente" msprop:Generator_ColumnPropNameInTable="nombre_clienteColumn" msprop:Generator_UserColumnName="nombre_cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="codigo_producto" msprop:Generator_ColumnVarNameInTable="columncodigo_producto" msprop:Generator_ColumnPropNameInRow="codigo_producto" msprop:Generator_ColumnPropNameInTable="codigo_productoColumn" msprop:Generator_UserColumnName="codigo_producto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion_producto" msprop:Generator_ColumnVarNameInTable="columndescripcion_producto" msprop:Generator_ColumnPropNameInRow="descripcion_producto" msprop:Generator_ColumnPropNameInTable="descripcion_productoColumn" msprop:Generator_UserColumnName="descripcion_producto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="facturapornumero" msprop:Generator_TableClassName="facturapornumeroDataTable" msprop:Generator_TableVarName="tablefacturapornumero" msprop:Generator_RowChangedName="facturapornumeroRowChanged" msprop:Generator_TablePropName="facturapornumero" msprop:Generator_RowDeletingName="facturapornumeroRowDeleting" msprop:Generator_RowChangingName="facturapornumeroRowChanging" msprop:Generator_RowEvHandlerName="facturapornumeroRowChangeEventHandler" msprop:Generator_RowDeletedName="facturapornumeroRowDeleted" msprop:Generator_RowClassName="facturapornumeroRow" msprop:Generator_UserTableName="facturapornumero" msprop:Generator_RowEvArgName="facturapornumeroRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="descripcion_serie_documento" msprop:Generator_ColumnVarNameInTable="columndescripcion_serie_documento" msprop:Generator_ColumnPropNameInRow="descripcion_serie_documento" msprop:Generator_ColumnPropNameInTable="descripcion_serie_documentoColumn" msprop:Generator_UserColumnName="descripcion_serie_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre_cliente" msprop:Generator_ColumnVarNameInTable="columnnombre_cliente" msprop:Generator_ColumnPropNameInRow="nombre_cliente" msprop:Generator_ColumnPropNameInTable="nombre_clienteColumn" msprop:Generator_UserColumnName="nombre_cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nit_cliente" msprop:Generator_ColumnVarNameInTable="columnnit_cliente" msprop:Generator_ColumnPropNameInRow="nit_cliente" msprop:Generator_ColumnPropNameInTable="nit_clienteColumn" msprop:Generator_UserColumnName="nit_cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="precio_por_unidad_detalle" msprop:Generator_ColumnVarNameInTable="columnprecio_por_unidad_detalle" msprop:Generator_ColumnPropNameInRow="precio_por_unidad_detalle" msprop:Generator_ColumnPropNameInTable="precio_por_unidad_detalleColumn" msprop:Generator_UserColumnName="precio_por_unidad_detalle" type="xs:double" minOccurs="0" />
+              <xs:element name="cantidad_de_producto_detalle" msprop:Generator_ColumnVarNameInTable="columncantidad_de_producto_detalle" msprop:Generator_ColumnPropNameInRow="cantidad_de_producto_detalle" msprop:Generator_ColumnPropNameInTable="cantidad_de_producto_detalleColumn" msprop:Generator_UserColumnName="cantidad_de_producto_detalle" type="xs:int" minOccurs="0" />
+              <xs:element name="total_detalle" msprop:Generator_ColumnVarNameInTable="columntotal_detalle" msprop:Generator_ColumnPropNameInRow="total_detalle" msprop:Generator_ColumnPropNameInTable="total_detalleColumn" msprop:Generator_UserColumnName="total_detalle" type="xs:double" minOccurs="0" />
+              <xs:element name="descripcion_producto" msprop:Generator_ColumnVarNameInTable="columndescripcion_producto" msprop:Generator_ColumnPropNameInRow="descripcion_producto" msprop:Generator_ColumnPropNameInTable="descripcion_productoColumn" msprop:Generator_UserColumnName="descripcion_producto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="codigo_producto" msprop:Generator_ColumnVarNameInTable="columncodigo_producto" msprop:Generator_ColumnPropNameInRow="codigo_producto" msprop:Generator_ColumnPropNameInTable="codigo_productoColumn" msprop:Generator_UserColumnName="codigo_producto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_encabezado_usuario" msprop:Generator_ColumnVarNameInTable="columnfecha_encabezado_usuario" msprop:Generator_ColumnPropNameInRow="fecha_encabezado_usuario" msprop:Generator_ColumnPropNameInTable="fecha_encabezado_usuarioColumn" msprop:Generator_UserColumnName="fecha_encabezado_usuario" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="total_encabezado" msprop:Generator_ColumnVarNameInTable="columntotal_encabezado" msprop:Generator_ColumnPropNameInRow="total_encabezado" msprop:Generator_ColumnPropNameInTable="total_encabezadoColumn" msprop:Generator_UserColumnName="total_encabezado" type="xs:double" minOccurs="0" />
+              <xs:element name="no_documento" msprop:Generator_ColumnVarNameInTable="columnno_documento" msprop:Generator_ColumnPropNameInRow="no_documento" msprop:Generator_ColumnPropNameInTable="no_documentoColumn" msprop:Generator_UserColumnName="no_documento" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Facturasentrefechas" msprop:Generator_TableClassName="FacturasentrefechasDataTable" msprop:Generator_TableVarName="tableFacturasentrefechas" msprop:Generator_TablePropName="Facturasentrefechas" msprop:Generator_RowDeletingName="FacturasentrefechasRowDeleting" msprop:Generator_RowChangingName="FacturasentrefechasRowChanging" msprop:Generator_RowEvHandlerName="FacturasentrefechasRowChangeEventHandler" msprop:Generator_RowDeletedName="FacturasentrefechasRowDeleted" msprop:Generator_UserTableName="Facturasentrefechas" msprop:Generator_RowChangedName="FacturasentrefechasRowChanged" msprop:Generator_RowEvArgName="FacturasentrefechasRowChangeEvent" msprop:Generator_RowClassName="FacturasentrefechasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="descripcion_serie_documento" msprop:Generator_ColumnVarNameInTable="columndescripcion_serie_documento" msprop:Generator_ColumnPropNameInRow="descripcion_serie_documento" msprop:Generator_ColumnPropNameInTable="descripcion_serie_documentoColumn" msprop:Generator_UserColumnName="descripcion_serie_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_encabezado_usuario" msprop:Generator_ColumnVarNameInTable="columnfecha_encabezado_usuario" msprop:Generator_ColumnPropNameInRow="fecha_encabezado_usuario" msprop:Generator_ColumnPropNameInTable="fecha_encabezado_usuarioColumn" msprop:Generator_UserColumnName="fecha_encabezado_usuario" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="total_encabezado" msprop:Generator_ColumnVarNameInTable="columntotal_encabezado" msprop:Generator_ColumnPropNameInRow="total_encabezado" msprop:Generator_ColumnPropNameInTable="total_encabezadoColumn" msprop:Generator_UserColumnName="total_encabezado" type="xs:double" minOccurs="0" />
+              <xs:element name="no_documento" msprop:Generator_ColumnVarNameInTable="columnno_documento" msprop:Generator_ColumnPropNameInRow="no_documento" msprop:Generator_ColumnPropNameInTable="no_documentoColumn" msprop:Generator_UserColumnName="no_documento" type="xs:int" minOccurs="0" />
+              <xs:element name="nombre_cliente" msprop:Generator_ColumnVarNameInTable="columnnombre_cliente" msprop:Generator_ColumnPropNameInRow="nombre_cliente" msprop:Generator_ColumnPropNameInTable="nombre_clienteColumn" msprop:Generator_UserColumnName="nombre_cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nit_cliente" msprop:Generator_ColumnVarNameInTable="columnnit_cliente" msprop:Generator_ColumnPropNameInRow="nit_cliente" msprop:Generator_ColumnPropNameInTable="nit_clienteColumn" msprop:Generator_UserColumnName="nit_cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CorteDeCaja" msprop:Generator_TableClassName="CorteDeCajaDataTable" msprop:Generator_TableVarName="tableCorteDeCaja" msprop:Generator_TablePropName="CorteDeCaja" msprop:Generator_RowDeletingName="CorteDeCajaRowDeleting" msprop:Generator_RowChangingName="CorteDeCajaRowChanging" msprop:Generator_RowEvHandlerName="CorteDeCajaRowChangeEventHandler" msprop:Generator_RowDeletedName="CorteDeCajaRowDeleted" msprop:Generator_UserTableName="CorteDeCaja" msprop:Generator_RowChangedName="CorteDeCajaRowChanged" msprop:Generator_RowEvArgName="CorteDeCajaRowChangeEvent" msprop:Generator_RowClassName="CorteDeCajaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="descripcion_tipo_documento" msprop:Generator_ColumnVarNameInTable="columndescripcion_tipo_documento" msprop:Generator_ColumnPropNameInRow="descripcion_tipo_documento" msprop:Generator_ColumnPropNameInTable="descripcion_tipo_documentoColumn" msprop:Generator_UserColumnName="descripcion_tipo_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion_serie_documento" msprop:Generator_ColumnVarNameInTable="columndescripcion_serie_documento" msprop:Generator_ColumnPropNameInRow="descripcion_serie_documento" msprop:Generator_ColumnPropNameInTable="descripcion_serie_documentoColumn" msprop:Generator_UserColumnName="descripcion_serie_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="total_encabezado" msprop:Generator_ColumnVarNameInTable="columntotal_encabezado" msprop:Generator_ColumnPropNameInRow="total_encabezado" msprop:Generator_ColumnPropNameInTable="total_encabezadoColumn" msprop:Generator_UserColumnName="total_encabezado" type="xs:double" minOccurs="0" />
+              <xs:element name="no_documento" msprop:Generator_ColumnVarNameInTable="columnno_documento" msprop:Generator_ColumnPropNameInRow="no_documento" msprop:Generator_ColumnPropNameInTable="no_documentoColumn" msprop:Generator_UserColumnName="no_documento" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:cliente" />
+      <xs:field xpath="mstns:id_cliente" />
+    </xs:unique>
+    <xs:unique name="proveedor_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:proveedor" />
+      <xs:field xpath="mstns:id_proveedor" />
+    </xs:unique>
+    <xs:unique name="bodega_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:bodega" />
+      <xs:field xpath="mstns:id_bodega" />
+    </xs:unique>
+    <xs:unique name="PermisosRol_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:PermisosRol" />
+      <xs:field xpath="mstns:id_permiso" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

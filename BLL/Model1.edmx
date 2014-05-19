@@ -1,0 +1,1916 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="mastertech_db1Model.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="mastertech_db1ModelStoreContainer">
+          <EntitySet Name="bodega" EntityType="mastertech_db1Model.Store.bodega" store:Type="Tables" Schema="mastertech_db1" />
+          <EntitySet Name="cliente" EntityType="mastertech_db1Model.Store.cliente" store:Type="Tables" Schema="mastertech_db1" />
+          <EntitySet Name="contacto" EntityType="mastertech_db1Model.Store.contacto" store:Type="Tables" Schema="mastertech_db1" />
+          <EntitySet Name="detalle" EntityType="mastertech_db1Model.Store.detalle" store:Type="Tables" Schema="mastertech_db1" />
+          <EntitySet Name="empresa" EntityType="mastertech_db1Model.Store.empresa" store:Type="Tables" store:Schema="mastertech_db1" store:Name="empresa">
+            <DefiningQuery>SELECT
+      empresa.nombre_empresa, 
+      empresa.slogan_empresa, 
+      empresa.nit_empresa, 
+      empresa.telefono_empresa, 
+      empresa.direccion_empresa
+      FROM empresa AS empresa</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="encabezado" EntityType="mastertech_db1Model.Store.encabezado" store:Type="Tables" Schema="mastertech_db1" />
+          <EntitySet Name="estado_documento" EntityType="mastertech_db1Model.Store.estado_documento" store:Type="Tables" Schema="mastertech_db1" />
+          <EntitySet Name="historial_precio_compra" EntityType="mastertech_db1Model.Store.historial_precio_compra" store:Type="Tables" Schema="mastertech_db1" />
+          <EntitySet Name="ingreso" EntityType="mastertech_db1Model.Store.ingreso" store:Type="Tables" Schema="mastertech_db1" />
+          <EntitySet Name="marca" EntityType="mastertech_db1Model.Store.marca" store:Type="Tables" Schema="mastertech_db1" />
+          <EntitySet Name="permiso" EntityType="mastertech_db1Model.Store.permiso" store:Type="Tables" Schema="mastertech_db1" />
+          <EntitySet Name="producto" EntityType="mastertech_db1Model.Store.producto" store:Type="Tables" Schema="mastertech_db1" />
+          <EntitySet Name="producto_bodega" EntityType="mastertech_db1Model.Store.producto_bodega" store:Type="Tables" Schema="mastertech_db1" />
+          <EntitySet Name="proveedor" EntityType="mastertech_db1Model.Store.proveedor" store:Type="Tables" Schema="mastertech_db1" />
+          <EntitySet Name="rol" EntityType="mastertech_db1Model.Store.rol" store:Type="Tables" Schema="mastertech_db1" />
+          <EntitySet Name="rol_permiso" EntityType="mastertech_db1Model.Store.rol_permiso" store:Type="Tables" Schema="mastertech_db1" />
+          <EntitySet Name="serie_documento" EntityType="mastertech_db1Model.Store.serie_documento" store:Type="Tables" Schema="mastertech_db1" />
+          <EntitySet Name="signo" EntityType="mastertech_db1Model.Store.signo" store:Type="Tables" Schema="mastertech_db1" />
+          <EntitySet Name="tipo_documento" EntityType="mastertech_db1Model.Store.tipo_documento" store:Type="Tables" Schema="mastertech_db1" />
+          <EntitySet Name="usuario" EntityType="mastertech_db1Model.Store.usuario" store:Type="Tables" Schema="mastertech_db1" />
+          <EntitySet Name="usuario_rol" EntityType="mastertech_db1Model.Store.usuario_rol" store:Type="Tables" Schema="mastertech_db1" />
+          <AssociationSet Name="Relationship11" Association="mastertech_db1Model.Store.Relationship11">
+            <End Role="proveedor" EntitySet="proveedor" />
+            <End Role="encabezado" EntitySet="encabezado" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship12" Association="mastertech_db1Model.Store.Relationship12">
+            <End Role="proveedor" EntitySet="proveedor" />
+            <End Role="encabezado" EntitySet="encabezado" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship13" Association="mastertech_db1Model.Store.Relationship13">
+            <End Role="marca" EntitySet="marca" />
+            <End Role="producto" EntitySet="producto" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship14" Association="mastertech_db1Model.Store.Relationship14">
+            <End Role="proveedor" EntitySet="proveedor" />
+            <End Role="contacto" EntitySet="contacto" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship2" Association="mastertech_db1Model.Store.Relationship2">
+            <End Role="serie_documento" EntitySet="serie_documento" />
+            <End Role="encabezado" EntitySet="encabezado" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship26" Association="mastertech_db1Model.Store.Relationship26">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="ingreso" EntitySet="ingreso" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship3" Association="mastertech_db1Model.Store.Relationship3">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="encabezado" EntitySet="encabezado" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship32" Association="mastertech_db1Model.Store.Relationship32">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="encabezado" EntitySet="encabezado" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship4" Association="mastertech_db1Model.Store.Relationship4">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="encabezado" EntitySet="encabezado" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship40" Association="mastertech_db1Model.Store.Relationship40">
+            <End Role="detalle" EntitySet="detalle" />
+            <End Role="historial_precio_compra" EntitySet="historial_precio_compra" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship42" Association="mastertech_db1Model.Store.Relationship42">
+            <End Role="estado_documento" EntitySet="estado_documento" />
+            <End Role="serie_documento" EntitySet="serie_documento" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship45" Association="mastertech_db1Model.Store.Relationship45">
+            <End Role="bodega" EntitySet="bodega" />
+            <End Role="detalle" EntitySet="detalle" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship46" Association="mastertech_db1Model.Store.Relationship46">
+            <End Role="producto" EntitySet="producto" />
+            <End Role="detalle" EntitySet="detalle" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship47" Association="mastertech_db1Model.Store.Relationship47">
+            <End Role="bodega" EntitySet="bodega" />
+            <End Role="producto_bodega" EntitySet="producto_bodega" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship48" Association="mastertech_db1Model.Store.Relationship48">
+            <End Role="producto" EntitySet="producto" />
+            <End Role="producto_bodega" EntitySet="producto_bodega" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship49" Association="mastertech_db1Model.Store.Relationship49">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="usuario_rol" EntitySet="usuario_rol" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship5" Association="mastertech_db1Model.Store.Relationship5">
+            <End Role="encabezado" EntitySet="encabezado" />
+            <End Role="detalle" EntitySet="detalle" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship50" Association="mastertech_db1Model.Store.Relationship50">
+            <End Role="rol" EntitySet="rol" />
+            <End Role="usuario_rol" EntitySet="usuario_rol" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship51" Association="mastertech_db1Model.Store.Relationship51">
+            <End Role="rol" EntitySet="rol" />
+            <End Role="rol_permiso" EntitySet="rol_permiso" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship52" Association="mastertech_db1Model.Store.Relationship52">
+            <End Role="permiso" EntitySet="permiso" />
+            <End Role="rol_permiso" EntitySet="rol_permiso" />
+          </AssociationSet>
+          <AssociationSet Name="serie_documento_ibfk_1" Association="mastertech_db1Model.Store.serie_documento_ibfk_1">
+            <End Role="tipo_documento" EntitySet="tipo_documento" />
+            <End Role="serie_documento" EntitySet="serie_documento" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="bodega">
+          <Key>
+            <PropertyRef Name="id_bodega" />
+          </Key>
+          <Property Name="id_bodega" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion_bodega" Type="varchar" MaxLength="255" />
+          <Property Name="direccion_bodega" Type="varchar" MaxLength="255" />
+          <Property Name="telefono_bodega" Type="varchar" MaxLength="15" />
+          <Property Name="telefono2_bodega" Type="varchar" MaxLength="15" />
+          <Property Name="estado_bodega" Type="bool" />
+        </EntityType>
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="id_cliente" />
+          </Key>
+          <Property Name="id_cliente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_cliente" Type="varchar" MaxLength="255" />
+          <Property Name="nit_cliente" Type="varchar" MaxLength="15" />
+          <Property Name="direccion_cliente" Type="varchar" MaxLength="255" />
+          <Property Name="telefono_cliente" Type="varchar" MaxLength="15" />
+          <Property Name="correo_cliente" Type="varchar" MaxLength="150" />
+          <Property Name="fecha_nacimiento_cliente" Type="datetime" />
+          <Property Name="estado_cliente" Type="bool" />
+        </EntityType>
+        <EntityType Name="contacto">
+          <Key>
+            <PropertyRef Name="id_contacto" />
+          </Key>
+          <Property Name="id_contacto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_contacto" Type="varchar" MaxLength="255" />
+          <Property Name="telefono_contacto" Type="varchar" MaxLength="15" />
+          <Property Name="direccion_contacto" Type="varchar" MaxLength="255" />
+          <Property Name="id_proveedor" Type="int" />
+          <Property Name="estado_contacto" Type="bool" />
+        </EntityType>
+        <EntityType Name="detalle">
+          <Key>
+            <PropertyRef Name="id_detalle" />
+          </Key>
+          <Property Name="id_detalle" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_encabezado" Type="int" />
+          <Property Name="precio_por_unidad_detalle" Type="double" />
+          <Property Name="cantidad_de_producto_detalle" Type="int" />
+          <Property Name="total_detalle" Type="double" />
+          <Property Name="id_bodega" Type="int" />
+          <Property Name="id_producto" Type="int" />
+          <Property Name="precio_costo" Type="double" />
+        </EntityType>
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'def.mastertech_db1.empresa' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+        <EntityType Name="empresa">
+          <Key>
+            <PropertyRef Name="nombre_empresa" />
+          </Key>
+          <Property Name="nombre_empresa" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="slogan_empresa" Type="varchar" MaxLength="255" />
+          <Property Name="nit_empresa" Type="varchar" MaxLength="50" />
+          <Property Name="telefono_empresa" Type="varchar" MaxLength="15" />
+          <Property Name="direccion_empresa" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="encabezado">
+          <Key>
+            <PropertyRef Name="id_encabezado" />
+          </Key>
+          <Property Name="id_encabezado" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_usuario" Type="int" />
+          <Property Name="id_serie_documento" Type="int" />
+          <Property Name="id_cliente" Type="int" />
+          <Property Name="id_proveedor" Type="int" />
+          <Property Name="fecha_encabezado_sistema" Type="timestamp" Precision="0" />
+          <Property Name="fecha_encabezado_usuario" Type="datetime" />
+          <Property Name="total_encabezado" Type="double" />
+          <Property Name="no_documento" Type="int" />
+          <Property Name="docomento_referencia_proveedor" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="estado_documento">
+          <Key>
+            <PropertyRef Name="id_estado_documento" />
+          </Key>
+          <Property Name="id_estado_documento" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion_estado_documento" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="historial_precio_compra">
+          <Key>
+            <PropertyRef Name="id_historial_precio_compra" />
+          </Key>
+          <Property Name="id_historial_precio_compra" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_detalle" Type="int" />
+          <Property Name="antiguo_precio_compra" Type="double" />
+          <Property Name="antigua_precio_venta" Type="double" />
+        </EntityType>
+        <EntityType Name="ingreso">
+          <Key>
+            <PropertyRef Name="id_ingreso" />
+          </Key>
+          <Property Name="id_ingreso" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_usuario" Type="int" />
+          <Property Name="fechahora_ingreso" Type="timestamp" Precision="0" />
+        </EntityType>
+        <EntityType Name="marca">
+          <Key>
+            <PropertyRef Name="id_marca" />
+          </Key>
+          <Property Name="id_marca" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_marca" Type="varchar" MaxLength="100" />
+          <Property Name="estado_marca" Type="bool" />
+        </EntityType>
+        <EntityType Name="permiso">
+          <Key>
+            <PropertyRef Name="id_permiso" />
+          </Key>
+          <Property Name="id_permiso" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion_permiso" Type="varchar" MaxLength="150" />
+          <Property Name="descripcion_permiso_para_programador" Type="varchar" MaxLength="150" />
+          <Property Name="fecha_creacion_permiso" Type="datetime" />
+          <Property Name="estado_permiso" Type="bool" />
+        </EntityType>
+        <EntityType Name="producto">
+          <Key>
+            <PropertyRef Name="id_producto" />
+          </Key>
+          <Property Name="id_producto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion_producto" Type="varchar" MaxLength="255" />
+          <Property Name="codigo_producto" Type="varchar" MaxLength="100" />
+          <Property Name="porcentaje_producto" Type="double" />
+          <Property Name="ultimo_precio_compra_producto" Type="double" />
+          <Property Name="ultimo_precio_venta_producto" Type="double" />
+          <Property Name="id_marca" Type="int" />
+          <Property Name="estado_producto" Type="bool" />
+        </EntityType>
+        <EntityType Name="producto_bodega">
+          <Key>
+            <PropertyRef Name="id_producto_bodega" />
+          </Key>
+          <Property Name="id_producto_bodega" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="existencia_minima_producto_bodega" Type="int" />
+          <Property Name="existencia_producto_bodega" Type="int" />
+          <Property Name="id_bodega" Type="int" />
+          <Property Name="id_producto" Type="int" />
+        </EntityType>
+        <EntityType Name="proveedor">
+          <Key>
+            <PropertyRef Name="id_proveedor" />
+          </Key>
+          <Property Name="id_proveedor" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nit_proveedor" Type="varchar" MaxLength="15" />
+          <Property Name="descripcion_proveedor" Type="varchar" MaxLength="100" />
+          <Property Name="telefono_proveedor" Type="varchar" MaxLength="15" />
+          <Property Name="telefono2_proveedor" Type="varchar" MaxLength="15" />
+          <Property Name="direccion_proveedor" Type="varchar" MaxLength="255" />
+          <Property Name="correo_proveedor" Type="varchar" MaxLength="150" />
+          <Property Name="estado_proveedor" Type="bool" />
+        </EntityType>
+        <EntityType Name="rol">
+          <Key>
+            <PropertyRef Name="id_rol" />
+          </Key>
+          <Property Name="id_rol" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_rol" Type="varchar" MaxLength="25" />
+          <Property Name="estado_rol" Type="bool" />
+        </EntityType>
+        <EntityType Name="rol_permiso">
+          <Key>
+            <PropertyRef Name="id_rol_permiso" />
+          </Key>
+          <Property Name="id_rol_permiso" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="estado_rol_permiso" Type="bool" />
+          <Property Name="id_rol" Type="int" />
+          <Property Name="id_permiso" Type="int" />
+        </EntityType>
+        <EntityType Name="serie_documento">
+          <Key>
+            <PropertyRef Name="id_serie_documento" />
+          </Key>
+          <Property Name="id_serie_documento" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion_serie_documento" Type="varchar" MaxLength="50" />
+          <Property Name="id_tipo_documento" Type="int" />
+          <Property Name="id_estado_documento" Type="int" />
+        </EntityType>
+        <EntityType Name="signo">
+          <Key>
+            <PropertyRef Name="id_signo" />
+          </Key>
+          <Property Name="id_signo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="signo" Type="varchar" MaxLength="10" />
+          <Property Name="descripcion" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="tipo_documento">
+          <Key>
+            <PropertyRef Name="id_tipo_documento" />
+          </Key>
+          <Property Name="id_tipo_documento" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion_tipo_documento" Type="varchar" MaxLength="250" />
+          <Property Name="signo_tipo_docuemtno" Type="varchar" MaxLength="10" />
+          <Property Name="estado_tipo_documento" Type="bool" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_empleado" Type="varchar" MaxLength="255" />
+          <Property Name="telefono_empleado" Type="varchar" MaxLength="15" />
+          <Property Name="nombre_usuario" Type="varchar" MaxLength="25" />
+          <Property Name="pass_usuario" Type="varchar" MaxLength="25" />
+          <Property Name="fecha_creacion_usuario" Type="datetime" />
+          <Property Name="estado_usuario" Type="bool" />
+        </EntityType>
+        <EntityType Name="usuario_rol">
+          <Key>
+            <PropertyRef Name="id_usuario_rol" />
+          </Key>
+          <Property Name="id_usuario_rol" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="estado_usurio_rol" Type="bool" />
+          <Property Name="id_usuario" Type="int" />
+          <Property Name="id_rol" Type="int" />
+        </EntityType>
+        <Association Name="Relationship11">
+          <End Role="proveedor" Type="mastertech_db1Model.Store.proveedor" Multiplicity="0..1" />
+          <End Role="encabezado" Type="mastertech_db1Model.Store.encabezado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proveedor">
+              <PropertyRef Name="id_proveedor" />
+            </Principal>
+            <Dependent Role="encabezado">
+              <PropertyRef Name="id_proveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship12">
+          <End Role="proveedor" Type="mastertech_db1Model.Store.proveedor" Multiplicity="0..1" />
+          <End Role="encabezado" Type="mastertech_db1Model.Store.encabezado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proveedor">
+              <PropertyRef Name="id_proveedor" />
+            </Principal>
+            <Dependent Role="encabezado">
+              <PropertyRef Name="id_proveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship13">
+          <End Role="marca" Type="mastertech_db1Model.Store.marca" Multiplicity="0..1" />
+          <End Role="producto" Type="mastertech_db1Model.Store.producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="marca">
+              <PropertyRef Name="id_marca" />
+            </Principal>
+            <Dependent Role="producto">
+              <PropertyRef Name="id_marca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship14">
+          <End Role="proveedor" Type="mastertech_db1Model.Store.proveedor" Multiplicity="0..1" />
+          <End Role="contacto" Type="mastertech_db1Model.Store.contacto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proveedor">
+              <PropertyRef Name="id_proveedor" />
+            </Principal>
+            <Dependent Role="contacto">
+              <PropertyRef Name="id_proveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship2">
+          <End Role="serie_documento" Type="mastertech_db1Model.Store.serie_documento" Multiplicity="0..1" />
+          <End Role="encabezado" Type="mastertech_db1Model.Store.encabezado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="serie_documento">
+              <PropertyRef Name="id_serie_documento" />
+            </Principal>
+            <Dependent Role="encabezado">
+              <PropertyRef Name="id_serie_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship26">
+          <End Role="usuario" Type="mastertech_db1Model.Store.usuario" Multiplicity="0..1" />
+          <End Role="ingreso" Type="mastertech_db1Model.Store.ingreso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="ingreso">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship3">
+          <End Role="cliente" Type="mastertech_db1Model.Store.cliente" Multiplicity="0..1" />
+          <End Role="encabezado" Type="mastertech_db1Model.Store.encabezado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id_cliente" />
+            </Principal>
+            <Dependent Role="encabezado">
+              <PropertyRef Name="id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship32">
+          <End Role="usuario" Type="mastertech_db1Model.Store.usuario" Multiplicity="0..1" />
+          <End Role="encabezado" Type="mastertech_db1Model.Store.encabezado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="encabezado">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship4">
+          <End Role="cliente" Type="mastertech_db1Model.Store.cliente" Multiplicity="0..1" />
+          <End Role="encabezado" Type="mastertech_db1Model.Store.encabezado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id_cliente" />
+            </Principal>
+            <Dependent Role="encabezado">
+              <PropertyRef Name="id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship40">
+          <End Role="detalle" Type="mastertech_db1Model.Store.detalle" Multiplicity="0..1" />
+          <End Role="historial_precio_compra" Type="mastertech_db1Model.Store.historial_precio_compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="detalle">
+              <PropertyRef Name="id_detalle" />
+            </Principal>
+            <Dependent Role="historial_precio_compra">
+              <PropertyRef Name="id_detalle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship42">
+          <End Role="estado_documento" Type="mastertech_db1Model.Store.estado_documento" Multiplicity="0..1" />
+          <End Role="serie_documento" Type="mastertech_db1Model.Store.serie_documento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estado_documento">
+              <PropertyRef Name="id_estado_documento" />
+            </Principal>
+            <Dependent Role="serie_documento">
+              <PropertyRef Name="id_estado_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship45">
+          <End Role="bodega" Type="mastertech_db1Model.Store.bodega" Multiplicity="0..1" />
+          <End Role="detalle" Type="mastertech_db1Model.Store.detalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bodega">
+              <PropertyRef Name="id_bodega" />
+            </Principal>
+            <Dependent Role="detalle">
+              <PropertyRef Name="id_bodega" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship46">
+          <End Role="producto" Type="mastertech_db1Model.Store.producto" Multiplicity="0..1" />
+          <End Role="detalle" Type="mastertech_db1Model.Store.detalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="producto">
+              <PropertyRef Name="id_producto" />
+            </Principal>
+            <Dependent Role="detalle">
+              <PropertyRef Name="id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship47">
+          <End Role="bodega" Type="mastertech_db1Model.Store.bodega" Multiplicity="0..1" />
+          <End Role="producto_bodega" Type="mastertech_db1Model.Store.producto_bodega" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bodega">
+              <PropertyRef Name="id_bodega" />
+            </Principal>
+            <Dependent Role="producto_bodega">
+              <PropertyRef Name="id_bodega" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship48">
+          <End Role="producto" Type="mastertech_db1Model.Store.producto" Multiplicity="0..1" />
+          <End Role="producto_bodega" Type="mastertech_db1Model.Store.producto_bodega" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="producto">
+              <PropertyRef Name="id_producto" />
+            </Principal>
+            <Dependent Role="producto_bodega">
+              <PropertyRef Name="id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship49">
+          <End Role="usuario" Type="mastertech_db1Model.Store.usuario" Multiplicity="0..1" />
+          <End Role="usuario_rol" Type="mastertech_db1Model.Store.usuario_rol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="usuario_rol">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship5">
+          <End Role="encabezado" Type="mastertech_db1Model.Store.encabezado" Multiplicity="0..1" />
+          <End Role="detalle" Type="mastertech_db1Model.Store.detalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="encabezado">
+              <PropertyRef Name="id_encabezado" />
+            </Principal>
+            <Dependent Role="detalle">
+              <PropertyRef Name="id_encabezado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship50">
+          <End Role="rol" Type="mastertech_db1Model.Store.rol" Multiplicity="0..1" />
+          <End Role="usuario_rol" Type="mastertech_db1Model.Store.usuario_rol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rol">
+              <PropertyRef Name="id_rol" />
+            </Principal>
+            <Dependent Role="usuario_rol">
+              <PropertyRef Name="id_rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship51">
+          <End Role="rol" Type="mastertech_db1Model.Store.rol" Multiplicity="0..1" />
+          <End Role="rol_permiso" Type="mastertech_db1Model.Store.rol_permiso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rol">
+              <PropertyRef Name="id_rol" />
+            </Principal>
+            <Dependent Role="rol_permiso">
+              <PropertyRef Name="id_rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship52">
+          <End Role="permiso" Type="mastertech_db1Model.Store.permiso" Multiplicity="0..1" />
+          <End Role="rol_permiso" Type="mastertech_db1Model.Store.rol_permiso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="permiso">
+              <PropertyRef Name="id_permiso" />
+            </Principal>
+            <Dependent Role="rol_permiso">
+              <PropertyRef Name="id_permiso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="serie_documento_ibfk_1">
+          <End Role="tipo_documento" Type="mastertech_db1Model.Store.tipo_documento" Multiplicity="0..1" />
+          <End Role="serie_documento" Type="mastertech_db1Model.Store.serie_documento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipo_documento">
+              <PropertyRef Name="id_tipo_documento" />
+            </Principal>
+            <Dependent Role="serie_documento">
+              <PropertyRef Name="id_tipo_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="ActualizarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="n_id" Type="int" Mode="In" />
+          <Parameter Name="n_no" Type="varchar" Mode="In" />
+          <Parameter Name="n_ni" Type="varchar" Mode="In" />
+          <Parameter Name="n_di" Type="varchar" Mode="In" />
+          <Parameter Name="n_te" Type="varchar" Mode="In" />
+          <Parameter Name="n_co" Type="varchar" Mode="In" />
+          <Parameter Name="n_fe" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="AsignarRolAUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="n_idus" Type="int" Mode="In" />
+          <Parameter Name="n_idro" Type="int" Mode="In" />
+        </Function>
+        <Function Name="detallecompra" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="n_iden" Type="int" Mode="In" />
+          <Parameter Name="n_preu" Type="double" Mode="In" />
+          <Parameter Name="n_cant" Type="int" Mode="In" />
+          <Parameter Name="n_totd" Type="double" Mode="In" />
+          <Parameter Name="n_idbo" Type="int" Mode="In" />
+          <Parameter Name="n_idpro" Type="int" Mode="In" />
+        </Function>
+        <Function Name="detallefactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="n_iden" Type="int" Mode="In" />
+          <Parameter Name="n_preu" Type="double" Mode="In" />
+          <Parameter Name="n_cant" Type="int" Mode="In" />
+          <Parameter Name="n_totd" Type="double" Mode="In" />
+          <Parameter Name="n_idbo" Type="int" Mode="In" />
+          <Parameter Name="n_idpro" Type="int" Mode="In" />
+        </Function>
+        <Function Name="EditarPermisoRol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="idrol" Type="int" Mode="In" />
+          <Parameter Name="idper" Type="int" Mode="In" />
+          <Parameter Name="val" Type="tinyint" Mode="In" />
+        </Function>
+        <Function Name="EliminarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="n_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="EliminarRolesDeUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="n_idus" Type="int" Mode="In" />
+        </Function>
+        <Function Name="EncabezadoCompra" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="n_idus" Type="int" Mode="In" />
+          <Parameter Name="n_idse" Type="int" Mode="In" />
+          <Parameter Name="n_idpro" Type="int" Mode="In" />
+          <Parameter Name="n_fe" Type="datetime" Mode="In" />
+          <Parameter Name="n_to" Type="double" Mode="In" />
+          <Parameter Name="n_ref" Type="varchar" Mode="In" />
+          <Parameter Name="NoCompra" Type="int" Mode="Out" />
+        </Function>
+        <Function Name="EncabezadoFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="n_idus" Type="int" Mode="In" />
+          <Parameter Name="n_idse" Type="int" Mode="In" />
+          <Parameter Name="n_idcli" Type="int" Mode="In" />
+          <Parameter Name="n_fe" Type="datetime" Mode="In" />
+          <Parameter Name="n_to" Type="double" Mode="In" />
+          <Parameter Name="n_ref" Type="varchar" Mode="In" />
+          <Parameter Name="NoFactura" Type="int" Mode="Out" />
+        </Function>
+        <Function Name="HistorialIngreso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="n_nous" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="IngresoBodega" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="n_de" Type="varchar" Mode="In" />
+          <Parameter Name="n_di" Type="varchar" Mode="In" />
+          <Parameter Name="n_te" Type="varchar" Mode="In" />
+          <Parameter Name="n_te2" Type="varchar" Mode="In" />
+          <Parameter Name="rsp" Type="int" Mode="Out" />
+        </Function>
+        <Function Name="IngresoCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="n_no" Type="varchar" Mode="In" />
+          <Parameter Name="n_ni" Type="varchar" Mode="In" />
+          <Parameter Name="n_di" Type="varchar" Mode="In" />
+          <Parameter Name="n_te" Type="varchar" Mode="In" />
+          <Parameter Name="n_co" Type="varchar" Mode="In" />
+          <Parameter Name="n_fe" Type="datetime" Mode="In" />
+          <Parameter Name="rsp" Type="int" Mode="Out" />
+        </Function>
+        <Function Name="IngresoCompra" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="n_idus" Type="int" Mode="In" />
+          <Parameter Name="n_idse" Type="int" Mode="In" />
+          <Parameter Name="n_nitpro" Type="varchar" Mode="In" />
+          <Parameter Name="n_fe" Type="datetime" Mode="In" />
+          <Parameter Name="n_to" Type="double" Mode="In" />
+          <Parameter Name="n_ref" Type="varchar" Mode="In" />
+          <Parameter Name="nocom" Type="int" Mode="Out" />
+        </Function>
+        <Function Name="IngresoContacto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="n_no" Type="varchar" Mode="In" />
+          <Parameter Name="n_te" Type="varchar" Mode="In" />
+          <Parameter Name="n_di" Type="varchar" Mode="In" />
+          <Parameter Name="n_id_pr" Type="int" Mode="In" />
+          <Parameter Name="rsp" Type="int" Mode="Out" />
+        </Function>
+        <Function Name="IngresoDetalleCompra" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="n_iden" Type="int" Mode="In" />
+          <Parameter Name="n_preu" Type="double" Mode="In" />
+          <Parameter Name="n_cant" Type="int" Mode="In" />
+          <Parameter Name="n_totd" Type="double" Mode="In" />
+          <Parameter Name="n_idbo" Type="int" Mode="In" />
+          <Parameter Name="n_codpro" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="IngresoDetalleFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="n_iden" Type="int" Mode="In" />
+          <Parameter Name="n_preu" Type="double" Mode="In" />
+          <Parameter Name="n_cant" Type="int" Mode="In" />
+          <Parameter Name="n_totd" Type="double" Mode="In" />
+          <Parameter Name="n_idbo" Type="int" Mode="In" />
+          <Parameter Name="n_codpro" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="IngresoFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="n_idus" Type="int" Mode="In" />
+          <Parameter Name="n_idse" Type="int" Mode="In" />
+          <Parameter Name="n_nicli" Type="varchar" Mode="In" />
+          <Parameter Name="n_fe" Type="datetime" Mode="In" />
+          <Parameter Name="n_to" Type="double" Mode="In" />
+          <Parameter Name="n_ref" Type="varchar" Mode="In" />
+          <Parameter Name="nofac" Type="int" Mode="Out" />
+        </Function>
+        <Function Name="ingresomarca" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="n_no" Type="varchar" Mode="In" />
+          <Parameter Name="rsp" Type="int" Mode="Out" />
+        </Function>
+        <Function Name="IngresoProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="n_de" Type="varchar" Mode="In" />
+          <Parameter Name="n_co" Type="varchar" Mode="In" />
+          <Parameter Name="n_pr" Type="double" Mode="In" />
+          <Parameter Name="n_ima" Type="int" Mode="In" />
+          <Parameter Name="rsp" Type="int" Mode="Out" />
+        </Function>
+        <Function Name="IngresoProductoEnBodega" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="n_ex" Type="int" Mode="In" />
+          <Parameter Name="n_idbod" Type="int" Mode="In" />
+          <Parameter Name="n_codpr" Type="varchar" Mode="In" />
+          <Parameter Name="rsp" Type="int" Mode="Out" />
+        </Function>
+        <Function Name="IngresoProveedor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="n_ni" Type="varchar" Mode="In" />
+          <Parameter Name="n_de" Type="varchar" Mode="In" />
+          <Parameter Name="n_te" Type="varchar" Mode="In" />
+          <Parameter Name="n_te2" Type="varchar" Mode="In" />
+          <Parameter Name="n_di" Type="varchar" Mode="In" />
+          <Parameter Name="n_co" Type="varchar" Mode="In" />
+          <Parameter Name="rsp" Type="int" Mode="Out" />
+        </Function>
+        <Function Name="IngresoSerieDocumento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="n_de" Type="varchar" Mode="In" />
+          <Parameter Name="n_ti" Type="int" Mode="In" />
+          <Parameter Name="rsp" Type="int" Mode="Out" />
+        </Function>
+        <Function Name="IngresoTipoDocumento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="n_de" Type="varchar" Mode="In" />
+          <Parameter Name="n_si" Type="varchar" Mode="In" />
+          <Parameter Name="rsp" Type="int" Mode="Out" />
+        </Function>
+        <Function Name="IngresoUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="n_no" Type="varchar" Mode="In" />
+          <Parameter Name="n_te" Type="varchar" Mode="In" />
+          <Parameter Name="n_u" Type="varchar" Mode="In" />
+          <Parameter Name="n_p" Type="varchar" Mode="In" />
+          <Parameter Name="rsp" Type="int" Mode="Out" />
+        </Function>
+        <Function Name="NuevoRol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="mastertech_db1">
+          <Parameter Name="n_rol" Type="varchar" Mode="In" />
+          <Parameter Name="rsp" Type="int" Mode="Out" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="mastertech_db1Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="mastertech_db1Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="bodega" EntityType="mastertech_db1Model.bodega" />
+          <EntitySet Name="cliente" EntityType="mastertech_db1Model.cliente" />
+          <EntitySet Name="contacto" EntityType="mastertech_db1Model.contacto" />
+          <EntitySet Name="detalle" EntityType="mastertech_db1Model.detalle" />
+          <EntitySet Name="empresa" EntityType="mastertech_db1Model.empresa" />
+          <EntitySet Name="encabezado" EntityType="mastertech_db1Model.encabezado" />
+          <EntitySet Name="estado_documento" EntityType="mastertech_db1Model.estado_documento" />
+          <EntitySet Name="historial_precio_compra" EntityType="mastertech_db1Model.historial_precio_compra" />
+          <EntitySet Name="ingreso" EntityType="mastertech_db1Model.ingreso" />
+          <EntitySet Name="marca" EntityType="mastertech_db1Model.marca" />
+          <EntitySet Name="permiso" EntityType="mastertech_db1Model.permiso" />
+          <EntitySet Name="producto" EntityType="mastertech_db1Model.producto" />
+          <EntitySet Name="producto_bodega" EntityType="mastertech_db1Model.producto_bodega" />
+          <EntitySet Name="proveedor" EntityType="mastertech_db1Model.proveedor" />
+          <EntitySet Name="rol" EntityType="mastertech_db1Model.rol" />
+          <EntitySet Name="rol_permiso" EntityType="mastertech_db1Model.rol_permiso" />
+          <EntitySet Name="serie_documento" EntityType="mastertech_db1Model.serie_documento" />
+          <EntitySet Name="signo" EntityType="mastertech_db1Model.signo" />
+          <EntitySet Name="tipo_documento" EntityType="mastertech_db1Model.tipo_documento" />
+          <EntitySet Name="usuario" EntityType="mastertech_db1Model.usuario" />
+          <EntitySet Name="usuario_rol" EntityType="mastertech_db1Model.usuario_rol" />
+          <AssociationSet Name="Relationship45" Association="mastertech_db1Model.Relationship45">
+            <End Role="bodega" EntitySet="bodega" />
+            <End Role="detalle" EntitySet="detalle" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship47" Association="mastertech_db1Model.Relationship47">
+            <End Role="bodega" EntitySet="bodega" />
+            <End Role="producto_bodega" EntitySet="producto_bodega" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship3" Association="mastertech_db1Model.Relationship3">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="encabezado" EntitySet="encabezado" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship4" Association="mastertech_db1Model.Relationship4">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="encabezado" EntitySet="encabezado" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship14" Association="mastertech_db1Model.Relationship14">
+            <End Role="proveedor" EntitySet="proveedor" />
+            <End Role="contacto" EntitySet="contacto" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship40" Association="mastertech_db1Model.Relationship40">
+            <End Role="detalle" EntitySet="detalle" />
+            <End Role="historial_precio_compra" EntitySet="historial_precio_compra" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship46" Association="mastertech_db1Model.Relationship46">
+            <End Role="producto" EntitySet="producto" />
+            <End Role="detalle" EntitySet="detalle" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship5" Association="mastertech_db1Model.Relationship5">
+            <End Role="encabezado" EntitySet="encabezado" />
+            <End Role="detalle" EntitySet="detalle" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship11" Association="mastertech_db1Model.Relationship11">
+            <End Role="proveedor" EntitySet="proveedor" />
+            <End Role="encabezado" EntitySet="encabezado" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship12" Association="mastertech_db1Model.Relationship12">
+            <End Role="proveedor" EntitySet="proveedor" />
+            <End Role="encabezado" EntitySet="encabezado" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship2" Association="mastertech_db1Model.Relationship2">
+            <End Role="serie_documento" EntitySet="serie_documento" />
+            <End Role="encabezado" EntitySet="encabezado" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship32" Association="mastertech_db1Model.Relationship32">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="encabezado" EntitySet="encabezado" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship42" Association="mastertech_db1Model.Relationship42">
+            <End Role="estado_documento" EntitySet="estado_documento" />
+            <End Role="serie_documento" EntitySet="serie_documento" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship26" Association="mastertech_db1Model.Relationship26">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="ingreso" EntitySet="ingreso" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship13" Association="mastertech_db1Model.Relationship13">
+            <End Role="marca" EntitySet="marca" />
+            <End Role="producto" EntitySet="producto" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship52" Association="mastertech_db1Model.Relationship52">
+            <End Role="permiso" EntitySet="permiso" />
+            <End Role="rol_permiso" EntitySet="rol_permiso" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship48" Association="mastertech_db1Model.Relationship48">
+            <End Role="producto" EntitySet="producto" />
+            <End Role="producto_bodega" EntitySet="producto_bodega" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship50" Association="mastertech_db1Model.Relationship50">
+            <End Role="rol" EntitySet="rol" />
+            <End Role="usuario_rol" EntitySet="usuario_rol" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship51" Association="mastertech_db1Model.Relationship51">
+            <End Role="rol" EntitySet="rol" />
+            <End Role="rol_permiso" EntitySet="rol_permiso" />
+          </AssociationSet>
+          <AssociationSet Name="serie_documento_ibfk_1" Association="mastertech_db1Model.serie_documento_ibfk_1">
+            <End Role="tipo_documento" EntitySet="tipo_documento" />
+            <End Role="serie_documento" EntitySet="serie_documento" />
+          </AssociationSet>
+          <AssociationSet Name="Relationship49" Association="mastertech_db1Model.Relationship49">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="usuario_rol" EntitySet="usuario_rol" />
+          </AssociationSet>
+          <FunctionImport Name="IngresoCliente">
+            <Parameter Name="n_no" Mode="In" Type="String" />
+            <Parameter Name="n_ni" Mode="In" Type="String" />
+            <Parameter Name="n_di" Mode="In" Type="String" />
+            <Parameter Name="n_te" Mode="In" Type="String" />
+            <Parameter Name="n_co" Mode="In" Type="String" />
+            <Parameter Name="n_fe" Mode="In" Type="DateTime" />
+            <Parameter Name="rsp" Mode="Out" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ingresomarca">
+            <Parameter Name="n_no" Mode="In" Type="String" />
+            <Parameter Name="rsp" Mode="Out" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="IngresoProveedor">
+            <Parameter Name="n_ni" Mode="In" Type="String" />
+            <Parameter Name="n_de" Mode="In" Type="String" />
+            <Parameter Name="n_te" Mode="In" Type="String" />
+            <Parameter Name="n_te2" Mode="In" Type="String" />
+            <Parameter Name="n_di" Mode="In" Type="String" />
+            <Parameter Name="n_co" Mode="In" Type="String" />
+            <Parameter Name="rsp" Mode="Out" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="IngresoContacto">
+            <Parameter Name="n_no" Mode="In" Type="String" />
+            <Parameter Name="n_te" Mode="In" Type="String" />
+            <Parameter Name="n_di" Mode="In" Type="String" />
+            <Parameter Name="n_id_pr" Mode="In" Type="Int32" />
+            <Parameter Name="rsp" Mode="Out" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="IngresoBodega">
+            <Parameter Name="n_de" Mode="In" Type="String" />
+            <Parameter Name="n_di" Mode="In" Type="String" />
+            <Parameter Name="n_te" Mode="In" Type="String" />
+            <Parameter Name="n_te2" Mode="In" Type="String" />
+            <Parameter Name="rsp" Mode="Out" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="IngresoSerieDocumento">
+            <Parameter Name="n_de" Mode="In" Type="String" />
+            <Parameter Name="n_ti" Mode="In" Type="Int32" />
+            <Parameter Name="rsp" Mode="Out" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="IngresoProducto">
+            <Parameter Name="n_de" Mode="In" Type="String" />
+            <Parameter Name="n_co" Mode="In" Type="String" />
+            <Parameter Name="n_pr" Mode="In" Type="Double" />
+            <Parameter Name="n_ima" Mode="In" Type="Int32" />
+            <Parameter Name="rsp" Mode="Out" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="IngresoUsuario">
+            <Parameter Name="n_no" Mode="In" Type="String" />
+            <Parameter Name="n_te" Mode="In" Type="String" />
+            <Parameter Name="n_u" Mode="In" Type="String" />
+            <Parameter Name="n_p" Mode="In" Type="String" />
+            <Parameter Name="rsp" Mode="Out" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="NuevoRol">
+            <Parameter Name="n_rol" Mode="In" Type="String" />
+            <Parameter Name="rsp" Mode="Out" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="EditarPermisoRol">
+            <Parameter Name="idrol" Mode="In" Type="Int32" />
+            <Parameter Name="idper" Mode="In" Type="Int32" />
+            <Parameter Name="val" Mode="In" Type="SByte" />
+          </FunctionImport>
+          <FunctionImport Name="EliminarRolesDeUsuario">
+          <Parameter Name="n_idus" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="AsignarRolAUsuario">
+            <Parameter Name="n_idus" Mode="In" Type="Int32" />
+            <Parameter Name="n_idro" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="HistorialIngreso">
+          <Parameter Name="n_nous" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="EncabezadoCompra">
+            <Parameter Name="n_idus" Mode="In" Type="Int32" />
+            <Parameter Name="n_idse" Mode="In" Type="Int32" />
+            <Parameter Name="n_idpro" Mode="In" Type="Int32" />
+            <Parameter Name="n_fe" Mode="In" Type="DateTime" />
+            <Parameter Name="n_to" Mode="In" Type="Double" />
+            <Parameter Name="n_ref" Mode="In" Type="String" />
+            <Parameter Name="NoCompra" Mode="Out" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="detallecompra">
+            <Parameter Name="n_iden" Mode="In" Type="Int32" />
+            <Parameter Name="n_preu" Mode="In" Type="Double" />
+            <Parameter Name="n_cant" Mode="In" Type="Int32" />
+            <Parameter Name="n_totd" Mode="In" Type="Double" />
+            <Parameter Name="n_idbo" Mode="In" Type="Int32" />
+            <Parameter Name="n_idpro" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="EncabezadoFactura">
+            <Parameter Name="n_idus" Mode="In" Type="Int32" />
+            <Parameter Name="n_idse" Mode="In" Type="Int32" />
+            <Parameter Name="n_idcli" Mode="In" Type="Int32" />
+            <Parameter Name="n_fe" Mode="In" Type="DateTime" />
+            <Parameter Name="n_to" Mode="In" Type="Double" />
+            <Parameter Name="n_ref" Mode="In" Type="String" />
+            <Parameter Name="NoFactura" Mode="Out" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="detallefactura">
+            <Parameter Name="n_iden" Mode="In" Type="Int32" />
+            <Parameter Name="n_preu" Mode="In" Type="Double" />
+            <Parameter Name="n_cant" Mode="In" Type="Int32" />
+            <Parameter Name="n_totd" Mode="In" Type="Double" />
+            <Parameter Name="n_idbo" Mode="In" Type="Int32" />
+            <Parameter Name="n_idpro" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="bodega">
+          <Key>
+            <PropertyRef Name="id_bodega" />
+          </Key>
+          <Property Name="id_bodega" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion_bodega" Type="String" />
+          <Property Name="direccion_bodega" Type="String" />
+          <Property Name="telefono_bodega" Type="String" />
+          <Property Name="telefono2_bodega" Type="String" />
+          <Property Name="estado_bodega" Type="Boolean" />
+          <NavigationProperty Name="detalle" Relationship="mastertech_db1Model.Relationship45" FromRole="bodega" ToRole="detalle" />
+          <NavigationProperty Name="producto_bodega" Relationship="mastertech_db1Model.Relationship47" FromRole="bodega" ToRole="producto_bodega" />
+        </EntityType>
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="id_cliente" />
+          </Key>
+          <Property Name="id_cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_cliente" Type="String" />
+          <Property Name="nit_cliente" Type="String" />
+          <Property Name="direccion_cliente" Type="String" />
+          <Property Name="telefono_cliente" Type="String" />
+          <Property Name="correo_cliente" Type="String" />
+          <Property Name="fecha_nacimiento_cliente" Type="DateTime" />
+          <Property Name="estado_cliente" Type="Boolean" />
+          <NavigationProperty Name="encabezado" Relationship="mastertech_db1Model.Relationship3" FromRole="cliente" ToRole="encabezado" />
+          <NavigationProperty Name="encabezado1" Relationship="mastertech_db1Model.Relationship4" FromRole="cliente" ToRole="encabezado" />
+        </EntityType>
+        <EntityType Name="contacto">
+          <Key>
+            <PropertyRef Name="id_contacto" />
+          </Key>
+          <Property Name="id_contacto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_contacto" Type="String" />
+          <Property Name="telefono_contacto" Type="String" />
+          <Property Name="direccion_contacto" Type="String" />
+          <Property Name="id_proveedor" Type="Int32" />
+          <Property Name="estado_contacto" Type="Boolean" />
+          <NavigationProperty Name="proveedor" Relationship="mastertech_db1Model.Relationship14" FromRole="contacto" ToRole="proveedor" />
+        </EntityType>
+        <EntityType Name="detalle">
+          <Key>
+            <PropertyRef Name="id_detalle" />
+          </Key>
+          <Property Name="id_detalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_encabezado" Type="Int32" />
+          <Property Name="precio_por_unidad_detalle" Type="Double" />
+          <Property Name="cantidad_de_producto_detalle" Type="Int32" />
+          <Property Name="total_detalle" Type="Double" />
+          <Property Name="id_bodega" Type="Int32" />
+          <Property Name="id_producto" Type="Int32" />
+          <Property Name="precio_costo" Type="Double" />
+          <NavigationProperty Name="bodega" Relationship="mastertech_db1Model.Relationship45" FromRole="detalle" ToRole="bodega" />
+          <NavigationProperty Name="historial_precio_compra" Relationship="mastertech_db1Model.Relationship40" FromRole="detalle" ToRole="historial_precio_compra" />
+          <NavigationProperty Name="producto" Relationship="mastertech_db1Model.Relationship46" FromRole="detalle" ToRole="producto" />
+          <NavigationProperty Name="encabezado" Relationship="mastertech_db1Model.Relationship5" FromRole="detalle" ToRole="encabezado" />
+        </EntityType>
+        <EntityType Name="empresa">
+          <Key>
+            <PropertyRef Name="nombre_empresa" />
+          </Key>
+          <Property Name="nombre_empresa" Type="String" Nullable="false" />
+          <Property Name="slogan_empresa" Type="String" />
+          <Property Name="nit_empresa" Type="String" />
+          <Property Name="telefono_empresa" Type="String" />
+          <Property Name="direccion_empresa" Type="String" />
+        </EntityType>
+        <EntityType Name="encabezado">
+          <Key>
+            <PropertyRef Name="id_encabezado" />
+          </Key>
+          <Property Name="id_encabezado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_usuario" Type="Int32" />
+          <Property Name="id_serie_documento" Type="Int32" />
+          <Property Name="id_cliente" Type="Int32" />
+          <Property Name="id_proveedor" Type="Int32" />
+          <Property Name="fecha_encabezado_sistema" Type="DateTimeOffset" />
+          <Property Name="fecha_encabezado_usuario" Type="DateTime" />
+          <Property Name="total_encabezado" Type="Double" />
+          <Property Name="no_documento" Type="Int32" />
+          <Property Name="docomento_referencia_proveedor" Type="String" />
+          <NavigationProperty Name="cliente" Relationship="mastertech_db1Model.Relationship3" FromRole="encabezado" ToRole="cliente" />
+          <NavigationProperty Name="cliente1" Relationship="mastertech_db1Model.Relationship4" FromRole="encabezado" ToRole="cliente" />
+          <NavigationProperty Name="detalle" Relationship="mastertech_db1Model.Relationship5" FromRole="encabezado" ToRole="detalle" />
+          <NavigationProperty Name="proveedor" Relationship="mastertech_db1Model.Relationship11" FromRole="encabezado" ToRole="proveedor" />
+          <NavigationProperty Name="proveedor1" Relationship="mastertech_db1Model.Relationship12" FromRole="encabezado" ToRole="proveedor" />
+          <NavigationProperty Name="serie_documento" Relationship="mastertech_db1Model.Relationship2" FromRole="encabezado" ToRole="serie_documento" />
+          <NavigationProperty Name="usuario" Relationship="mastertech_db1Model.Relationship32" FromRole="encabezado" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="estado_documento">
+          <Key>
+            <PropertyRef Name="id_estado_documento" />
+          </Key>
+          <Property Name="id_estado_documento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion_estado_documento" Type="String" />
+          <NavigationProperty Name="serie_documento" Relationship="mastertech_db1Model.Relationship42" FromRole="estado_documento" ToRole="serie_documento" />
+        </EntityType>
+        <EntityType Name="historial_precio_compra">
+          <Key>
+            <PropertyRef Name="id_historial_precio_compra" />
+          </Key>
+          <Property Name="id_historial_precio_compra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_detalle" Type="Int32" />
+          <Property Name="antiguo_precio_compra" Type="Double" />
+          <Property Name="antigua_precio_venta" Type="Double" />
+          <NavigationProperty Name="detalle" Relationship="mastertech_db1Model.Relationship40" FromRole="historial_precio_compra" ToRole="detalle" />
+        </EntityType>
+        <EntityType Name="ingreso">
+          <Key>
+            <PropertyRef Name="id_ingreso" />
+          </Key>
+          <Property Name="id_ingreso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_usuario" Type="Int32" />
+          <Property Name="fechahora_ingreso" Type="DateTimeOffset" />
+          <NavigationProperty Name="usuario" Relationship="mastertech_db1Model.Relationship26" FromRole="ingreso" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="marca">
+          <Key>
+            <PropertyRef Name="id_marca" />
+          </Key>
+          <Property Name="id_marca" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_marca" Type="String" />
+          <Property Name="estado_marca" Type="Boolean" />
+          <NavigationProperty Name="producto" Relationship="mastertech_db1Model.Relationship13" FromRole="marca" ToRole="producto" />
+        </EntityType>
+        <EntityType Name="permiso">
+          <Key>
+            <PropertyRef Name="id_permiso" />
+          </Key>
+          <Property Name="id_permiso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion_permiso" Type="String" />
+          <Property Name="descripcion_permiso_para_programador" Type="String" />
+          <Property Name="fecha_creacion_permiso" Type="DateTime" />
+          <Property Name="estado_permiso" Type="Boolean" />
+          <NavigationProperty Name="rol_permiso" Relationship="mastertech_db1Model.Relationship52" FromRole="permiso" ToRole="rol_permiso" />
+        </EntityType>
+        <EntityType Name="producto">
+          <Key>
+            <PropertyRef Name="id_producto" />
+          </Key>
+          <Property Name="id_producto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion_producto" Type="String" />
+          <Property Name="codigo_producto" Type="String" />
+          <Property Name="porcentaje_producto" Type="Double" />
+          <Property Name="ultimo_precio_compra_producto" Type="Double" />
+          <Property Name="ultimo_precio_venta_producto" Type="Double" />
+          <Property Name="id_marca" Type="Int32" />
+          <Property Name="estado_producto" Type="Boolean" />
+          <NavigationProperty Name="detalle" Relationship="mastertech_db1Model.Relationship46" FromRole="producto" ToRole="detalle" />
+          <NavigationProperty Name="marca" Relationship="mastertech_db1Model.Relationship13" FromRole="producto" ToRole="marca" />
+          <NavigationProperty Name="producto_bodega" Relationship="mastertech_db1Model.Relationship48" FromRole="producto" ToRole="producto_bodega" />
+        </EntityType>
+        <EntityType Name="producto_bodega">
+          <Key>
+            <PropertyRef Name="id_producto_bodega" />
+          </Key>
+          <Property Name="id_producto_bodega" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="existencia_minima_producto_bodega" Type="Int32" />
+          <Property Name="existencia_producto_bodega" Type="Int32" />
+          <Property Name="id_bodega" Type="Int32" />
+          <Property Name="id_producto" Type="Int32" />
+          <NavigationProperty Name="bodega" Relationship="mastertech_db1Model.Relationship47" FromRole="producto_bodega" ToRole="bodega" />
+          <NavigationProperty Name="producto" Relationship="mastertech_db1Model.Relationship48" FromRole="producto_bodega" ToRole="producto" />
+        </EntityType>
+        <EntityType Name="proveedor">
+          <Key>
+            <PropertyRef Name="id_proveedor" />
+          </Key>
+          <Property Name="id_proveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nit_proveedor" Type="String" />
+          <Property Name="descripcion_proveedor" Type="String" />
+          <Property Name="telefono_proveedor" Type="String" />
+          <Property Name="telefono2_proveedor" Type="String" />
+          <Property Name="direccion_proveedor" Type="String" />
+          <Property Name="correo_proveedor" Type="String" />
+          <Property Name="estado_proveedor" Type="Boolean" />
+          <NavigationProperty Name="contacto" Relationship="mastertech_db1Model.Relationship14" FromRole="proveedor" ToRole="contacto" />
+          <NavigationProperty Name="encabezado" Relationship="mastertech_db1Model.Relationship11" FromRole="proveedor" ToRole="encabezado" />
+          <NavigationProperty Name="encabezado1" Relationship="mastertech_db1Model.Relationship12" FromRole="proveedor" ToRole="encabezado" />
+        </EntityType>
+        <EntityType Name="rol">
+          <Key>
+            <PropertyRef Name="id_rol" />
+          </Key>
+          <Property Name="id_rol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_rol" Type="String" />
+          <Property Name="estado_rol" Type="Boolean" />
+          <NavigationProperty Name="usuario_rol" Relationship="mastertech_db1Model.Relationship50" FromRole="rol" ToRole="usuario_rol" />
+          <NavigationProperty Name="rol_permiso" Relationship="mastertech_db1Model.Relationship51" FromRole="rol" ToRole="rol_permiso" />
+        </EntityType>
+        <EntityType Name="rol_permiso">
+          <Key>
+            <PropertyRef Name="id_rol_permiso" />
+          </Key>
+          <Property Name="id_rol_permiso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="estado_rol_permiso" Type="Boolean" />
+          <Property Name="id_rol" Type="Int32" />
+          <Property Name="id_permiso" Type="Int32" />
+          <NavigationProperty Name="permiso" Relationship="mastertech_db1Model.Relationship52" FromRole="rol_permiso" ToRole="permiso" />
+          <NavigationProperty Name="rol" Relationship="mastertech_db1Model.Relationship51" FromRole="rol_permiso" ToRole="rol" />
+        </EntityType>
+        <EntityType Name="serie_documento">
+          <Key>
+            <PropertyRef Name="id_serie_documento" />
+          </Key>
+          <Property Name="id_serie_documento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion_serie_documento" Type="String" />
+          <Property Name="id_tipo_documento" Type="Int32" />
+          <Property Name="id_estado_documento" Type="Int32" />
+          <NavigationProperty Name="encabezado" Relationship="mastertech_db1Model.Relationship2" FromRole="serie_documento" ToRole="encabezado" />
+          <NavigationProperty Name="estado_documento" Relationship="mastertech_db1Model.Relationship42" FromRole="serie_documento" ToRole="estado_documento" />
+          <NavigationProperty Name="tipo_documento" Relationship="mastertech_db1Model.serie_documento_ibfk_1" FromRole="serie_documento" ToRole="tipo_documento" />
+        </EntityType>
+        <EntityType Name="signo">
+          <Key>
+            <PropertyRef Name="id_signo" />
+          </Key>
+          <Property Name="id_signo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="signo1" Type="String" />
+          <Property Name="descripcion" Type="String" />
+        </EntityType>
+        <EntityType Name="tipo_documento">
+          <Key>
+            <PropertyRef Name="id_tipo_documento" />
+          </Key>
+          <Property Name="id_tipo_documento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion_tipo_documento" Type="String" />
+          <Property Name="signo_tipo_docuemtno" Type="String" />
+          <Property Name="estado_tipo_documento" Type="Boolean" />
+          <NavigationProperty Name="serie_documento" Relationship="mastertech_db1Model.serie_documento_ibfk_1" FromRole="tipo_documento" ToRole="serie_documento" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_empleado" Type="String" />
+          <Property Name="telefono_empleado" Type="String" />
+          <Property Name="nombre_usuario" Type="String" />
+          <Property Name="pass_usuario" Type="String" />
+          <Property Name="fecha_creacion_usuario" Type="DateTime" />
+          <Property Name="estado_usuario" Type="Boolean" />
+          <NavigationProperty Name="encabezado" Relationship="mastertech_db1Model.Relationship32" FromRole="usuario" ToRole="encabezado" />
+          <NavigationProperty Name="ingreso" Relationship="mastertech_db1Model.Relationship26" FromRole="usuario" ToRole="ingreso" />
+          <NavigationProperty Name="usuario_rol" Relationship="mastertech_db1Model.Relationship49" FromRole="usuario" ToRole="usuario_rol" />
+        </EntityType>
+        <EntityType Name="usuario_rol">
+          <Key>
+            <PropertyRef Name="id_usuario_rol" />
+          </Key>
+          <Property Name="id_usuario_rol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="estado_usurio_rol" Type="Boolean" />
+          <Property Name="id_usuario" Type="Int32" />
+          <Property Name="id_rol" Type="Int32" />
+          <NavigationProperty Name="rol" Relationship="mastertech_db1Model.Relationship50" FromRole="usuario_rol" ToRole="rol" />
+          <NavigationProperty Name="usuario" Relationship="mastertech_db1Model.Relationship49" FromRole="usuario_rol" ToRole="usuario" />
+        </EntityType>
+        <Association Name="Relationship45">
+          <End Role="bodega" Type="mastertech_db1Model.bodega" Multiplicity="0..1" />
+          <End Role="detalle" Type="mastertech_db1Model.detalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bodega">
+              <PropertyRef Name="id_bodega" />
+            </Principal>
+            <Dependent Role="detalle">
+              <PropertyRef Name="id_bodega" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship47">
+          <End Role="bodega" Type="mastertech_db1Model.bodega" Multiplicity="0..1" />
+          <End Role="producto_bodega" Type="mastertech_db1Model.producto_bodega" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bodega">
+              <PropertyRef Name="id_bodega" />
+            </Principal>
+            <Dependent Role="producto_bodega">
+              <PropertyRef Name="id_bodega" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship3">
+          <End Role="cliente" Type="mastertech_db1Model.cliente" Multiplicity="0..1" />
+          <End Role="encabezado" Type="mastertech_db1Model.encabezado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id_cliente" />
+            </Principal>
+            <Dependent Role="encabezado">
+              <PropertyRef Name="id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship4">
+          <End Role="cliente" Type="mastertech_db1Model.cliente" Multiplicity="0..1" />
+          <End Role="encabezado" Type="mastertech_db1Model.encabezado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id_cliente" />
+            </Principal>
+            <Dependent Role="encabezado">
+              <PropertyRef Name="id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship14">
+          <End Role="proveedor" Type="mastertech_db1Model.proveedor" Multiplicity="0..1" />
+          <End Role="contacto" Type="mastertech_db1Model.contacto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proveedor">
+              <PropertyRef Name="id_proveedor" />
+            </Principal>
+            <Dependent Role="contacto">
+              <PropertyRef Name="id_proveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship40">
+          <End Role="detalle" Type="mastertech_db1Model.detalle" Multiplicity="0..1" />
+          <End Role="historial_precio_compra" Type="mastertech_db1Model.historial_precio_compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="detalle">
+              <PropertyRef Name="id_detalle" />
+            </Principal>
+            <Dependent Role="historial_precio_compra">
+              <PropertyRef Name="id_detalle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship46">
+          <End Role="producto" Type="mastertech_db1Model.producto" Multiplicity="0..1" />
+          <End Role="detalle" Type="mastertech_db1Model.detalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="producto">
+              <PropertyRef Name="id_producto" />
+            </Principal>
+            <Dependent Role="detalle">
+              <PropertyRef Name="id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship5">
+          <End Role="encabezado" Type="mastertech_db1Model.encabezado" Multiplicity="0..1" />
+          <End Role="detalle" Type="mastertech_db1Model.detalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="encabezado">
+              <PropertyRef Name="id_encabezado" />
+            </Principal>
+            <Dependent Role="detalle">
+              <PropertyRef Name="id_encabezado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship11">
+          <End Role="proveedor" Type="mastertech_db1Model.proveedor" Multiplicity="0..1" />
+          <End Role="encabezado" Type="mastertech_db1Model.encabezado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proveedor">
+              <PropertyRef Name="id_proveedor" />
+            </Principal>
+            <Dependent Role="encabezado">
+              <PropertyRef Name="id_proveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship12">
+          <End Role="proveedor" Type="mastertech_db1Model.proveedor" Multiplicity="0..1" />
+          <End Role="encabezado" Type="mastertech_db1Model.encabezado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proveedor">
+              <PropertyRef Name="id_proveedor" />
+            </Principal>
+            <Dependent Role="encabezado">
+              <PropertyRef Name="id_proveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship2">
+          <End Role="serie_documento" Type="mastertech_db1Model.serie_documento" Multiplicity="0..1" />
+          <End Role="encabezado" Type="mastertech_db1Model.encabezado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="serie_documento">
+              <PropertyRef Name="id_serie_documento" />
+            </Principal>
+            <Dependent Role="encabezado">
+              <PropertyRef Name="id_serie_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship32">
+          <End Role="usuario" Type="mastertech_db1Model.usuario" Multiplicity="0..1" />
+          <End Role="encabezado" Type="mastertech_db1Model.encabezado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="encabezado">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship42">
+          <End Role="estado_documento" Type="mastertech_db1Model.estado_documento" Multiplicity="0..1" />
+          <End Role="serie_documento" Type="mastertech_db1Model.serie_documento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estado_documento">
+              <PropertyRef Name="id_estado_documento" />
+            </Principal>
+            <Dependent Role="serie_documento">
+              <PropertyRef Name="id_estado_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship26">
+          <End Role="usuario" Type="mastertech_db1Model.usuario" Multiplicity="0..1" />
+          <End Role="ingreso" Type="mastertech_db1Model.ingreso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="ingreso">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship13">
+          <End Role="marca" Type="mastertech_db1Model.marca" Multiplicity="0..1" />
+          <End Role="producto" Type="mastertech_db1Model.producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="marca">
+              <PropertyRef Name="id_marca" />
+            </Principal>
+            <Dependent Role="producto">
+              <PropertyRef Name="id_marca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship52">
+          <End Role="permiso" Type="mastertech_db1Model.permiso" Multiplicity="0..1" />
+          <End Role="rol_permiso" Type="mastertech_db1Model.rol_permiso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="permiso">
+              <PropertyRef Name="id_permiso" />
+            </Principal>
+            <Dependent Role="rol_permiso">
+              <PropertyRef Name="id_permiso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship48">
+          <End Role="producto" Type="mastertech_db1Model.producto" Multiplicity="0..1" />
+          <End Role="producto_bodega" Type="mastertech_db1Model.producto_bodega" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="producto">
+              <PropertyRef Name="id_producto" />
+            </Principal>
+            <Dependent Role="producto_bodega">
+              <PropertyRef Name="id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship50">
+          <End Role="rol" Type="mastertech_db1Model.rol" Multiplicity="0..1" />
+          <End Role="usuario_rol" Type="mastertech_db1Model.usuario_rol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rol">
+              <PropertyRef Name="id_rol" />
+            </Principal>
+            <Dependent Role="usuario_rol">
+              <PropertyRef Name="id_rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship51">
+          <End Role="rol" Type="mastertech_db1Model.rol" Multiplicity="0..1" />
+          <End Role="rol_permiso" Type="mastertech_db1Model.rol_permiso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rol">
+              <PropertyRef Name="id_rol" />
+            </Principal>
+            <Dependent Role="rol_permiso">
+              <PropertyRef Name="id_rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="serie_documento_ibfk_1">
+          <End Role="tipo_documento" Type="mastertech_db1Model.tipo_documento" Multiplicity="0..1" />
+          <End Role="serie_documento" Type="mastertech_db1Model.serie_documento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipo_documento">
+              <PropertyRef Name="id_tipo_documento" />
+            </Principal>
+            <Dependent Role="serie_documento">
+              <PropertyRef Name="id_tipo_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relationship49">
+          <End Role="usuario" Type="mastertech_db1Model.usuario" Multiplicity="0..1" />
+          <End Role="usuario_rol" Type="mastertech_db1Model.usuario_rol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="usuario_rol">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="mastertech_db1ModelStoreContainer" CdmEntityContainer="mastertech_db1Entities">
+          <EntitySetMapping Name="bodega">
+            <EntityTypeMapping TypeName="mastertech_db1Model.bodega">
+              <MappingFragment StoreEntitySet="bodega">
+                <ScalarProperty Name="id_bodega" ColumnName="id_bodega" />
+                <ScalarProperty Name="descripcion_bodega" ColumnName="descripcion_bodega" />
+                <ScalarProperty Name="direccion_bodega" ColumnName="direccion_bodega" />
+                <ScalarProperty Name="telefono_bodega" ColumnName="telefono_bodega" />
+                <ScalarProperty Name="telefono2_bodega" ColumnName="telefono2_bodega" />
+                <ScalarProperty Name="estado_bodega" ColumnName="estado_bodega" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cliente">
+            <EntityTypeMapping TypeName="mastertech_db1Model.cliente">
+              <MappingFragment StoreEntitySet="cliente">
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="nombre_cliente" ColumnName="nombre_cliente" />
+                <ScalarProperty Name="nit_cliente" ColumnName="nit_cliente" />
+                <ScalarProperty Name="direccion_cliente" ColumnName="direccion_cliente" />
+                <ScalarProperty Name="telefono_cliente" ColumnName="telefono_cliente" />
+                <ScalarProperty Name="correo_cliente" ColumnName="correo_cliente" />
+                <ScalarProperty Name="fecha_nacimiento_cliente" ColumnName="fecha_nacimiento_cliente" />
+                <ScalarProperty Name="estado_cliente" ColumnName="estado_cliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contacto">
+            <EntityTypeMapping TypeName="mastertech_db1Model.contacto">
+              <MappingFragment StoreEntitySet="contacto">
+                <ScalarProperty Name="id_contacto" ColumnName="id_contacto" />
+                <ScalarProperty Name="nombre_contacto" ColumnName="nombre_contacto" />
+                <ScalarProperty Name="telefono_contacto" ColumnName="telefono_contacto" />
+                <ScalarProperty Name="direccion_contacto" ColumnName="direccion_contacto" />
+                <ScalarProperty Name="id_proveedor" ColumnName="id_proveedor" />
+                <ScalarProperty Name="estado_contacto" ColumnName="estado_contacto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="detalle">
+            <EntityTypeMapping TypeName="mastertech_db1Model.detalle">
+              <MappingFragment StoreEntitySet="detalle">
+                <ScalarProperty Name="id_detalle" ColumnName="id_detalle" />
+                <ScalarProperty Name="id_encabezado" ColumnName="id_encabezado" />
+                <ScalarProperty Name="precio_por_unidad_detalle" ColumnName="precio_por_unidad_detalle" />
+                <ScalarProperty Name="cantidad_de_producto_detalle" ColumnName="cantidad_de_producto_detalle" />
+                <ScalarProperty Name="total_detalle" ColumnName="total_detalle" />
+                <ScalarProperty Name="id_bodega" ColumnName="id_bodega" />
+                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+                <ScalarProperty Name="precio_costo" ColumnName="precio_costo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="empresa">
+            <EntityTypeMapping TypeName="mastertech_db1Model.empresa">
+              <MappingFragment StoreEntitySet="empresa">
+                <ScalarProperty Name="nombre_empresa" ColumnName="nombre_empresa" />
+                <ScalarProperty Name="slogan_empresa" ColumnName="slogan_empresa" />
+                <ScalarProperty Name="nit_empresa" ColumnName="nit_empresa" />
+                <ScalarProperty Name="telefono_empresa" ColumnName="telefono_empresa" />
+                <ScalarProperty Name="direccion_empresa" ColumnName="direccion_empresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="encabezado">
+            <EntityTypeMapping TypeName="mastertech_db1Model.encabezado">
+              <MappingFragment StoreEntitySet="encabezado">
+                <ScalarProperty Name="id_encabezado" ColumnName="id_encabezado" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="id_serie_documento" ColumnName="id_serie_documento" />
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="id_proveedor" ColumnName="id_proveedor" />
+                <ScalarProperty Name="fecha_encabezado_sistema" ColumnName="fecha_encabezado_sistema" />
+                <ScalarProperty Name="fecha_encabezado_usuario" ColumnName="fecha_encabezado_usuario" />
+                <ScalarProperty Name="total_encabezado" ColumnName="total_encabezado" />
+                <ScalarProperty Name="no_documento" ColumnName="no_documento" />
+                <ScalarProperty Name="docomento_referencia_proveedor" ColumnName="docomento_referencia_proveedor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="estado_documento">
+            <EntityTypeMapping TypeName="mastertech_db1Model.estado_documento">
+              <MappingFragment StoreEntitySet="estado_documento">
+                <ScalarProperty Name="id_estado_documento" ColumnName="id_estado_documento" />
+                <ScalarProperty Name="descripcion_estado_documento" ColumnName="descripcion_estado_documento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="historial_precio_compra">
+            <EntityTypeMapping TypeName="mastertech_db1Model.historial_precio_compra">
+              <MappingFragment StoreEntitySet="historial_precio_compra">
+                <ScalarProperty Name="id_historial_precio_compra" ColumnName="id_historial_precio_compra" />
+                <ScalarProperty Name="id_detalle" ColumnName="id_detalle" />
+                <ScalarProperty Name="antiguo_precio_compra" ColumnName="antiguo_precio_compra" />
+                <ScalarProperty Name="antigua_precio_venta" ColumnName="antigua_precio_venta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ingreso">
+            <EntityTypeMapping TypeName="mastertech_db1Model.ingreso">
+              <MappingFragment StoreEntitySet="ingreso">
+                <ScalarProperty Name="id_ingreso" ColumnName="id_ingreso" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="fechahora_ingreso" ColumnName="fechahora_ingreso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="marca">
+            <EntityTypeMapping TypeName="mastertech_db1Model.marca">
+              <MappingFragment StoreEntitySet="marca">
+                <ScalarProperty Name="id_marca" ColumnName="id_marca" />
+                <ScalarProperty Name="nombre_marca" ColumnName="nombre_marca" />
+                <ScalarProperty Name="estado_marca" ColumnName="estado_marca" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="permiso">
+            <EntityTypeMapping TypeName="mastertech_db1Model.permiso">
+              <MappingFragment StoreEntitySet="permiso">
+                <ScalarProperty Name="id_permiso" ColumnName="id_permiso" />
+                <ScalarProperty Name="descripcion_permiso" ColumnName="descripcion_permiso" />
+                <ScalarProperty Name="descripcion_permiso_para_programador" ColumnName="descripcion_permiso_para_programador" />
+                <ScalarProperty Name="fecha_creacion_permiso" ColumnName="fecha_creacion_permiso" />
+                <ScalarProperty Name="estado_permiso" ColumnName="estado_permiso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="producto">
+            <EntityTypeMapping TypeName="mastertech_db1Model.producto">
+              <MappingFragment StoreEntitySet="producto">
+                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+                <ScalarProperty Name="descripcion_producto" ColumnName="descripcion_producto" />
+                <ScalarProperty Name="codigo_producto" ColumnName="codigo_producto" />
+                <ScalarProperty Name="porcentaje_producto" ColumnName="porcentaje_producto" />
+                <ScalarProperty Name="ultimo_precio_compra_producto" ColumnName="ultimo_precio_compra_producto" />
+                <ScalarProperty Name="ultimo_precio_venta_producto" ColumnName="ultimo_precio_venta_producto" />
+                <ScalarProperty Name="id_marca" ColumnName="id_marca" />
+                <ScalarProperty Name="estado_producto" ColumnName="estado_producto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="producto_bodega">
+            <EntityTypeMapping TypeName="mastertech_db1Model.producto_bodega">
+              <MappingFragment StoreEntitySet="producto_bodega">
+                <ScalarProperty Name="id_producto_bodega" ColumnName="id_producto_bodega" />
+                <ScalarProperty Name="existencia_minima_producto_bodega" ColumnName="existencia_minima_producto_bodega" />
+                <ScalarProperty Name="existencia_producto_bodega" ColumnName="existencia_producto_bodega" />
+                <ScalarProperty Name="id_bodega" ColumnName="id_bodega" />
+                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="proveedor">
+            <EntityTypeMapping TypeName="mastertech_db1Model.proveedor">
+              <MappingFragment StoreEntitySet="proveedor">
+                <ScalarProperty Name="id_proveedor" ColumnName="id_proveedor" />
+                <ScalarProperty Name="nit_proveedor" ColumnName="nit_proveedor" />
+                <ScalarProperty Name="descripcion_proveedor" ColumnName="descripcion_proveedor" />
+                <ScalarProperty Name="telefono_proveedor" ColumnName="telefono_proveedor" />
+                <ScalarProperty Name="telefono2_proveedor" ColumnName="telefono2_proveedor" />
+                <ScalarProperty Name="direccion_proveedor" ColumnName="direccion_proveedor" />
+                <ScalarProperty Name="correo_proveedor" ColumnName="correo_proveedor" />
+                <ScalarProperty Name="estado_proveedor" ColumnName="estado_proveedor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rol">
+            <EntityTypeMapping TypeName="mastertech_db1Model.rol">
+              <MappingFragment StoreEntitySet="rol">
+                <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+                <ScalarProperty Name="nombre_rol" ColumnName="nombre_rol" />
+                <ScalarProperty Name="estado_rol" ColumnName="estado_rol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rol_permiso">
+            <EntityTypeMapping TypeName="mastertech_db1Model.rol_permiso">
+              <MappingFragment StoreEntitySet="rol_permiso">
+                <ScalarProperty Name="id_rol_permiso" ColumnName="id_rol_permiso" />
+                <ScalarProperty Name="estado_rol_permiso" ColumnName="estado_rol_permiso" />
+                <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+                <ScalarProperty Name="id_permiso" ColumnName="id_permiso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="serie_documento">
+            <EntityTypeMapping TypeName="mastertech_db1Model.serie_documento">
+              <MappingFragment StoreEntitySet="serie_documento">
+                <ScalarProperty Name="id_serie_documento" ColumnName="id_serie_documento" />
+                <ScalarProperty Name="descripcion_serie_documento" ColumnName="descripcion_serie_documento" />
+                <ScalarProperty Name="id_tipo_documento" ColumnName="id_tipo_documento" />
+                <ScalarProperty Name="id_estado_documento" ColumnName="id_estado_documento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="signo">
+            <EntityTypeMapping TypeName="mastertech_db1Model.signo">
+              <MappingFragment StoreEntitySet="signo">
+                <ScalarProperty Name="id_signo" ColumnName="id_signo" />
+                <ScalarProperty Name="signo1" ColumnName="signo" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipo_documento">
+            <EntityTypeMapping TypeName="mastertech_db1Model.tipo_documento">
+              <MappingFragment StoreEntitySet="tipo_documento">
+                <ScalarProperty Name="id_tipo_documento" ColumnName="id_tipo_documento" />
+                <ScalarProperty Name="descripcion_tipo_documento" ColumnName="descripcion_tipo_documento" />
+                <ScalarProperty Name="signo_tipo_docuemtno" ColumnName="signo_tipo_docuemtno" />
+                <ScalarProperty Name="estado_tipo_documento" ColumnName="estado_tipo_documento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuario">
+            <EntityTypeMapping TypeName="mastertech_db1Model.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="nombre_empleado" ColumnName="nombre_empleado" />
+                <ScalarProperty Name="telefono_empleado" ColumnName="telefono_empleado" />
+                <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
+                <ScalarProperty Name="pass_usuario" ColumnName="pass_usuario" />
+                <ScalarProperty Name="fecha_creacion_usuario" ColumnName="fecha_creacion_usuario" />
+                <ScalarProperty Name="estado_usuario" ColumnName="estado_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuario_rol">
+            <EntityTypeMapping TypeName="mastertech_db1Model.usuario_rol">
+              <MappingFragment StoreEntitySet="usuario_rol">
+                <ScalarProperty Name="id_usuario_rol" ColumnName="id_usuario_rol" />
+                <ScalarProperty Name="estado_usurio_rol" ColumnName="estado_usurio_rol" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="IngresoCliente" FunctionName="mastertech_db1Model.Store.IngresoCliente" />
+          <FunctionImportMapping FunctionImportName="ingresomarca" FunctionName="mastertech_db1Model.Store.ingresomarca" />
+          <FunctionImportMapping FunctionImportName="IngresoProveedor" FunctionName="mastertech_db1Model.Store.IngresoProveedor" />
+          <FunctionImportMapping FunctionImportName="IngresoContacto" FunctionName="mastertech_db1Model.Store.IngresoContacto" />
+          <FunctionImportMapping FunctionImportName="IngresoBodega" FunctionName="mastertech_db1Model.Store.IngresoBodega" />
+          <FunctionImportMapping FunctionImportName="IngresoSerieDocumento" FunctionName="mastertech_db1Model.Store.IngresoSerieDocumento" />
+          <FunctionImportMapping FunctionImportName="IngresoProducto" FunctionName="mastertech_db1Model.Store.IngresoProducto" />
+          <FunctionImportMapping FunctionImportName="IngresoUsuario" FunctionName="mastertech_db1Model.Store.IngresoUsuario" />
+          <FunctionImportMapping FunctionImportName="NuevoRol" FunctionName="mastertech_db1Model.Store.NuevoRol" />
+          <FunctionImportMapping FunctionImportName="EditarPermisoRol" FunctionName="mastertech_db1Model.Store.EditarPermisoRol" />
+          <FunctionImportMapping FunctionImportName="EliminarRolesDeUsuario" FunctionName="mastertech_db1Model.Store.EliminarRolesDeUsuario" />
+          <FunctionImportMapping FunctionImportName="AsignarRolAUsuario" FunctionName="mastertech_db1Model.Store.AsignarRolAUsuario" />
+          <FunctionImportMapping FunctionImportName="HistorialIngreso" FunctionName="mastertech_db1Model.Store.HistorialIngreso" />
+          <FunctionImportMapping FunctionImportName="EncabezadoCompra" FunctionName="mastertech_db1Model.Store.EncabezadoCompra" />
+          <FunctionImportMapping FunctionImportName="detallecompra" FunctionName="mastertech_db1Model.Store.detallecompra" />
+          <FunctionImportMapping FunctionImportName="EncabezadoFactura" FunctionName="mastertech_db1Model.Store.EncabezadoFactura" />
+          <FunctionImportMapping FunctionImportName="detallefactura" FunctionName="mastertech_db1Model.Store.detallefactura" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1">
+        <EntityTypeShape EntityType="mastertech_db1Model.bodega" Width="1.5" PointX="6" PointY="8.625" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="mastertech_db1Model.cliente" Width="1.5" PointX="3.75" PointY="8.625" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="mastertech_db1Model.contacto" Width="1.5" PointX="3" PointY="3.75" Height="2.3648893229166656" IsExpanded="true" />
+        <EntityTypeShape EntityType="mastertech_db1Model.detalle" Width="1.5" PointX="8.25" PointY="3.25" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="mastertech_db1Model.empresa" Width="1.5" PointX="2.75" PointY="0.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="mastertech_db1Model.encabezado" Width="1.5" PointX="6" PointY="2.75" Height="4.2879036458333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="mastertech_db1Model.estado_documento" Width="1.5" PointX="1.5" PointY="12.25" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="mastertech_db1Model.historial_precio_compra" Width="1.5" PointX="10.5" PointY="3.875" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="mastertech_db1Model.ingreso" Width="1.5" PointX="6" PointY="17.875" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="mastertech_db1Model.marca" Width="1.5" PointX="3.75" PointY="22.625" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="mastertech_db1Model.permiso" Width="1.5" PointX="3.75" PointY="28.75" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="mastertech_db1Model.producto" Width="1.5" PointX="6" PointY="22" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="mastertech_db1Model.producto_bodega" Width="1.5" PointX="8.25" PointY="15.75" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="mastertech_db1Model.proveedor" Width="1.5" PointX="0.75" PointY="3.375" Height="3.1340950520833388" IsExpanded="true" />
+        <EntityTypeShape EntityType="mastertech_db1Model.rol" Width="1.5" PointX="3.75" PointY="25.875" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="mastertech_db1Model.rol_permiso" Width="1.5" PointX="6" PointY="26.75" Height="2.172587890624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="mastertech_db1Model.serie_documento" Width="1.5" PointX="3.75" PointY="13.25" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="mastertech_db1Model.signo" Width="1.5" PointX="0.75" PointY="7.75" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="mastertech_db1Model.tipo_documento" Width="1.5" PointX="1.5" PointY="14.625" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="mastertech_db1Model.usuario" Width="1.5" PointX="3.75" PointY="17.375" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="mastertech_db1Model.usuario_rol" Width="1.5" PointX="6" PointY="14.75" Height="2.1725878906250031" IsExpanded="true" />
+        <AssociationConnector Association="mastertech_db1Model.Relationship45" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="9.9035953776041659" />
+          <ConnectorPoint PointX="7.791666666666667" PointY="9.9035953776041659" />
+          <ConnectorPoint PointX="7.958333333333333" PointY="9.9035953776041659" />
+          <ConnectorPoint PointX="9" PointY="9.9035953776041659" />
+          <ConnectorPoint PointX="9" PointY="6.576396484375" />
+        </AssociationConnector>
+        <AssociationConnector Association="mastertech_db1Model.Relationship47" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="10.574145566406248" />
+          <ConnectorPoint PointX="7.791666666666667" PointY="10.574145566406248" />
+          <ConnectorPoint PointX="7.958333333333333" PointY="10.574145566406248" />
+          <ConnectorPoint PointX="8.625" PointY="10.574145566406248" />
+          <ConnectorPoint PointX="8.625" PointY="15.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="mastertech_db1Model.Relationship3" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.90625" PointY="8.625" />
+          <ConnectorPoint PointX="4.90625" PointY="3.21875" />
+          <ConnectorPoint PointX="6" PointY="3.21875" />
+        </AssociationConnector>
+        <AssociationConnector Association="mastertech_db1Model.Relationship4" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.1093775" PointY="8.625" />
+          <ConnectorPoint PointX="5.1093775" PointY="6.6076464843749987" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="6.6076464843749978" />
+          <ConnectorPoint PointX="5.708333333333333" PointY="6.6076464843749987" />
+          <ConnectorPoint PointX="5.729166666666667" PointY="6.6076464843749978" />
+          <ConnectorPoint PointX="5.895833333333333" PointY="6.6076464843749987" />
+          <ConnectorPoint PointX="6" PointY="6.6076464843749987" />
+        </AssociationConnector>
+        <AssociationConnector Association="mastertech_db1Model.Relationship14" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="4.9324446614583328" />
+          <ConnectorPoint PointX="3" PointY="4.9324446614583328" />
+        </AssociationConnector>
+        <AssociationConnector Association="mastertech_db1Model.Relationship40" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="4.8651432291666659" />
+          <ConnectorPoint PointX="10.5" PointY="4.8651432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="mastertech_db1Model.Relationship46" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="22.001152846153843" />
+          <ConnectorPoint PointX="7.875" PointY="21.626152846153843" />
+          <ConnectorPoint PointX="7.875" PointY="4.9131982421875" />
+          <ConnectorPoint PointX="8.25" PointY="4.9131982421875" />
+        </AssociationConnector>
+        <AssociationConnector Association="mastertech_db1Model.Relationship5" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="4.01909912109375" />
+          <ConnectorPoint PointX="8.25" PointY="4.01909912109375" />
+        </AssociationConnector>
+        <AssociationConnector Association="mastertech_db1Model.Relationship11" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="6.3432421875000022" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="6.3432421875000014" />
+          <ConnectorPoint PointX="4.989583333333333" PointY="6.3432421875000022" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="6.3432421875000014" />
+          <ConnectorPoint PointX="5.708333333333333" PointY="6.3432421875000022" />
+          <ConnectorPoint PointX="5.729166666666667" PointY="6.3432421875000014" />
+          <ConnectorPoint PointX="5.895833333333333" PointY="6.3432421875000022" />
+          <ConnectorPoint PointX="6" PointY="6.3432421875000022" />
+        </AssociationConnector>
+        <AssociationConnector Association="mastertech_db1Model.Relationship12" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="3.53125" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="3.5312499999999996" />
+          <ConnectorPoint PointX="4.989583333333333" PointY="3.53125" />
+          <ConnectorPoint PointX="6" PointY="3.53125" />
+        </AssociationConnector>
+        <AssociationConnector Association="mastertech_db1Model.Relationship2" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="13.251152846153847" />
+          <ConnectorPoint PointX="5.625" PointY="12.876152846153847" />
+          <ConnectorPoint PointX="5.625" PointY="4.9372460937500016" />
+          <ConnectorPoint PointX="6" PointY="4.9372460937500016" />
+        </AssociationConnector>
+        <AssociationConnector Association="mastertech_db1Model.Relationship32" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.22576923076923" PointY="17.375" />
+          <ConnectorPoint PointX="5.5660744349011209" PointY="17.034694795868109" />
+          <ConnectorPoint PointX="5.6839255650988791" PointY="16.916843665670353" />
+          <ConnectorPoint PointX="5.8125" PointY="16.788269230769231" />
+          <ConnectorPoint PointX="5.8125" PointY="5.6402441406250023" />
+          <ConnectorPoint PointX="6" PointY="5.6402441406250023" />
+        </AssociationConnector>
+        <AssociationConnector Association="mastertech_db1Model.Relationship42" ManuallyRouted="false">
+          <ConnectorPoint PointX="3" PointY="13.547841796875" />
+          <ConnectorPoint PointX="3.75" PointY="13.547841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="mastertech_db1Model.Relationship26" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="18.768992513020834" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="18.768992513020834" />
+          <ConnectorPoint PointX="5.708333333333333" PointY="18.768992513020834" />
+          <ConnectorPoint PointX="6" PointY="18.768992513020834" />
+        </AssociationConnector>
+        <AssociationConnector Association="mastertech_db1Model.Relationship13" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="23.518992513020834" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="23.518992513020834" />
+          <ConnectorPoint PointX="5.708333333333333" PointY="23.518992513020834" />
+          <ConnectorPoint PointX="6" PointY="23.518992513020834" />
+        </AssociationConnector>
+        <AssociationConnector Association="mastertech_db1Model.Relationship52" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="29.922588390625002" />
+          <ConnectorPoint PointX="6.75" PointY="29.922588390625002" />
+          <ConnectorPoint PointX="6.75" PointY="28.922587890624996" />
+        </AssociationConnector>
+        <AssociationConnector Association="mastertech_db1Model.Relationship48" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="23.598876449118588" />
+          <ConnectorPoint PointX="9" PointY="23.598876449118588" />
+          <ConnectorPoint PointX="9" PointY="18.114889322916667" />
+        </AssociationConnector>
+        <AssociationConnector Association="mastertech_db1Model.Relationship50" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="25.876152846153843" />
+          <ConnectorPoint PointX="5.625" PointY="25.501152846153843" />
+          <ConnectorPoint PointX="5.625" PointY="15.836293945312502" />
+          <ConnectorPoint PointX="5.729166666666667" PointY="15.836293945312502" />
+          <ConnectorPoint PointX="5.895833333333333" PointY="15.836293945312502" />
+          <ConnectorPoint PointX="6" PointY="15.836293945312502" />
+        </AssociationConnector>
+        <AssociationConnector Association="mastertech_db1Model.Relationship51" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="27.302643229166669" />
+          <ConnectorPoint PointX="6" PointY="27.302643229166669" />
+        </AssociationConnector>
+        <AssociationConnector Association="mastertech_db1Model.serie_documento_ibfk_1" ManuallyRouted="false">
+          <ConnectorPoint PointX="3" PointY="15.119944661458334" />
+          <ConnectorPoint PointX="3.75" PointY="15.119944661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="mastertech_db1Model.Relationship49" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="17.432691307692306" />
+          <ConnectorPoint PointX="5.5660744349011209" PointY="17.116616872791184" />
+          <ConnectorPoint PointX="5.6839255650988791" PointY="16.998765742593427" />
+          <ConnectorPoint PointX="5.71875" PointY="16.963941307692306" />
+          <ConnectorPoint PointX="5.71875" PointY="17.20499073677885" />
+          <ConnectorPoint PointX="6.0011528461538459" PointY="16.922587890625003" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

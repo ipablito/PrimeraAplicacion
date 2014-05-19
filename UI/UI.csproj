@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7AF223A9-AD04-4105-8CBC-CD0B1490C8C8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UI</RootNamespace>
+    <AssemblyName>UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v12.1.Core, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="MySql.Data, Version=6.3.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="F_bodega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_bodega.Designer.cs">
+      <DependentUpon>F_bodega.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_buscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_buscar.Designer.cs">
+      <DependentUpon>F_buscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_busquedas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_busquedas.Designer.cs">
+      <DependentUpon>F_busquedas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_compra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_compra.Designer.cs">
+      <DependentUpon>F_compra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_contacto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_contacto.Designer.cs">
+      <DependentUpon>F_contacto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_factura.Designer.cs">
+      <DependentUpon>F_factura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_loggin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_loggin.Designer.cs">
+      <DependentUpon>F_loggin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_marca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_marca.Designer.cs">
+      <DependentUpon>F_marca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_menu.Designer.cs">
+      <DependentUpon>F_menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_cliente.Designer.cs">
+      <DependentUpon>F_cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_modificarprecioproducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_modificarprecioproducto.Designer.cs">
+      <DependentUpon>F_modificarprecioproducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_producto.Designer.cs">
+      <DependentUpon>F_producto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_proveedor.Designer.cs">
+      <DependentUpon>F_proveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_reportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_reportes.Designer.cs">
+      <DependentUpon>F_reportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_rol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_rol.Designer.cs">
+      <DependentUpon>F_rol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_rolPermiso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_rolPermiso.Designer.cs">
+      <DependentUpon>F_rolPermiso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_serie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_serie.Designer.cs">
+      <DependentUpon>F_serie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_usuario.Designer.cs">
+      <DependentUpon>F_usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_usuarioRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_usuarioRol.Designer.cs">
+      <DependentUpon>F_usuarioRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="R_bodegasactivas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>R_bodegasactivas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="R_ClientesActivos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>R_ClientesActivos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="R_compra.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>R_compra.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="R_Comprasaunproveedor.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>R_Comprasaunproveedor.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="R_comprasentrefechas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>R_comprasentrefechas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="R_contactodeproveedor.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>R_contactodeproveedor.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="R_CorteDeCaja.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>R_CorteDeCaja.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="R_factura.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>R_factura.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="R_facturasdeuncliente.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>R_facturasdeuncliente.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="R_facturasentrefechas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>R_facturasentrefechas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="R_historialexistenciaproductoenbodega.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>R_historialexistenciaproductoenbodega.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="R_historialprecioproducto.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>R_historialprecioproducto.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="R_marcasactivas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>R_marcasactivas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="R_movimientosentrefechas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>R_movimientosentrefechas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="R_productoexistente.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>R_productoexistente.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="R_productosenbodega.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>R_productosenbodega.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="R_proveedoresactivos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>R_proveedoresactivos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="R_seriesactivas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>R_seriesactivas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Variables.cs" />
+    <EmbeddedResource Include="F_bodega.resx">
+      <DependentUpon>F_bodega.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_buscar.resx">
+      <DependentUpon>F_buscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_busquedas.resx">
+      <DependentUpon>F_busquedas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_compra.resx">
+      <DependentUpon>F_compra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_contacto.resx">
+      <DependentUpon>F_contacto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_factura.resx">
+      <DependentUpon>F_factura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_loggin.resx">
+      <DependentUpon>F_loggin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_marca.resx">
+      <DependentUpon>F_marca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_menu.resx">
+      <DependentUpon>F_menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_cliente.resx">
+      <DependentUpon>F_cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_modificarprecioproducto.resx">
+      <DependentUpon>F_modificarprecioproducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_producto.resx">
+      <DependentUpon>F_producto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_proveedor.resx">
+      <DependentUpon>F_proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_reportes.resx">
+      <DependentUpon>F_reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_rol.resx">
+      <DependentUpon>F_rol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_rolPermiso.resx">
+      <DependentUpon>F_rolPermiso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_serie.resx">
+      <DependentUpon>F_serie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_usuario.resx">
+      <DependentUpon>F_usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_usuarioRol.resx">
+      <DependentUpon>F_usuarioRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="R_bodegasactivas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>R_bodegasactivas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="R_ClientesActivos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>R_ClientesActivos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="R_compra.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>R_compra.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="R_Comprasaunproveedor.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>R_Comprasaunproveedor.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="R_comprasentrefechas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>R_comprasentrefechas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="R_contactodeproveedor.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>R_contactodeproveedor.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="R_CorteDeCaja.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>R_CorteDeCaja.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="R_factura.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>R_factura.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="R_facturasdeuncliente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>R_facturasdeuncliente.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="R_facturasentrefechas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>R_facturasentrefechas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="R_historialexistenciaproductoenbodega.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>R_historialexistenciaproductoenbodega.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="R_historialprecioproducto.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>R_historialprecioproducto.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="R_marcasactivas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>R_marcasactivas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="R_movimientosentrefechas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>R_movimientosentrefechas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="R_productoexistente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>R_productoexistente.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="R_productosenbodega.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>R_productosenbodega.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="R_proveedoresactivos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>R_proveedoresactivos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="R_seriesactivas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>R_seriesactivas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{52F4C975-1E2F-4407-9BBE-D0FE463F1C18}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

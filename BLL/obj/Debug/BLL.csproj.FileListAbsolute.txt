@@ -1,0 +1,6 @@
+c:\users\ipabliito_\documents\visual studio 2010\Projects\MT\BLL\bin\Debug\BLL.dll.config
+c:\users\ipabliito_\documents\visual studio 2010\Projects\MT\BLL\bin\Debug\BLL.dll
+c:\users\ipabliito_\documents\visual studio 2010\Projects\MT\BLL\bin\Debug\BLL.pdb
+c:\users\ipabliito_\documents\visual studio 2010\Projects\MT\BLL\obj\Debug\BLL.dll
+c:\users\ipabliito_\documents\visual studio 2010\Projects\MT\BLL\obj\Debug\BLL.pdb
+C:\Users\iPabLiiTo_\documents\visual studio 2010\Projects\MT\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache

@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mastertech_db1ModelStoreContainer" CdmEntityContainer="mastertech_db1Entities">
+    <EntitySetMapping Name="bodega">
+      <EntityTypeMapping TypeName="mastertech_db1Model.bodega">
+        <MappingFragment StoreEntitySet="bodega">
+          <ScalarProperty Name="id_bodega" ColumnName="id_bodega" />
+          <ScalarProperty Name="descripcion_bodega" ColumnName="descripcion_bodega" />
+          <ScalarProperty Name="direccion_bodega" ColumnName="direccion_bodega" />
+          <ScalarProperty Name="telefono_bodega" ColumnName="telefono_bodega" />
+          <ScalarProperty Name="telefono2_bodega" ColumnName="telefono2_bodega" />
+          <ScalarProperty Name="estado_bodega" ColumnName="estado_bodega" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cliente">
+      <EntityTypeMapping TypeName="mastertech_db1Model.cliente">
+        <MappingFragment StoreEntitySet="cliente">
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="nombre_cliente" ColumnName="nombre_cliente" />
+          <ScalarProperty Name="nit_cliente" ColumnName="nit_cliente" />
+          <ScalarProperty Name="direccion_cliente" ColumnName="direccion_cliente" />
+          <ScalarProperty Name="telefono_cliente" ColumnName="telefono_cliente" />
+          <ScalarProperty Name="correo_cliente" ColumnName="correo_cliente" />
+          <ScalarProperty Name="fecha_nacimiento_cliente" ColumnName="fecha_nacimiento_cliente" />
+          <ScalarProperty Name="estado_cliente" ColumnName="estado_cliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contacto">
+      <EntityTypeMapping TypeName="mastertech_db1Model.contacto">
+        <MappingFragment StoreEntitySet="contacto">
+          <ScalarProperty Name="id_contacto" ColumnName="id_contacto" />
+          <ScalarProperty Name="nombre_contacto" ColumnName="nombre_contacto" />
+          <ScalarProperty Name="telefono_contacto" ColumnName="telefono_contacto" />
+          <ScalarProperty Name="direccion_contacto" ColumnName="direccion_contacto" />
+          <ScalarProperty Name="id_proveedor" ColumnName="id_proveedor" />
+          <ScalarProperty Name="estado_contacto" ColumnName="estado_contacto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="detalle">
+      <EntityTypeMapping TypeName="mastertech_db1Model.detalle">
+        <MappingFragment StoreEntitySet="detalle">
+          <ScalarProperty Name="id_detalle" ColumnName="id_detalle" />
+          <ScalarProperty Name="id_encabezado" ColumnName="id_encabezado" />
+          <ScalarProperty Name="precio_por_unidad_detalle" ColumnName="precio_por_unidad_detalle" />
+          <ScalarProperty Name="cantidad_de_producto_detalle" ColumnName="cantidad_de_producto_detalle" />
+          <ScalarProperty Name="total_detalle" ColumnName="total_detalle" />
+          <ScalarProperty Name="id_bodega" ColumnName="id_bodega" />
+          <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+          <ScalarProperty Name="precio_costo" ColumnName="precio_costo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="empresa">
+      <EntityTypeMapping TypeName="mastertech_db1Model.empresa">
+        <MappingFragment StoreEntitySet="empresa">
+          <ScalarProperty Name="nombre_empresa" ColumnName="nombre_empresa" />
+          <ScalarProperty Name="slogan_empresa" ColumnName="slogan_empresa" />
+          <ScalarProperty Name="nit_empresa" ColumnName="nit_empresa" />
+          <ScalarProperty Name="telefono_empresa" ColumnName="telefono_empresa" />
+          <ScalarProperty Name="direccion_empresa" ColumnName="direccion_empresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="encabezado">
+      <EntityTypeMapping TypeName="mastertech_db1Model.encabezado">
+        <MappingFragment StoreEntitySet="encabezado">
+          <ScalarProperty Name="id_encabezado" ColumnName="id_encabezado" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="id_serie_documento" ColumnName="id_serie_documento" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="id_proveedor" ColumnName="id_proveedor" />
+          <ScalarProperty Name="fecha_encabezado_sistema" ColumnName="fecha_encabezado_sistema" />
+          <ScalarProperty Name="fecha_encabezado_usuario" ColumnName="fecha_encabezado_usuario" />
+          <ScalarProperty Name="total_encabezado" ColumnName="total_encabezado" />
+          <ScalarProperty Name="no_documento" ColumnName="no_documento" />
+          <ScalarProperty Name="docomento_referencia_proveedor" ColumnName="docomento_referencia_proveedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estado_documento">
+      <EntityTypeMapping TypeName="mastertech_db1Model.estado_documento">
+        <MappingFragment StoreEntitySet="estado_documento">
+          <ScalarProperty Name="id_estado_documento" ColumnName="id_estado_documento" />
+          <ScalarProperty Name="descripcion_estado_documento" ColumnName="descripcion_estado_documento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="historial_precio_compra">
+      <EntityTypeMapping TypeName="mastertech_db1Model.historial_precio_compra">
+        <MappingFragment StoreEntitySet="historial_precio_compra">
+          <ScalarProperty Name="id_historial_precio_compra" ColumnName="id_historial_precio_compra" />
+          <ScalarProperty Name="id_detalle" ColumnName="id_detalle" />
+          <ScalarProperty Name="antiguo_precio_compra" ColumnName="antiguo_precio_compra" />
+          <ScalarProperty Name="antigua_precio_venta" ColumnName="antigua_precio_venta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ingreso">
+      <EntityTypeMapping TypeName="mastertech_db1Model.ingreso">
+        <MappingFragment StoreEntitySet="ingreso">
+          <ScalarProperty Name="id_ingreso" ColumnName="id_ingreso" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="fechahora_ingreso" ColumnName="fechahora_ingreso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="marca">
+      <EntityTypeMapping TypeName="mastertech_db1Model.marca">
+        <MappingFragment StoreEntitySet="marca">
+          <ScalarProperty Name="id_marca" ColumnName="id_marca" />
+          <ScalarProperty Name="nombre_marca" ColumnName="nombre_marca" />
+          <ScalarProperty Name="estado_marca" ColumnName="estado_marca" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="permiso">
+      <EntityTypeMapping TypeName="mastertech_db1Model.permiso">
+        <MappingFragment StoreEntitySet="permiso">
+          <ScalarProperty Name="id_permiso" ColumnName="id_permiso" />
+          <ScalarProperty Name="descripcion_permiso" ColumnName="descripcion_permiso" />
+          <ScalarProperty Name="descripcion_permiso_para_programador" ColumnName="descripcion_permiso_para_programador" />
+          <ScalarProperty Name="fecha_creacion_permiso" ColumnName="fecha_creacion_permiso" />
+          <ScalarProperty Name="estado_permiso" ColumnName="estado_permiso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="producto">
+      <EntityTypeMapping TypeName="mastertech_db1Model.producto">
+        <MappingFragment StoreEntitySet="producto">
+          <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+          <ScalarProperty Name="descripcion_producto" ColumnName="descripcion_producto" />
+          <ScalarProperty Name="codigo_producto" ColumnName="codigo_producto" />
+          <ScalarProperty Name="porcentaje_producto" ColumnName="porcentaje_producto" />
+          <ScalarProperty Name="ultimo_precio_compra_producto" ColumnName="ultimo_precio_compra_producto" />
+          <ScalarProperty Name="ultimo_precio_venta_producto" ColumnName="ultimo_precio_venta_producto" />
+          <ScalarProperty Name="id_marca" ColumnName="id_marca" />
+          <ScalarProperty Name="estado_producto" ColumnName="estado_producto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="producto_bodega">
+      <EntityTypeMapping TypeName="mastertech_db1Model.producto_bodega">
+        <MappingFragment StoreEntitySet="producto_bodega">
+          <ScalarProperty Name="id_producto_bodega" ColumnName="id_producto_bodega" />
+          <ScalarProperty Name="existencia_minima_producto_bodega" ColumnName="existencia_minima_producto_bodega" />
+          <ScalarProperty Name="existencia_producto_bodega" ColumnName="existencia_producto_bodega" />
+          <ScalarProperty Name="id_bodega" ColumnName="id_bodega" />
+          <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proveedor">
+      <EntityTypeMapping TypeName="mastertech_db1Model.proveedor">
+        <MappingFragment StoreEntitySet="proveedor">
+          <ScalarProperty Name="id_proveedor" ColumnName="id_proveedor" />
+          <ScalarProperty Name="nit_proveedor" ColumnName="nit_proveedor" />
+          <ScalarProperty Name="descripcion_proveedor" ColumnName="descripcion_proveedor" />
+          <ScalarProperty Name="telefono_proveedor" ColumnName="telefono_proveedor" />
+          <ScalarProperty Name="telefono2_proveedor" ColumnName="telefono2_proveedor" />
+          <ScalarProperty Name="direccion_proveedor" ColumnName="direccion_proveedor" />
+          <ScalarProperty Name="correo_proveedor" ColumnName="correo_proveedor" />
+          <ScalarProperty Name="estado_proveedor" ColumnName="estado_proveedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rol">
+      <EntityTypeMapping TypeName="mastertech_db1Model.rol">
+        <MappingFragment StoreEntitySet="rol">
+          <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+          <ScalarProperty Name="nombre_rol" ColumnName="nombre_rol" />
+          <ScalarProperty Name="estado_rol" ColumnName="estado_rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rol_permiso">
+      <EntityTypeMapping TypeName="mastertech_db1Model.rol_permiso">
+        <MappingFragment StoreEntitySet="rol_permiso">
+          <ScalarProperty Name="id_rol_permiso" ColumnName="id_rol_permiso" />
+          <ScalarProperty Name="estado_rol_permiso" ColumnName="estado_rol_permiso" />
+          <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+          <ScalarProperty Name="id_permiso" ColumnName="id_permiso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="serie_documento">
+      <EntityTypeMapping TypeName="mastertech_db1Model.serie_documento">
+        <MappingFragment StoreEntitySet="serie_documento">
+          <ScalarProperty Name="id_serie_documento" ColumnName="id_serie_documento" />
+          <ScalarProperty Name="descripcion_serie_documento" ColumnName="descripcion_serie_documento" />
+          <ScalarProperty Name="id_tipo_documento" ColumnName="id_tipo_documento" />
+          <ScalarProperty Name="id_estado_documento" ColumnName="id_estado_documento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="signo">
+      <EntityTypeMapping TypeName="mastertech_db1Model.signo">
+        <MappingFragment StoreEntitySet="signo">
+          <ScalarProperty Name="id_signo" ColumnName="id_signo" />
+          <ScalarProperty Name="signo1" ColumnName="signo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_documento">
+      <EntityTypeMapping TypeName="mastertech_db1Model.tipo_documento">
+        <MappingFragment StoreEntitySet="tipo_documento">
+          <ScalarProperty Name="id_tipo_documento" ColumnName="id_tipo_documento" />
+          <ScalarProperty Name="descripcion_tipo_documento" ColumnName="descripcion_tipo_documento" />
+          <ScalarProperty Name="signo_tipo_docuemtno" ColumnName="signo_tipo_docuemtno" />
+          <ScalarProperty Name="estado_tipo_documento" ColumnName="estado_tipo_documento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="mastertech_db1Model.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="nombre_empleado" ColumnName="nombre_empleado" />
+          <ScalarProperty Name="telefono_empleado" ColumnName="telefono_empleado" />
+          <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
+          <ScalarProperty Name="pass_usuario" ColumnName="pass_usuario" />
+          <ScalarProperty Name="fecha_creacion_usuario" ColumnName="fecha_creacion_usuario" />
+          <ScalarProperty Name="estado_usuario" ColumnName="estado_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario_rol">
+      <EntityTypeMapping TypeName="mastertech_db1Model.usuario_rol">
+        <MappingFragment StoreEntitySet="usuario_rol">
+          <ScalarProperty Name="id_usuario_rol" ColumnName="id_usuario_rol" />
+          <ScalarProperty Name="estado_usurio_rol" ColumnName="estado_usurio_rol" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="IngresoCliente" FunctionName="mastertech_db1Model.Store.IngresoCliente" />
+    <FunctionImportMapping FunctionImportName="ingresomarca" FunctionName="mastertech_db1Model.Store.ingresomarca" />
+    <FunctionImportMapping FunctionImportName="IngresoProveedor" FunctionName="mastertech_db1Model.Store.IngresoProveedor" />
+    <FunctionImportMapping FunctionImportName="IngresoContacto" FunctionName="mastertech_db1Model.Store.IngresoContacto" />
+    <FunctionImportMapping FunctionImportName="IngresoBodega" FunctionName="mastertech_db1Model.Store.IngresoBodega" />
+    <FunctionImportMapping FunctionImportName="IngresoSerieDocumento" FunctionName="mastertech_db1Model.Store.IngresoSerieDocumento" />
+    <FunctionImportMapping FunctionImportName="IngresoProducto" FunctionName="mastertech_db1Model.Store.IngresoProducto" />
+    <FunctionImportMapping FunctionImportName="IngresoUsuario" FunctionName="mastertech_db1Model.Store.IngresoUsuario" />
+    <FunctionImportMapping FunctionImportName="NuevoRol" FunctionName="mastertech_db1Model.Store.NuevoRol" />
+    <FunctionImportMapping FunctionImportName="EditarPermisoRol" FunctionName="mastertech_db1Model.Store.EditarPermisoRol" />
+    <FunctionImportMapping FunctionImportName="EliminarRolesDeUsuario" FunctionName="mastertech_db1Model.Store.EliminarRolesDeUsuario" />
+    <FunctionImportMapping FunctionImportName="AsignarRolAUsuario" FunctionName="mastertech_db1Model.Store.AsignarRolAUsuario" />
+    <FunctionImportMapping FunctionImportName="HistorialIngreso" FunctionName="mastertech_db1Model.Store.HistorialIngreso" />
+    <FunctionImportMapping FunctionImportName="EncabezadoCompra" FunctionName="mastertech_db1Model.Store.EncabezadoCompra" />
+    <FunctionImportMapping FunctionImportName="detallecompra" FunctionName="mastertech_db1Model.Store.detallecompra" />
+    <FunctionImportMapping FunctionImportName="EncabezadoFactura" FunctionName="mastertech_db1Model.Store.EncabezadoFactura" />
+    <FunctionImportMapping FunctionImportName="detallefactura" FunctionName="mastertech_db1Model.Store.detallefactura" />
+  </EntityContainerMapping>
+</Mapping>
